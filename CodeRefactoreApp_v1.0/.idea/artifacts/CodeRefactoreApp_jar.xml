@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CodeRefactoreApp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CodeRefactoreApp_jar</output-path>
+    <root id="archive" name="CodeRefactoreApp.jar">
+      <element id="module-output" name="CodeRefactoreApp" />
+    </root>
+  </artifact>
+</component>
