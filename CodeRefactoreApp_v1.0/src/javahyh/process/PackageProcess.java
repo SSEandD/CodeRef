@@ -11,6 +11,7 @@ public class PackageProcess {
     }
 
     public List<String> process(){
+        if(packageGroup.size()>1) packageGroup.add(0,"/*****存在多行package语句建议删除*****/\r\n");
         String word;
         for(int i=0;i<packageGroup.size();i++){
             word=packageGroup.get(i);
