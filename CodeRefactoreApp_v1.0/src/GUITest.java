@@ -6,7 +6,7 @@ import javasss.BlankCharacter;
 import javasss.FileProcessing;
 import javasss.OrderBlock;
 
-import java.awt.EventQueue;
+import java.awt.*;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -38,22 +38,20 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
-import java.awt.Color;
 import javax.swing.JLayeredPane;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 import javax.swing.JSplitPane;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import javax.swing.JCheckBox;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import static com.sun.javafx.scene.control.skin.Utils.getResource;
 
@@ -67,6 +65,7 @@ public class GUITest {
 	String extensionName="";//文件后缀名
 	String className="";//文件名字
 	String downloadpath="";//下载路径
+	String listdata[]= {"1fsdfdsfsdfdsfdsfsdfdsfdsfsd","2dfdsfsd","3fsfdsfdfsd"};
 	/**
 	 * Launch the application.
 	 */
@@ -97,14 +96,15 @@ public class GUITest {
 	private void initialize() {
 		frame = new JFrame();//整体框架
 		frame.setBackground(new Color(128, 128, 128));
-		frame.setTitle("代码结构及流程重构系统");
+		frame.setTitle("代码重构转换器");
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 1217, 715);
+		frame.setBounds(100, 100, 1275, 715);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
 
 		JPanel choosePath = new JPanel();//选择路径模块
 		choosePath.setToolTipText("");
-		choosePath.setBorder(null);
+		choosePath.setBorder(new LineBorder(Color.LIGHT_GRAY));
 
 		sourceFile = new JTextField();//存放读取文件路径
 		sourceFile.setColumns(10);
@@ -112,6 +112,7 @@ public class GUITest {
 
 		//定义选择按钮
 		JButton btnBrowse = new JButton("选择");
+		btnBrowse.setFont(new Font("宋体", Font.PLAIN, 15));
 		btnBrowse.setBackground(new Color(220, 220, 220));
 
 		JLabel label = new JLabel("请选择需要处理的源文件");
@@ -144,14 +145,15 @@ public class GUITest {
 		//展示文本模块
 		JPanel showText = new JPanel();
 		JButton btnChangeButton = new JButton("转换");
+		btnChangeButton.setFont(new Font("宋体", Font.PLAIN, 15));
 		btnChangeButton.setBackground(Color.LIGHT_GRAY);
 
-		btnChangeButton.setBounds(528, 309, 100, 23);
+		btnChangeButton.setBounds(662, 341, 100, 23);
 		showText.setLayout(null);
 		showText.add(btnChangeButton);
 
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(665, 20, 500, 510);
+		scrollPane_1.setBounds(790, 20, 465, 510);
 		showText.add(scrollPane_1);
 
 		JTextArea newText = new JTextArea();//存放已处理内容
@@ -159,7 +161,7 @@ public class GUITest {
 		scrollPane_1.setViewportView(newText);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(0, 20, 500, 510);
+		scrollPane.setBounds(180, 20, 465, 510);
 		showText.add(scrollPane);
 
 		JTextArea oldText = new JTextArea();//存放未处理的文件内容
@@ -179,63 +181,64 @@ public class GUITest {
 		lblNewLabel.setIcon(new ImageIcon(GUITest.class.getResource("icon.png")));
 
 		JButton btnExit = new JButton("退出");
+		btnExit.setFont(new Font("宋体", Font.PLAIN, 15));
 		btnExit.setBackground(new Color(220, 220, 220));
 
 		JButton btnDownload = new JButton("下载");
+		btnDownload.setFont(new Font("宋体", Font.PLAIN, 15));
 
 		btnDownload.setBackground(new Color(220, 220, 220));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-				gl_panel.createParallelGroup(Alignment.LEADING)
+				gl_panel.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_panel.createSequentialGroup()
 								.addContainerGap()
 								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED, 850, Short.MAX_VALUE)
-								.addComponent(btnDownload)
+								.addPreferredGap(ComponentPlacement.RELATED, 1037, Short.MAX_VALUE)
+								.addComponent(btnDownload, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
 								.addGap(18)
 								.addComponent(btnExit, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
 								.addGap(24))
 		);
 		gl_panel.setVerticalGroup(
-				gl_panel.createParallelGroup(Alignment.TRAILING)
+				gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
-								.addContainerGap(17, Short.MAX_VALUE)
-								.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-										.addGroup(Alignment.TRAILING, gl_panel.createParallelGroup(Alignment.BASELINE)
-												.addComponent(btnExit)
-												.addComponent(btnDownload))
-										.addComponent(lblNewLabel, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
+								.addContainerGap(20, Short.MAX_VALUE)
+								.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+										.addComponent(btnExit)
+										.addComponent(btnDownload))
 								.addContainerGap())
+						.addGroup(gl_panel.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(16, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 				groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 1211, Short.MAX_VALUE)
-						.addGroup(groupLayout.createSequentialGroup()
-								.addGap(27)
-								.addComponent(showText, GroupLayout.PREFERRED_SIZE, 1165, GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(19, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-								.addGap(20)
-								.addComponent(choosePath, GroupLayout.PREFERRED_SIZE, 673, GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(518, Short.MAX_VALUE))
+						.addComponent(choosePath, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 1269, Short.MAX_VALUE)
+						.addComponent(showText, GroupLayout.DEFAULT_SIZE, 1269, Short.MAX_VALUE)
+						.addComponent(panel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 1269, Short.MAX_VALUE)
 		);
 		groupLayout.setVerticalGroup(
 				groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
 								.addComponent(choosePath, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
 								.addComponent(showText, GroupLayout.PREFERRED_SIZE, 542, GroupLayout.PREFERRED_SIZE)
 								.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(panel, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE))
+								.addComponent(panel, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap())
 		);
 		//确认框定义代码
 		JCheckBox f_wbtn = new JCheckBox("for 转 while");
-		f_wbtn.setBounds(525, 84, 103, 23);
+		f_wbtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+		f_wbtn.setBounds(662, 148, 103, 23);
 		showText.add(f_wbtn);
 
 		JCheckBox w_fbtn = new JCheckBox("while 转 for");
+		w_fbtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		//复选框状态改变事件
 		f_wbtn.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent es) {
@@ -256,14 +259,16 @@ public class GUITest {
 				}
 			}
 		});
-		w_fbtn.setBounds(525, 109, 103, 23);
+		w_fbtn.setBounds(662, 173, 103, 23);
 		showText.add(w_fbtn);
 
-		JCheckBox i_sbtn = new JCheckBox("switch 转 if");
-		i_sbtn.setBounds(525, 134, 103, 23);
+		JCheckBox i_sbtn = new JCheckBox("if 转 switch");
+		i_sbtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+		i_sbtn.setBounds(662, 198, 103, 23);
 		showText.add(i_sbtn);
 
 		JCheckBox s_ibtn = new JCheckBox("多if 转 switch");
+		s_ibtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		//监听事件
 		i_sbtn.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent es) {
@@ -284,14 +289,16 @@ public class GUITest {
 				}
 			}
 		});
-		s_ibtn.setBounds(525, 159, 103, 23);
+		s_ibtn.setBounds(662, 223, 103, 23);
 		showText.add(s_ibtn);
 
 		JCheckBox if_ifsbtn = new JCheckBox("多if 转 单if");
-		if_ifsbtn.setBounds(525, 184, 103, 23);
+		if_ifsbtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+		if_ifsbtn.setBounds(662, 248, 103, 23);
 		showText.add(if_ifsbtn);
 
 		JCheckBox ifs_ifbtn = new JCheckBox("单if 转 多if");
+		ifs_ifbtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
 		//监听事件
 		if_ifsbtn.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent es) {
@@ -312,16 +319,36 @@ public class GUITest {
 				}
 			}
 		});
-		ifs_ifbtn.setBounds(525, 209, 103, 23);
+		ifs_ifbtn.setBounds(662, 273, 103, 23);
 		showText.add(ifs_ifbtn);
 
 		JLabel label_1 = new JLabel("处理前代码：");
-		label_1.setBounds(0, 0, 100, 15);
+		label_1.setFont(new Font("宋体", Font.BOLD, 14));
+		label_1.setBounds(181, 0, 100, 15);
 		showText.add(label_1);
 
 		JLabel label_2 = new JLabel("处理后代码：");
-		label_2.setBounds(665, 0, 100, 15);
+		label_2.setFont(new Font("宋体", Font.BOLD, 14));
+		label_2.setBounds(792, 0, 100, 15);
 		showText.add(label_2);
+
+//		frame.getContentPane().setLayout(groupLayout);
+
+		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBounds(5, 20, 165, 510);
+		showText.add(scrollPane_2);
+
+		JList list = new JList();
+		list.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent arg0) {
+				/**监听事件**/
+
+				oldText.setText("hhhhhhhhhhhhhh");
+			}
+		});
+		scrollPane_2.setViewportView(list);
+		/**加个自动排序？**/
+		list.setListData(listdata);
 		frame.getContentPane().setLayout(groupLayout);
 
 		//转换按钮

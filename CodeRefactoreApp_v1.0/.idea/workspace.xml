@@ -6,17 +6,24 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="添加批处理浏览目录">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/META-INF/CodeRefactoreApp.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/All.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/All.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/Transformation2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/Transformation3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/Transformation4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/Transformation5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/Transformation6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/ImportProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/ImportProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/Table.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUITest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,31 +52,42 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-2054185890">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="19" />
+          <entry key="txt" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="19" />
+          <entry key="PLAIN_TEXT" value="9" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="CodeRefactoreApp" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GUITest.java">
+        <entry file="file://$PROJECT_DIR$/src/GUITest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-              <folding>
-                <element signature="e#12404#12405#0" expanded="true" />
-                <element signature="e#12429#12430#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MainRun.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="466" column="27" selection-start-line="466" selection-start-column="27" selection-end-line="466" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -148,11 +166,17 @@
         <option value="$PROJECT_DIR$/src/javahyh/methodtree/NodeTree.java" />
         <option value="$PROJECT_DIR$/src/javahyh/lexical/LexicalAnalysis.java" />
         <option value="$PROJECT_DIR$/src/javahyh/CodeFile.java" />
-        <option value="$PROJECT_DIR$/src/GUITest.java" />
         <option value="$PROJECT_DIR$/src/javapgb/ForToWhile.java" />
         <option value="$PROJECT_DIR$/GUITest.java" />
+        <option value="$PROJECT_DIR$/src/GUITest.java" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -161,9 +185,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="5" />
+    <option name="x" value="168" />
+    <option name="y" value="13" />
     <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -171,6 +196,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,7 +213,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -196,6 +221,7 @@
     <property name="ToolWindowAnt Build.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562928893348" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -207,14 +233,14 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\src\javapgb" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\src" />
       <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp" />
       <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\src\javapgb\standardName\word" />
       <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\test" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\src\javapgb" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -289,6 +315,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.CodeFile" />
+      <item itemvalue="Application.GUITest" />
+      <item itemvalue="Application.GUITest (1)" />
+      <item itemvalue="Application.NodeTree" />
+      <item itemvalue="Application.test2 (1)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GUITest" />
@@ -421,7 +454,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="334533000" />
+    <option name="totallyTimeSpent" value="337973000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -433,9 +466,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.2386059" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.50680786" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -445,7 +479,7 @@
       <window_info anchor="bottom" id="Duplicates" order="0" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" weight="0.40084985" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" weight="0.45812806" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.54031116" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -453,9 +487,9 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067025" side_tool="true" weight="0.33521923" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32956153" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32840723" />
       <window_info anchor="bottom" id="Ant Build" order="14" show_stripe_button="false" weight="0.24752475" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
@@ -471,10 +505,47 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hyh" />
     <MESSAGE value="格式修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="格式修改" />
+    <MESSAGE value="添加批处理浏览目录" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加批处理浏览目录" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -626,11 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6756" selection-start-line="6756" selection-end-line="6756" />
-          <folding>
-            <element signature="e#244811#244812#0" expanded="true" />
-            <element signature="e#246247#246248#0" expanded="true" />
-            <element signature="e#246321#246322#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -645,10 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#1242#1243#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -668,11 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="1335" selection-start-line="1335" selection-end-line="1335" />
-          <folding>
-            <element signature="e#49043#49044#0" expanded="true" />
-            <element signature="e#49082#49083#0" expanded="true" />
-            <element signature="e#52271#52272#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -687,10 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="463" selection-start-line="463" selection-end-line="463" />
-          <folding>
-            <element signature="e#15586#15587#0" expanded="true" />
-            <element signature="e#15631#15632#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -733,10 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="4569" column="24" selection-start-line="4569" selection-start-column="24" selection-end-line="4569" selection-end-column="24" />
-          <folding>
-            <element signature="e#168016#168017#0" expanded="true" />
-            <element signature="e#168074#168075#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -764,10 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="96" column="44" lean-forward="true" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#wordAnalysis#0;class#WordAnalysis#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -970,13 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="446" column="40" selection-start-line="446" selection-start-column="23" selection-end-line="446" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javahyh/methodtree/NodeTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1070,23 +1108,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUITest.java">
+    <entry file="file://$PROJECT_DIR$/GUITest.java" />
+    <entry file="file://$PROJECT_DIR$/MainRun.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding>
-            <element signature="e#12404#12405#0" expanded="true" />
-            <element signature="e#12429#12430#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="466" column="27" selection-start-line="466" selection-start-column="27" selection-end-line="466" selection-end-column="27" />
         </state>
       </provider>
     </entry>
