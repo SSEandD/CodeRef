@@ -30,6 +30,15 @@ public class NormalTree extends NodeTree {
             newWord.addAll(allWord);
             newWord.add("\r");
             newWord.add("\n");
+            if(flag == 1) {
+                int theLen=0;
+                for(String s:allWord) {
+                    theLen += s.length();
+                }
+                if(theLen > 100) {
+                    newWord.add(0,"/***** Suggest:Don't out 100 char in a line :( *****/\r\n");
+                }
+            }
         }
     }
 

@@ -3,7 +3,7 @@ import javahyh.lexical.LexicalAnalysis;
 import javapgb.All;
 import javasss.BlankCharacter;
 import javasss.OrderBlock;
-
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class MainRun {
@@ -20,6 +20,7 @@ public class MainRun {
     }
     //主程序入口
     public String run() {
+        //for(String s:source) s=new String(s.getBytes(), StandardCharsets.UTF_8);
         StringBuilder result = new StringBuilder();
         //SYM
         OrderBlock ob = new OrderBlock(source);

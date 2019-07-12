@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
@@ -375,7 +376,7 @@ public class GUITest {
 				MainRun theMain=new MainRun(source,judge);
 				result=theMain.run();
 				//结果显示
-				newText.setText(result);//转换完成
+				newText.setText(result);
 			}
 		});
 		//选择源文件
