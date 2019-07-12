@@ -60,13 +60,17 @@ public class GUITest {
 	private JFrame frame;
 	private JTextField sourceFile;
 
-	String path="";//路径
+	String rightPath="";//当前路径
 	String result="";//最后输出结果
 	String extensionName="";//文件后缀名
 	String className="";//文件名字
 	String downloadpath="";//下载路径
-	String listdata[]= {"1fsdfdsfsdfdsfdsfsdfdsfdsfsd","2dfdsfsd","3fsfdsfdfsd"};
+//	String listdata[]= {"1fsdfdsfsdfdsfdsfsdfdsfdsfsd","2dfdsfsd","3fsfdsfdfsd"};
+    ArrayList<String> fileNames = new ArrayList<String>();//记录文件名
+    ArrayList<String> paths = new ArrayList<String>();//记录文件名
+    File[] sourcefiles ;
 	/**
+     *
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
@@ -335,20 +339,26 @@ public class GUITest {
 //		frame.getContentPane().setLayout(groupLayout);
 
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(5, 20, 165, 510);
+		scrollPane_2.setBounds(5, 20, 165, 465);
 		showText.add(scrollPane_2);
 
 		JList list = new JList();
 		list.addListSelectionListener(new ListSelectionListener() {
-			public void valueChanged(ListSelectionEvent arg0) {
+			public void valueChanged(ListSelectionEvent e) {
 				/**监听事件**/
+				int i;
+                i=list.getSelectedIndex();
+                rightPath=paths.get(i);
+                sourceFile.setText(rightPath);
+                String text = readTxt(sourceFile.getText());//保存了读取出的文本内容（含换行符）
+				oldText.setText(text);
+//                JOptionPane.showMessageDialog(null, i);
+//				oldText.setText("hhhhhhhhhhhhhh");
 
-				oldText.setText("hhhhhhhhhhhhhh");
 			}
 		});
 		scrollPane_2.setViewportView(list);
 		/**加个自动排序？**/
-		list.setListData(listdata);
 		frame.getContentPane().setLayout(groupLayout);
 
 		//转换按钮
@@ -365,11 +375,11 @@ public class GUITest {
 				judge.add(if_ifsbtn.isSelected());
 				judge.add(ifs_ifbtn.isSelected());
 
-				if("".equals(path)) {
+				if("".equals(rightPath)) {
 					JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
 				}
 				else {
-					source = FileProcessing.readFile(path);//按行读取文件内容（无换行符
+					source = FileProcessing.readFile(rightPath);//按行读取文件内容（无换行符
 				}
 				//主程序
 				MainRun theMain=new MainRun(source,judge);
@@ -381,31 +391,65 @@ public class GUITest {
 		//选择源文件
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFileChooser jfc=new JFileChooser();
-				jfc.showOpenDialog(jfc);
-				File file = jfc.getSelectedFile();
+			    //清空
+			    clearAll();
+			    oldText.setText("");
+			    newText.setText("");
 
-				try{
-					path=file.getPath();
-					sourceFile.setText(file.getPath());
-					String[] strArray = path.split("\\\\");
-					String[] splitStr = strArray[strArray.length-1].split("\\.");
-					className = splitStr[0];     // 保存的文件名
-				}
-				catch(Exception exception ) {
-					exception.printStackTrace();
-				}
+                JFileChooser jfc=new JFileChooser();
 
-				extensionName = getExtensionName(sourceFile.getText());
-				/**如果是java或者txt文件*/
-				if ("java".equals(extensionName) || "txt".equals(extensionName)) {
-					String text = readTxt(sourceFile.getText());//保存了读取出的文本内容（含换行符）
-					oldText.setText(text);
-				}
-				else {
-					oldText.setText(null);
-					JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
-				}
+                jfc.setMultiSelectionEnabled(true);
+                boolean someFileWrong = false;
+                int option = jfc.showOpenDialog(jfc);
+                if(option == JFileChooser.APPROVE_OPTION) {
+                    sourcefiles = jfc.getSelectedFiles();
+					String path;
+
+                    for(File file:sourcefiles) {
+//						fileNames += file.getName() + " ";
+//						JOptionPane.showMessageDialog(null, fileNames);
+                        try{
+                            path = file.getPath();
+                            paths.add(path);
+//                            sourceFile.setText(file.getPath());
+                            String[] strArray = path.split("\\\\");
+                            String[] splitStr = strArray[strArray.length-1].split("\\.");
+                            className = splitStr[0];     // 保存的文件名
+                            fileNames.add(className);
+                        }
+                        catch(Exception exception ) {
+                            exception.printStackTrace();
+                        }
+
+//                        extensionName = getExtensionName(sourceFile.getText());
+
+
+
+                        //判断输入文件是否符合要求
+                        extensionName = getExtensionName(file.getPath());
+                        /**如果是java或者txt文件*/
+                        if ("java".equals(extensionName) || "txt".equals(extensionName)) {
+//                            String text = readTxt(file.getPath());//保存了读取出的文本内容（含换行符）
+//                            oldText.setText(text);
+                        }
+                        else {
+                            someFileWrong = true;
+//                            oldText.setText(null);
+//                            JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
+                        }
+
+
+
+
+
+                    }
+                }
+                if(someFileWrong){
+                    JOptionPane.showMessageDialog(null, "上传文件存在非java/txt文件");
+                }
+                else{
+                    list.setListData(fileNames.toArray());
+                }
 
 			}
 		});
@@ -445,6 +489,13 @@ public class GUITest {
 			}
 		});
 	}
+
+	//清空记录
+    private void clearAll(){
+	    paths.clear();
+	    fileNames.clear();
+	    sourcefiles=null;
+    }
 
 	//获取用户上传的文件名
 	private String getExtensionName(String filename) {
