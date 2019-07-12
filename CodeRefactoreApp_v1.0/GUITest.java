@@ -58,15 +58,15 @@ import javax.swing.event.ChangeEvent;
 import static com.sun.javafx.scene.control.skin.Utils.getResource;
 
 public class GUITest {
-
+/***////
 	private JFrame frame;
 	private JTextField sourceFile;
 
-	String path="";//Â·¾¶
-	String result="";//×îºóÊä³ö½á¹û
-	String extensionName="";//ÎÄ¼þºó×ºÃû
-	String className="";//ÎÄ¼þÃû×Ö
-	String downloadpath="";//ÏÂÔØÂ·¾¶
+	String path="";//Â·ï¿½ï¿½
+	String result="";//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	String extensionName="";//ï¿½Ä¼ï¿½ï¿½ï¿½×ºï¿½ï¿½
+	String className="";//ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+	String downloadpath="";//ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½
 	/**
 	 * Launch the application.
 	 */
@@ -88,33 +88,33 @@ public class GUITest {
 	 */
 	public GUITest() {
 		initialize();
-		JOptionPane.showMessageDialog(null, "1.ÇëÑ¡Ôñjava/txtÎÄ¼þÉÏ´« \n2.ÇëÈ·±£Ñ¡ÔñµÄÔ´ÎÄ¼þ¿ÉÒÔÍ¨¹ý±àÒë\n3.¿ÉÊµÏÖ´óÍÕ·å¼°Ð¡ÍÕ·åÃüÃû");
+		JOptionPane.showMessageDialog(null, "1.ï¿½ï¿½Ñ¡ï¿½ï¿½java/txtï¿½Ä¼ï¿½ï¿½Ï´ï¿½ \n2.ï¿½ï¿½È·ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n3.ï¿½ï¿½Êµï¿½Ö´ï¿½ï¿½Õ·å¼°Ð¡ï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½");
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();//ÕûÌå¿ò¼Ü
+		frame = new JFrame();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		frame.setBackground(new Color(128, 128, 128));
-		frame.setTitle("´úÂë½á¹¹¼°Á÷³ÌÖØ¹¹ÏµÍ³");
+		frame.setTitle("ï¿½ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¹ï¿½ÏµÍ³");
 		frame.setResizable(false);
 		frame.setBounds(100, 100, 1217, 715);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JPanel choosePath = new JPanel();//Ñ¡ÔñÂ·¾¶Ä£¿é
+		JPanel choosePath = new JPanel();//Ñ¡ï¿½ï¿½Â·ï¿½ï¿½Ä£ï¿½ï¿½
 		choosePath.setToolTipText("");
 		choosePath.setBorder(null);
 		
-		sourceFile = new JTextField();//´æ·Å¶ÁÈ¡ÎÄ¼þÂ·¾¶
+		sourceFile = new JTextField();//ï¿½ï¿½Å¶ï¿½È¡ï¿½Ä¼ï¿½Â·ï¿½ï¿½
 		sourceFile.setColumns(10);
 		
 		
-		//¶¨ÒåÑ¡Ôñ°´Å¥
-		JButton btnBrowse = new JButton("Ñ¡Ôñ");
+		//ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½Å¥
+		JButton btnBrowse = new JButton("Ñ¡ï¿½ï¿½");
 		btnBrowse.setBackground(new Color(220, 220, 220));
 		
-		JLabel label = new JLabel("ÇëÑ¡ÔñÐèÒª´¦ÀíµÄÔ´ÎÄ¼þ");
+		JLabel label = new JLabel("ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½");
 		GroupLayout gl_choosePath = new GroupLayout(choosePath);
 		gl_choosePath.setHorizontalGroup(
 			gl_choosePath.createParallelGroup(Alignment.LEADING)
@@ -141,9 +141,9 @@ public class GUITest {
 		);
 		choosePath.setLayout(gl_choosePath);
 		
-		//Õ¹Ê¾ÎÄ±¾Ä£¿é
+		//Õ¹Ê¾ï¿½Ä±ï¿½Ä£ï¿½ï¿½
 		JPanel showText = new JPanel();  
-		JButton btnChangeButton = new JButton("×ª»»");
+		JButton btnChangeButton = new JButton("×ªï¿½ï¿½");
 		btnChangeButton.setBackground(Color.LIGHT_GRAY);
 
 		btnChangeButton.setBounds(528, 309, 100, 23);
@@ -154,7 +154,7 @@ public class GUITest {
 		scrollPane_1.setBounds(665, 20, 500, 510);
 		showText.add(scrollPane_1);
 		
-		JTextArea newText = new JTextArea();//´æ·ÅÒÑ´¦ÀíÄÚÈÝ
+		JTextArea newText = new JTextArea();//ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		newText.setEditable(false);
 		scrollPane_1.setViewportView(newText);
 		
@@ -162,26 +162,26 @@ public class GUITest {
 		scrollPane.setBounds(0, 20, 500, 510);
 		showText.add(scrollPane);
 		
-		JTextArea oldText = new JTextArea();//´æ·ÅÎ´´¦ÀíµÄÎÄ¼þÄÚÈÝ
+		JTextArea oldText = new JTextArea();//ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 		scrollPane.setViewportView(oldText);
 		oldText.setEditable(false);
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.LIGHT_GRAY));
 		
-		JLabel lblNewLabel = new JLabel("Ïà¹ØÐÅÏ¢");
+		JLabel lblNewLabel = new JLabel("ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢");
 		lblNewLabel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				JOptionPane.showMessageDialog(null, "1.ÇëÑ¡Ôñjava/txtÎÄ¼þÉÏ´« \n2.ÇëÈ·±£Ñ¡ÔñµÄÔ´ÎÄ¼þ¿ÉÒÔÍ¨¹ý±àÒë\n3.¿ÉÊµÏÖ´óÍÕ·å¼°Ð¡ÍÕ·åÃüÃû");
+				JOptionPane.showMessageDialog(null, "1.ï¿½ï¿½Ñ¡ï¿½ï¿½java/txtï¿½Ä¼ï¿½ï¿½Ï´ï¿½ \n2.ï¿½ï¿½È·ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n3.ï¿½ï¿½Êµï¿½Ö´ï¿½ï¿½Õ·å¼°Ð¡ï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½");
 			}
 		});
 		lblNewLabel.setIcon(new ImageIcon(GUITest.class.getResource("icon.png")));
 		
-		JButton btnExit = new JButton("ÍË³ö");
+		JButton btnExit = new JButton("ï¿½Ë³ï¿½");
 		btnExit.setBackground(new Color(220, 220, 220));
 		
-		JButton btnDownload = new JButton("ÏÂÔØ");
+		JButton btnDownload = new JButton("ï¿½ï¿½ï¿½ï¿½");
 		
 		btnDownload.setBackground(new Color(220, 220, 220));
 		GroupLayout gl_panel = new GroupLayout(panel);
@@ -230,28 +230,28 @@ public class GUITest {
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE))
 		);
-		//È·ÈÏ¿ò¶¨Òå´úÂë
+		//È·ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		JCheckBox f_wbtn = new JCheckBox("for ×ª while");
 		f_wbtn.setBounds(525, 84, 103, 23);
 		showText.add(f_wbtn);
 		
 		JCheckBox w_fbtn = new JCheckBox("while ×ª for");
-		//¸´Ñ¡¿ò×´Ì¬¸Ä±äÊÂ¼þ
+		//ï¿½ï¿½Ñ¡ï¿½ï¿½×´Ì¬ï¿½Ä±ï¿½ï¿½Â¼ï¿½
 		f_wbtn.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent es) {
 				JCheckBox checkBox = (JCheckBox) es.getSource();
 				if(checkBox.isSelected()) {
-					//ÕâÀïÊÇÖ¸±»Ñ¡ÖÐÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					w_fbtn.setSelected(false);
 				}
 			}
 		});
-		//¼àÌýÊÂ¼þ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 		w_fbtn.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent es) {
 				JCheckBox checkBox = (JCheckBox) es.getSource();
 				if(checkBox.isSelected()) {
-					//ÕâÀïÊÇÖ¸±»Ñ¡ÖÐÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					f_wbtn.setSelected(false);
 				}
 			}
@@ -263,23 +263,23 @@ public class GUITest {
 		i_sbtn.setBounds(525, 134, 103, 23);
 		showText.add(i_sbtn);
 		
-		JCheckBox s_ibtn = new JCheckBox("¶àif ×ª switch");
-		//¼àÌýÊÂ¼þ
+		JCheckBox s_ibtn = new JCheckBox("ï¿½ï¿½if ×ª switch");
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 				i_sbtn.addChangeListener(new ChangeListener() {
 					public void stateChanged(ChangeEvent es) {
 						JCheckBox checkBox = (JCheckBox) es.getSource();
 						if(checkBox.isSelected()) {
-							//ÕâÀïÊÇÖ¸±»Ñ¡ÖÐÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							s_ibtn.setSelected(false);
 						}
 					}
 				});
-		////¼àÌýÊÂ¼þ
+		////ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 		s_ibtn.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent es) {
 				JCheckBox checkBox = (JCheckBox) es.getSource();
 				if(checkBox.isSelected()) {
-					//ÕâÀïÊÇÖ¸±»Ñ¡ÖÐÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					i_sbtn.setSelected(false);
 				}
 			}
@@ -287,27 +287,27 @@ public class GUITest {
 		s_ibtn.setBounds(525, 159, 103, 23);
 		showText.add(s_ibtn);
 		
-		JCheckBox if_ifsbtn = new JCheckBox("¶àif ×ª µ¥if");
+		JCheckBox if_ifsbtn = new JCheckBox("ï¿½ï¿½if ×ª ï¿½ï¿½if");
 		if_ifsbtn.setBounds(525, 184, 103, 23);
 		showText.add(if_ifsbtn);
 		
-		JCheckBox ifs_ifbtn = new JCheckBox("µ¥if ×ª ¶àif");
-		//¼àÌýÊÂ¼þ
+		JCheckBox ifs_ifbtn = new JCheckBox("ï¿½ï¿½if ×ª ï¿½ï¿½if");
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 				if_ifsbtn.addChangeListener(new ChangeListener() {
 					public void stateChanged(ChangeEvent es) {
 						JCheckBox checkBox = (JCheckBox) es.getSource();
 						if(checkBox.isSelected()) {
-							//ÕâÀïÊÇÖ¸±»Ñ¡ÖÐÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 							ifs_ifbtn.setSelected(false);
 						}
 					}
 				});
-		//¼àÌýÊÂ¼þ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 		ifs_ifbtn.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent es) {
 				JCheckBox checkBox = (JCheckBox) es.getSource();
 				if(checkBox.isSelected()) {
-					//ÕâÀïÊÇÖ¸±»Ñ¡ÖÐÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 					if_ifsbtn.setSelected(false);
 				}
 			}
@@ -315,16 +315,16 @@ public class GUITest {
 		ifs_ifbtn.setBounds(525, 209, 103, 23);
 		showText.add(ifs_ifbtn);
 		
-		JLabel label_1 = new JLabel("´¦ÀíÇ°´úÂë£º");
+		JLabel label_1 = new JLabel("ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ë£º");
 		label_1.setBounds(0, 0, 100, 15);
 		showText.add(label_1);
 		
-		JLabel label_2 = new JLabel("´¦Àíºó´úÂë£º");
+		JLabel label_2 = new JLabel("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£º");
 		label_2.setBounds(665, 0, 100, 15);
 		showText.add(label_2);
 		frame.getContentPane().setLayout(groupLayout);
 		
-		//×ª»»°´Å¥
+		//×ªï¿½ï¿½ï¿½ï¿½Å¥
 		btnChangeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -340,19 +340,19 @@ public class GUITest {
 				judge.add(ifs_ifbtn.isSelected());
 
 				if("".equals(path)) {
-					JOptionPane.showMessageDialog(null, "ÇëÑ¡Ôñjava/txtÎÄ¼þÉÏ´«");
+					JOptionPane.showMessageDialog(null, "ï¿½ï¿½Ñ¡ï¿½ï¿½java/txtï¿½Ä¼ï¿½ï¿½Ï´ï¿½");
 				}
 				else {
-					source = FileProcessing.readFile(path);//°´ÐÐ¶ÁÈ¡ÎÄ¼þÄÚÈÝ£¨ÎÞ»»ÐÐ·û
+					source = FileProcessing.readFile(path);//ï¿½ï¿½ï¿½Ð¶ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½Þ»ï¿½ï¿½Ð·ï¿½
 				}
-				//Ö÷³ÌÐò
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				MainRun theMain=new MainRun(source,judge);
 				result=theMain.run();
 
-				newText.setText(result);//×ª»»Íê³É
+				newText.setText(result);//×ªï¿½ï¿½ï¿½ï¿½ï¿½
 			}
 		});
-		//Ñ¡ÔñÔ´ÎÄ¼þ
+		//Ñ¡ï¿½ï¿½Ô´ï¿½Ä¼ï¿½
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser jfc=new JFileChooser();			
@@ -364,32 +364,32 @@ public class GUITest {
 					sourceFile.setText(file.getPath());
 					String[] strArray = path.split("\\\\");
 					String[] splitStr = strArray[strArray.length-1].split("\\.");
-					className = splitStr[0];     // ±£´æµÄÎÄ¼þÃû
+					className = splitStr[0];     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
 				}
 				catch(Exception exception ) {
 					exception.printStackTrace();
 				}
 				
 				extensionName = getExtensionName(sourceFile.getText());
-				/**Èç¹ûÊÇjava»òÕßtxtÎÄ¼þ*/
+				/**ï¿½ï¿½ï¿½ï¿½ï¿½javaï¿½ï¿½ï¿½ï¿½txtï¿½Ä¼ï¿½*/
 				if ("java".equals(extensionName) || "txt".equals(extensionName)) {
-					String text = readTxt(sourceFile.getText());//±£´æÁË¶ÁÈ¡³öµÄÎÄ±¾ÄÚÈÝ£¨º¬»»ÐÐ·û£©
+					String text = readTxt(sourceFile.getText());//ï¿½ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½
 					oldText.setText(text);
 				}
 				else {
 					oldText.setText(null);
-					JOptionPane.showMessageDialog(null, "ÇëÑ¡Ôñjava/txtÎÄ¼þÉÏ´«");
+					JOptionPane.showMessageDialog(null, "ï¿½ï¿½Ñ¡ï¿½ï¿½java/txtï¿½Ä¼ï¿½ï¿½Ï´ï¿½");
 				}
 				
 			}
 		});
-		//ÍË³ö°´Å¥
+		//ï¿½Ë³ï¿½ï¿½ï¿½Å¥
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		//ÏÂÔØ°´Å¥
+		//ï¿½ï¿½ï¿½Ø°ï¿½Å¥
 		btnDownload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -400,27 +400,27 @@ public class GUITest {
 				if(flag == JFileChooser.APPROVE_OPTION) 
 	                        {
 					f = fc.getSelectedFile();
-					downloadpath=f.getPath();                // pathÊÇ±£´æºÃµÄÏÂÔØÂ·¾¶£¬¿ÉÒÔÊä³öÒ»ÏÂ
+					downloadpath=f.getPath();                // pathï¿½Ç±ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
 				}
 				String newfile = downloadpath+"\\"+className+"_new"+ ".java";
 				FileProcessing.clearFile(newfile);
 				FileProcessing.writeFile(newfile,result);
 				if(result!="") {
 					if(flag == JFileChooser.APPROVE_OPTION) {
-						JOptionPane.showMessageDialog(null, "ÏÂÔØ³É¹¦£¡");
+						JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½Ø³É¹ï¿½ï¿½ï¿½");
 					}
 					else if(flag == JFileChooser.CANCEL_OPTION){
-						JOptionPane.showMessageDialog(null, "È¡ÏûÏÂÔØ£¡");
+						JOptionPane.showMessageDialog(null, "È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");
 					}
 				}
 				else if(result=="") {
-					JOptionPane.showMessageDialog(null, "ÏÂÔØ´íÎó£¡");
+					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½Ø´ï¿½ï¿½ï¿½");
 				}
 			}
 		});
 	}
 	
-    //»ñÈ¡ÓÃ»§ÉÏ´«µÄÎÄ¼þÃû
+    //ï¿½ï¿½È¡ï¿½Ã»ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
 	private String getExtensionName(String filename) {
 		if ((filename != null) && (filename.length() > 0)) {
 			int dot = filename.lastIndexOf('.');
@@ -431,7 +431,7 @@ public class GUITest {
 		return filename;
 	}
 
-	//¶ÁÈ¡ÉÏ´«ÎÄ¼þ
+	//ï¿½ï¿½È¡ï¿½Ï´ï¿½ï¿½Ä¼ï¿½
 	private String readTxt(String path) {
 		if (path == null || "".equals(path)) {
 			return "";
