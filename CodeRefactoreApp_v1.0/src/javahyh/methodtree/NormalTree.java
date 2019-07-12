@@ -36,6 +36,7 @@ public class NormalTree extends NodeTree {
                     theLen += s.length();
                 }
                 if(theLen > 100) {
+                    for(int i=0;i<spaceNum;i++) newWord.add(" ");
                     newWord.add(0,"/***** Suggest:Don't out 100 char in a line :( *****/\r\n");
                 }
             }
