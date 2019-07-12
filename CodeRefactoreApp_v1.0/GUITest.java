@@ -327,7 +327,6 @@ public class GUITest {
 		//转换按钮
 		btnChangeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
 				result="";
 				ArrayList<String> source=new ArrayList<>();
 				ArrayList<Boolean> judge=new ArrayList<>();
@@ -348,7 +347,7 @@ public class GUITest {
 				//主程序
 				MainRun theMain=new MainRun(source,judge);
 				result=theMain.run();
-
+				//结果显示
 				newText.setText(result);//转换完成
 			}
 		});
