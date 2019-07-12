@@ -3,33 +3,23 @@ package javahyh.process;
 import java.util.*;
 
 public class ImportProcess {
-    //包含所有import
+    //包含所有import的字符串数组
     private List<String> importGroup;
-
+    //按行存储的字符串数组
     private ArrayList<ArrayList<String>> table;
-
+    //构造方法
     public ImportProcess(List<String> importGroup){
         this.importGroup=importGroup;
-        table=new ArrayList<>();
         init();
     }
-
-    public List<String> process(){
-        List<String> list=new ArrayList<>();
-        table=blockSort();
-        for(ArrayList<String> line:table){
-            list.addAll(line);
-        }
-        return list;
-    }
-
+    //将import字符串数组转为按行存储的字符串数组
     private void init(){
+        table=new ArrayList<>();
         for(int i=0;i<importGroup.size();){
             ArrayList<String> line=new ArrayList<>();
-            String word;
-            word=importGroup.get(i);
-            i++;
+            String word=importGroup.get(i++);
             while (!word.equals(";")){
+                if(i>=importGroup.size()) break;
                 line.add(word);
                 word=importGroup.get(i);
                 i++;
@@ -39,10 +29,12 @@ public class ImportProcess {
             table.add(line);
         }
     }
-
+    //将所有import分块排序方法
     private ArrayList<ArrayList<String>> blockSort(){
+        //储存分块排序后的内容
         ArrayList<ArrayList<String>> newTable=new ArrayList<>();
-        ArrayList<String> tran= new ArrayList<String>();
+        //构造一句空行
+        ArrayList<String> tran= new ArrayList<>();
         tran.add("\r\n");
         //标志是否有此类型的import语句
         int isHaveImport=0;
@@ -112,5 +104,21 @@ public class ImportProcess {
             isHaveImport=0;
         }
         return newTable;
+    }
+    //处理并返回修改后的import块
+    public List<String> process(){
+        List<String> list=new ArrayList<>();
+        table=blockSort();
+        for(ArrayList<String> line:table){
+            list.addAll(line);
+        }
+        //遇到*添加提示信息
+        for(String word:list) {
+            if("*".equals(word)) {
+                list.add(0,"/***** Suggest:Don't use the '*' for import :( *****/\r\n");
+                break;
+            }
+        }
+        return list;
     }
 }
