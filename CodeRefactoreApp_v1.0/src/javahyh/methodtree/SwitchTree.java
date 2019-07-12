@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SwitchTree extends NodeTree {
 
-    private List<String> conLine=new ArrayList<>();
+    private List<String> conLine;
 
     public SwitchTree(List<String> conLine, List<String> allWord, int level, int space) {
         this.conLine = conLine;
