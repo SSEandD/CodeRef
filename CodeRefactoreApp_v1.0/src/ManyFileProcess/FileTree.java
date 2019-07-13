@@ -22,8 +22,10 @@ public abstract class FileTree {
     public ArrayList<String> getAllFileList(){
         ArrayList<String> allFileList=new ArrayList<>();
         allFileList.add(nowAddress);
-        for(FileTree t:sonTree){
-            allFileList.add(t.nowAddress);
+        if(sonTree!=null) {
+            for(FileTree t:sonTree){
+                allFileList.addAll(t.getAllFileList());
+            }
         }
         return allFileList;
     }
@@ -40,7 +42,7 @@ public abstract class FileTree {
     }
     //打印找到的java或txt文件地址列表
     public void print(){
-        for (String add:getFileList()){
+        for (String add:getAllFileList()){
             System.out.println(add);
         }
     }
