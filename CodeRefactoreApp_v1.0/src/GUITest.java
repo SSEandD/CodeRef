@@ -346,6 +346,7 @@ public class GUITest {
                     String otext = readTxt(sourceFile.getText());//保存了读取出的文本内容（含换行符）
                     oldText.setText(otext);
                     String ntext = results.get(i);//保存了读取出的文本内容（含换行符）
+					//数组栈溢出
                     newText.setText(ntext);
                 }catch (Exception ex){
                     ex.printStackTrace();
@@ -496,39 +497,49 @@ public class GUITest {
 			}
 		});
 		//退出按钮
-		btnExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
+		btnExit.addActionListener(e -> System.exit(0));
 		//下载按钮
-		btnDownload.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnDownload.addActionListener(e -> {
 
-				JFileChooser fc = new JFileChooser();
-				fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-				File f = null;
-				int flag = fc.showOpenDialog(null);
-				if(flag == JFileChooser.APPROVE_OPTION)
-				{
-					f = fc.getSelectedFile();
-					downloadpath=f.getPath();                // path是保存好的下载路径，可以输出一下
+			JFileChooser fc = new JFileChooser();
+			fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			File f = null;
+			int flag = fc.showOpenDialog(null);
+			if(flag == JFileChooser.APPROVE_OPTION)
+			{
+				f = fc.getSelectedFile();
+				downloadpath=f.getPath();                // path是保存好的下载路径，可以输出一下
+			}
+
+
+
+			String newfilePath = downloadpath+"\\"+"_new";//新建一个文件夹存放结果
+			File newFile = new File(newfilePath);
+			//如果文件夹不存在则创建
+			if  (!newFile .exists()  && !newFile .isDirectory())
+			{
+				newFile .mkdir();
+			}
+
+
+			for(int i=0;i<paths.size();i++){
+
+			}
+			FileProcessing.clearFile(newfilePath);
+			FileProcessing.writeFile(newfilePath,result);
+			if(result!="") {
+				if(flag == JFileChooser.APPROVE_OPTION) {
+					JOptionPane.showMessageDialog(null, "下载成功！");
 				}
-				String newfile = downloadpath+"\\"+className+"_new"+ ".java";
-				FileProcessing.clearFile(newfile);
-				FileProcessing.writeFile(newfile,result);
-				if(result!="") {
-					if(flag == JFileChooser.APPROVE_OPTION) {
-						JOptionPane.showMessageDialog(null, "下载成功！");
-					}
-					else if(flag == JFileChooser.CANCEL_OPTION){
-						JOptionPane.showMessageDialog(null, "取消下载！");
-					}
-				}
-				else if(result=="") {
-					JOptionPane.showMessageDialog(null, "下载错误！");
+				else if(flag == JFileChooser.CANCEL_OPTION){
+					JOptionPane.showMessageDialog(null, "取消下载！");
 				}
 			}
+			else if(result=="") {
+				JOptionPane.showMessageDialog(null, "下载错误！");
+			}
+
+
 		});
 	}
 
