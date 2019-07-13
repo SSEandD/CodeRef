@@ -124,6 +124,7 @@ public class Transformation4 {
 								}
 								arrayListTemp1.add(j,"(");
 								arrayListTemp1.add(j,"switch");
+								arrayListTemp1.add(j,"\r\n/***** Revised:if transform switch! :( *****/\r\n");
 								continue;
 							}
 							//取出代码块if、else、else if 代码块
@@ -205,6 +206,7 @@ public class Transformation4 {
 							arrayListCondition.remove(arrayListCondition.size()-1);
 							arrayListAfterDelete= deleteIfAndElse(arrayListIf);
 							ArrayList arrayListResult = new ArrayList();
+							arrayListResult.add("/***** Revised:if transform switch! :( *****/");
 							arrayListResult.add("switch");
 							arrayListResult.add("(");
 							arrayListResult = generalMethod.addArrayListToArrayList1(arrayListResult, arrayListCondition);
@@ -227,11 +229,11 @@ public class Transformation4 {
 							}
 						}
 					}catch(Exception e){
-						e.printStackTrace();//continue;
+						continue;
 					}
 				}
 			}catch(Exception e){
-				e.printStackTrace();//continue;
+				continue;
 			}
 		}
 		return arrayList;

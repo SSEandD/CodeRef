@@ -12,6 +12,7 @@ public class Transformation6 {
 		String result="";
 		String temp="";
 		String temp1="";
+		String previousWord="";
 		int startI=0;
 		int startJ=0;
 		int endI=0;
@@ -22,6 +23,11 @@ public class Transformation6 {
 			for(int j=0;j<arrayListTemp.size();j++){
 				temp=String.valueOf(arrayListTemp.get(j));
 				if(temp.equals("if")){
+					//如果是else的if就不转
+					previousWord=findPreviousWord(arrayList,i,j);
+					if(previousWord.equals("else")){
+						continue;
+					}
 					arrayListTempParentheses = generalMethod.returnBracketsMatching(arrayList, i, j, "(");
 					endI=Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-2)));
 					endJ=Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-1)));
@@ -88,7 +94,8 @@ public class Transformation6 {
 							arrayListTemp=ifToIfs(arrayListTempPostfix,arrayListTempBraces);
 							arrayList=generalMethod.arrayListRemove(arrayList, i, j, endI, endJ);
 							arrayList=generalMethod.arrayListAdd(arrayList, i, j, arrayListTemp,0);
-							//System.out.println(arrayList);
+							arrayListTemp = (ArrayList) arrayList.get(i);
+							arrayListTemp.add(j,"\r\n/***** Revised:if transform ifs! :( *****/\r\n");
 						}
 					}
 				}
@@ -631,5 +638,32 @@ public class Transformation6 {
 			}
 		}
 		return nextWord;
+	}
+	public String findPreviousWord(ArrayList arrayList,int i,int j){
+		String result = "";
+		String temp="";
+		boolean isBreak = false;
+		ArrayList arrayListTemp = new ArrayList();
+		for(int i1=i;i1>-1;i1--){
+			arrayListTemp = (ArrayList) arrayList.get(i1);
+			int j1=0;
+			if(i1==i){
+				j1=j-1;
+			}else{
+				j1=arrayListTemp.size()-1;
+			}
+			for(;j1>-1;j1--){
+				temp=String.valueOf(arrayListTemp.get(j1));
+				if(!temp.equals(" ")){
+					result = temp;
+					isBreak = true;
+					break;
+				}
+			}
+			if(isBreak){
+				break;
+			}
+		}
+		return result;
 	}
 }

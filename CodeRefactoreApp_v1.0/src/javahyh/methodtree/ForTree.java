@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ForTree extends NodeTree {
 
-    private List<String> forLine = new ArrayList<>();
+    private List<String> forLine;
 
     public ForTree(List<String> conLine, List<String> allWord, int level, int space) {
         this.forLine = conLine;
@@ -27,6 +27,13 @@ public class ForTree extends NodeTree {
 
         for (int i = 0; i < spaceNum; i++) {
             newWord.add(" ");
+        }
+        for(int i=0;i<forLine.size();i++){
+            if(i+1==forLine.size()) break;
+            String word1=forLine.get(i);
+            String word2=forLine.get(i+1);
+            if(" ".equals(word1) || ".".equals(word1)) continue;
+            if(!" ".equals(word2) && !".".equals(word2)) forLine.add(i+1," ");
         }
         newWord.addAll(forLine);
         newWord.add(" ");
