@@ -163,6 +163,7 @@ public class GUITest {
 
 		JTextArea newText = new JTextArea();//存放已处理内容
 		newText.setEditable(false);
+        newText.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		scrollPane_1.setViewportView(newText);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -170,6 +171,7 @@ public class GUITest {
 		showText.add(scrollPane);
 
 		JTextArea oldText = new JTextArea();//存放未处理的文件内容
+        oldText.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		scrollPane.setViewportView(oldText);
 		oldText.setEditable(false);
 
@@ -332,6 +334,7 @@ public class GUITest {
 		showText.add(scrollPane_2);
 
 		JList list = new JList();
+        list.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
 			    try {
