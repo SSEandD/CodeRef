@@ -6,18 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="下载功能已实现&#10;简单批处理基本完成">
+    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="添加一些注释，删除一些无用的方法">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/lexical/LexicalAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/lexical/LexicalAnalysis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/NormalTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/NormalTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/SwitchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/SwitchTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/ClassProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/ClassProcess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/ImportProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/ImportProcess.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUITest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,24 +41,26 @@
     <session id="-2054185890">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="8" />
+          <entry key="java" value="11" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="8" />
+          <entry key="JAVA" value="11" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1144" />
-          <entry key="txt" value="139" />
+          <entry key="java" value="1331" />
+          <entry key="txt" value="155" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1144" />
-          <entry key="PLAIN_TEXT" value="139" />
+          <entry key="JAVA" value="1331" />
+          <entry key="PLAIN_TEXT" value="155" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -89,18 +81,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUITest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="573" column="68" lean-forward="true" selection-start-line="573" selection-start-column="68" selection-end-line="573" selection-end-column="68" />
+            <state relative-caret-position="104">
+              <caret line="336" column="67" selection-start-line="336" selection-start-column="67" selection-end-line="336" selection-end-column="67" />
               <folding>
-                <element signature="docComment;method#main#0;class#GUITest#0" />
-                <element signature="docComment;method#GUITest#0;class#GUITest#0" />
-                <element signature="docComment;method#initialize#0;class#GUITest#0" />
-                <element signature="e#9014#9225#0" />
-                <element signature="e#9276#9487#0" />
-                <element signature="e#9911#10122#0" />
-                <element signature="e#10175#10386#0" />
-                <element signature="e#10826#11040#0" />
-                <element signature="e#11094#11308#0" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#5828#6015#0" expanded="true" />
+                <element signature="e#6014#6015#0" expanded="true" />
                 <element signature="method#clearAll#0;class#GUITest#0" />
                 <element signature="method#getExtensionName#0;class#GUITest#0" />
               </folding>
@@ -109,10 +95,32 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javasss/FileProcessing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1215">
+              <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainRun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="320">
+              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javasss/OrderBlock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+              <folding>
+                <element signature="e#613#614#0" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,12 +143,17 @@
       <find>Table</find>
       <find>代码</find>
       <find>icon</find>
-      <find>list</find>
       <find>fileNames</find>
       <find>sourcefiles</find>
       <find>if</find>
       <find>try</find>
       <find>path</find>
+      <find>\n</find>
+      <find>Pane</find>
+      <find>pane</find>
+      <find>textpane</find>
+      <find>newtext</find>
+      <find>list</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/CodeFile.java" />
         <option value="$PROJECT_DIR$/src/process/PackageProcess.java" />
         <option value="$PROJECT_DIR$/src/process/ImportProcess.java" />
-        <option value="$PROJECT_DIR$/src/javasss/FileProcessing.java" />
         <option value="$PROJECT_DIR$/src/process/ClassProcess.java" />
         <option value="$PROJECT_DIR$/src/methodtree/NodeTree.java" />
         <option value="$PROJECT_DIR$/src/methodtree/SwitchTree.java" />
@@ -181,7 +193,6 @@
         <option value="$PROJECT_DIR$/src/javapgb/EnglishRecognition.java" />
         <option value="$PROJECT_DIR$/src/javapgb/StandardName.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
-        <option value="$PROJECT_DIR$/src/javasss/OrderBlock.java" />
         <option value="$PROJECT_DIR$/src/javasss/test.java" />
         <option value="$PROJECT_DIR$/src/javasss/test2.java" />
         <option value="$PROJECT_DIR$/test/test-file.txt" />
@@ -190,7 +201,6 @@
         <option value="$PROJECT_DIR$/test/test-tree.txt" />
         <option value="$PROJECT_DIR$/src/test2.java" />
         <option value="$PROJECT_DIR$/src/javasss/GUITest.java" />
-        <option value="$PROJECT_DIR$/src/javasss/BlankCharacter.java" />
         <option value="$PROJECT_DIR$/src/javapgb/All.java" />
         <option value="$PROJECT_DIR$/src/xxx.java" />
         <option value="$PROJECT_DIR$/src/javapgb/WordAnalysis.java" />
@@ -199,6 +209,9 @@
         <option value="$PROJECT_DIR$/src/javahyh/CodeFile.java" />
         <option value="$PROJECT_DIR$/src/javapgb/ForToWhile.java" />
         <option value="$PROJECT_DIR$/GUITest.java" />
+        <option value="$PROJECT_DIR$/src/javasss/OrderBlock.java" />
+        <option value="$PROJECT_DIR$/src/javasss/BlankCharacter.java" />
+        <option value="$PROJECT_DIR$/src/javasss/FileProcessing.java" />
         <option value="$PROJECT_DIR$/src/GUITest.java" />
       </list>
     </option>
@@ -241,6 +254,12 @@
               <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="javasss" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -252,7 +271,7 @@
     <property name="ToolWindowAnt Build.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562994681318" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563006968673" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -288,8 +307,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javapgb/Transformation1.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javapgb/Transformation2.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javahyh/CodeFile.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javahyh/lexical/LexicalAnalysis.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javapgb/Transformation4.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -297,10 +317,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javapgb/Transformation3.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javapgb/Transformation4.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javapgb/Transformation5.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javapgb/Transformation6.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -575,7 +591,7 @@
       <workItem from="1562913635672" duration="320000" />
       <workItem from="1562914018480" duration="610000" />
       <workItem from="1562933852539" duration="11558000" />
-      <workItem from="1562982892727" duration="4904000" />
+      <workItem from="1562982892727" duration="13491000" />
     </task>
     <task id="LOCAL-00001" summary="hyh">
       <created>1562913727422</created>
@@ -640,11 +656,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562991947153</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="下载功能已实现&#10;简单批处理基本完成">
+      <created>1562994734024</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1562994734024</updated>
+    </task>
+    <task id="LOCAL-00011" summary="添加一些注释，删除一些无用的方法">
+      <created>1563004420222</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1563004420222</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355449000" />
+    <option name="totallyTimeSpent" value="364036000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -659,7 +689,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.2677761" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992928" weight="0.2677761" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -669,17 +699,17 @@
       <window_info anchor="bottom" id="Duplicates" order="0" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" weight="0.4499179" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49932975" visible="true" weight="0.4499179" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.54031116" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32840723" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.72085387" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.5714286" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32840723" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067025" side_tool="true" weight="0.33521923" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32840723" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32840723" />
       <window_info anchor="bottom" id="Ant Build" order="14" show_stripe_button="false" weight="0.24752475" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
@@ -744,7 +774,9 @@
     <MESSAGE value="下载改一半" />
     <MESSAGE value="right one" />
     <MESSAGE value="下载功能已实现&#10;简单批处理基本完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="下载功能已实现&#10;简单批处理基本完成" />
+    <MESSAGE value="添加一些注释，删除一些无用的方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加一些注释，删除一些无用的方法" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -863,9 +895,6 @@
         <state relative-caret-position="-483" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/java/util/annotations.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -898,13 +927,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/javasss/OrderBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Math.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -926,16 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javasss/FileProcessing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javapgb/IfToIfs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -953,13 +965,6 @@
     <entry file="file://$PROJECT_DIR$/test/test-tree.txt" />
     <entry file="file://$PROJECT_DIR$/test/test-lex.txt" />
     <entry file="file://$PROJECT_DIR$/src/javasss/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/javasss/BlankCharacter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="292" selection-start-line="292" selection-end-line="292" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test2.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/regex/Pattern.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1284,13 +1289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/JAVA/Java/jdk1.8.0_181/src.zip!/javax/swing/event/ChangeListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1298,20 +1296,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/javasss/FileProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1215">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javasss/OrderBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+          <folding>
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3480" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javasss/BlankCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="205" column="35" selection-start-line="205" selection-start-column="35" selection-end-line="205" selection-end-column="35" />
+          <folding>
+            <element signature="e#440#448#0" expanded="true" />
+            <element signature="e#963#964#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="method#transBC#0;class#BlankCharacter#0" />
+            <element signature="method#inQuotation#0;class#BlankCharacter#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="573" column="68" lean-forward="true" selection-start-line="573" selection-start-column="68" selection-end-line="573" selection-end-column="68" />
+        <state relative-caret-position="104">
+          <caret line="336" column="67" selection-start-line="336" selection-start-column="67" selection-end-line="336" selection-end-column="67" />
           <folding>
-            <element signature="docComment;method#main#0;class#GUITest#0" />
-            <element signature="docComment;method#GUITest#0;class#GUITest#0" />
-            <element signature="docComment;method#initialize#0;class#GUITest#0" />
-            <element signature="e#9014#9225#0" />
-            <element signature="e#9276#9487#0" />
-            <element signature="e#9911#10122#0" />
-            <element signature="e#10175#10386#0" />
-            <element signature="e#10826#11040#0" />
-            <element signature="e#11094#11308#0" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5828#6015#0" expanded="true" />
+            <element signature="e#6014#6015#0" expanded="true" />
             <element signature="method#clearAll#0;class#GUITest#0" />
             <element signature="method#getExtensionName#0;class#GUITest#0" />
           </folding>
