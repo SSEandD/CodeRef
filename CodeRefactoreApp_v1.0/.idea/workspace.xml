@@ -6,19 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="">
+    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="下载功能已实现&#10;简单批处理基本完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$12.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$9.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/lexical/LexicalAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/lexical/LexicalAnalysis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/NormalTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/NormalTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/SwitchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/SwitchTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/ClassProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/ClassProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/ImportProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/ImportProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUITest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,14 +61,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="983" />
-          <entry key="txt" value="101" />
+          <entry key="java" value="1144" />
+          <entry key="txt" value="139" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="983" />
-          <entry key="PLAIN_TEXT" value="101" />
+          <entry key="JAVA" value="1144" />
+          <entry key="PLAIN_TEXT" value="139" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -89,8 +89,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUITest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="525" selection-start-line="525" selection-end-line="525" />
+            <state relative-caret-position="109">
+              <caret line="573" column="68" lean-forward="true" selection-start-line="573" selection-start-column="68" selection-end-line="573" selection-end-column="68" />
+              <folding>
+                <element signature="docComment;method#main#0;class#GUITest#0" />
+                <element signature="docComment;method#GUITest#0;class#GUITest#0" />
+                <element signature="docComment;method#initialize#0;class#GUITest#0" />
+                <element signature="e#9014#9225#0" />
+                <element signature="e#9276#9487#0" />
+                <element signature="e#9911#10122#0" />
+                <element signature="e#10175#10386#0" />
+                <element signature="e#10826#11040#0" />
+                <element signature="e#11094#11308#0" />
+                <element signature="method#clearAll#0;class#GUITest#0" />
+                <element signature="method#getExtensionName#0;class#GUITest#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/src/MainRun.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -127,6 +140,7 @@
       <find>sourcefiles</find>
       <find>if</find>
       <find>try</find>
+      <find>path</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -238,7 +252,7 @@
     <property name="ToolWindowAnt Build.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562991331534" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562994681318" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -561,7 +575,7 @@
       <workItem from="1562913635672" duration="320000" />
       <workItem from="1562914018480" duration="610000" />
       <workItem from="1562933852539" duration="11558000" />
-      <workItem from="1562982892727" duration="1472000" />
+      <workItem from="1562982892727" duration="4904000" />
     </task>
     <task id="LOCAL-00001" summary="hyh">
       <created>1562913727422</created>
@@ -612,11 +626,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562987172374</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="下载改一半">
+      <created>1562991383329</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1562991383329</updated>
+    </task>
+    <task id="LOCAL-00009" summary="right one">
+      <created>1562991947153</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562991947153</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352017000" />
+    <option name="totallyTimeSpent" value="355449000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -645,13 +673,13 @@
       <window_info anchor="bottom" id="Debug" order="4" weight="0.54031116" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.32956153" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32840723" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.72085387" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32840723" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50067025" side_tool="true" weight="0.33521923" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32840723" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32840723" />
       <window_info anchor="bottom" id="Ant Build" order="14" show_stripe_button="false" weight="0.24752475" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
@@ -714,7 +742,9 @@
     <MESSAGE value="能判断输入的文件集是否符合要求&#10;点击目录文件能在未处理代码框显示" />
     <MESSAGE value="实现一键重构&#10;实现处理后代码展示&#10;未完善下载功能" />
     <MESSAGE value="下载改一半" />
-    <option name="LAST_COMMIT_MESSAGE" value="下载改一半" />
+    <MESSAGE value="right one" />
+    <MESSAGE value="下载功能已实现&#10;简单批处理基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="下载功能已实现&#10;简单批处理基本完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1257,7 +1287,7 @@
     <entry file="file://$PROJECT_DIR$/src/MainRun.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
@@ -1270,8 +1300,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="525" selection-start-line="525" selection-end-line="525" />
+        <state relative-caret-position="109">
+          <caret line="573" column="68" lean-forward="true" selection-start-line="573" selection-start-column="68" selection-end-line="573" selection-end-column="68" />
+          <folding>
+            <element signature="docComment;method#main#0;class#GUITest#0" />
+            <element signature="docComment;method#GUITest#0;class#GUITest#0" />
+            <element signature="docComment;method#initialize#0;class#GUITest#0" />
+            <element signature="e#9014#9225#0" />
+            <element signature="e#9276#9487#0" />
+            <element signature="e#9911#10122#0" />
+            <element signature="e#10175#10386#0" />
+            <element signature="e#10826#11040#0" />
+            <element signature="e#11094#11308#0" />
+            <element signature="method#clearAll#0;class#GUITest#0" />
+            <element signature="method#getExtensionName#0;class#GUITest#0" />
+          </folding>
         </state>
       </provider>
     </entry>
