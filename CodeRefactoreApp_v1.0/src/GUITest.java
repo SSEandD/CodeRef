@@ -376,7 +376,7 @@ public class GUITest {
 				MainRun theMain=new MainRun(source,judge);
 				result=theMain.run();
 				//结果显示
-				newText.setText(result);
+				newText.setText(result);//转换完成
 			}
 		});
 		//选择源文件
