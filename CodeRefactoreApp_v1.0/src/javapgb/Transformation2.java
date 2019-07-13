@@ -42,6 +42,8 @@ public class Transformation2 {
 						arrayList = generalMethod.arrayListRemove(arrayList, startI, startJ, endI, endJ);
 						arrayList = generalMethod.arrayListAdd(arrayList, i, j+1, arrList, 0);
 						arrayListTemp.set(j,"for");
+						arrayListTemp.add(j,"/***** Revised:while transform for! :( *****/");
+						j++;
 					}
 				}catch(Exception e){
 					continue;
