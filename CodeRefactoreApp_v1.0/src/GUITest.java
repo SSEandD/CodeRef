@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
@@ -61,13 +60,19 @@ public class GUITest {
 	private JFrame frame;
 	private JTextField sourceFile;
 
-	String path="";//路径
-	String result="";//最后输出结果
-	String extensionName="";//文件后缀名
-	String className="";//文件名字
-	String downloadpath="";//下载路径
-	String listdata[]= {"1fsdfdsfsdfdsfdsfsdfdsfdsfsd","2dfdsfsd","3fsfdsfdfsd"};
+    private String rightPath="";//当前路径
+    private String result="";//最后输出结果
+    private String extensionName="";//文件后缀名
+    private String className="";//文件名字
+    private String downloadpath="";//下载路径
+//	String listdata[]= {"1fsdfdsfsdfdsfdsfsdfdsfdsfsd","2dfdsfsd","3fsfdsfdfsd"};
+    private ArrayList<String> fileNames = new ArrayList<>();//记录文件名
+    private ArrayList<String> paths = new ArrayList<>();//记录文件名
+    private ArrayList<String> results = new ArrayList<>();//记录文件名
+    private File[] sourcefiles ;
+    private int selectFileNum;
 	/**
+     *
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
@@ -88,7 +93,7 @@ public class GUITest {
 	 */
 	public GUITest() {
 		initialize();
-		JOptionPane.showMessageDialog(null, "1.请选择java/txt文件上传 \n2.请确保选择的源文件可以通过编译\n3.可实现大驼峰及小驼峰命名");
+//		JOptionPane.showMessageDialog(null, "1.请选择java/txt文件上传 \n2.请确保选择的源文件可以通过编译\n3.可实现大驼峰及小驼峰命名");
 	}
 
 	/**
@@ -113,10 +118,11 @@ public class GUITest {
 
 		//定义选择按钮
 		JButton btnBrowse = new JButton("选择");
-		btnBrowse.setFont(new Font("宋体", Font.PLAIN, 15));
+		btnBrowse.setFont(new Font("宋体", Font.PLAIN, 14));
 		btnBrowse.setBackground(new Color(220, 220, 220));
 
 		JLabel label = new JLabel("请选择需要处理的源文件");
+        label.setFont(new Font("宋体", Font.PLAIN, 14));
 		GroupLayout gl_choosePath = new GroupLayout(choosePath);
 		gl_choosePath.setHorizontalGroup(
 				gl_choosePath.createParallelGroup(Alignment.LEADING)
@@ -232,125 +238,167 @@ public class GUITest {
 								.addComponent(panel, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
 								.addContainerGap())
 		);
-		//确认框定义代码
-		JCheckBox f_wbtn = new JCheckBox("for 转 while");
-		f_wbtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		f_wbtn.setBounds(662, 148, 103, 23);
-		showText.add(f_wbtn);
+        //确认框定义代码
+        JCheckBox f_wbtn = new JCheckBox("for转while");
+        f_wbtn.setFont(new Font("宋体", Font.BOLD, 14));
+        f_wbtn.setBounds(657, 148, 122, 23);
+        showText.add(f_wbtn);
 
-		JCheckBox w_fbtn = new JCheckBox("while 转 for");
-		w_fbtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		//复选框状态改变事件
-		f_wbtn.addChangeListener(new ChangeListener() {
-			public void stateChanged(ChangeEvent es) {
-				JCheckBox checkBox = (JCheckBox) es.getSource();
-				if(checkBox.isSelected()) {
-					//这里是指被选中了！！！！！！！！！
-					w_fbtn.setSelected(false);
-				}
-			}
-		});
-		//监听事件
-		w_fbtn.addChangeListener(new ChangeListener() {
-			public void stateChanged(ChangeEvent es) {
-				JCheckBox checkBox = (JCheckBox) es.getSource();
-				if(checkBox.isSelected()) {
-					//这里是指被选中了！！！！！！！！！
-					f_wbtn.setSelected(false);
-				}
-			}
-		});
-		w_fbtn.setBounds(662, 173, 103, 23);
-		showText.add(w_fbtn);
+        JCheckBox w_fbtn = new JCheckBox("while转for");
+        w_fbtn.setFont(new Font("宋体", Font.BOLD, 14));
+        //复选框状态改变事件
+        f_wbtn.addChangeListener(es -> {
+            JCheckBox checkBox = (JCheckBox) es.getSource();
+            if(checkBox.isSelected()) {
+                //这里是指被选中了！！！！！！！！！
+                w_fbtn.setSelected(false);
+            }
+        });
+        //监听事件
+        w_fbtn.addChangeListener(es -> {
+            JCheckBox checkBox = (JCheckBox) es.getSource();
+            if(checkBox.isSelected()) {
+                //这里是指被选中了！！！！！！！！！
+                f_wbtn.setSelected(false);
+            }
+        });
+        w_fbtn.setBounds(657, 173, 133, 23);
+        showText.add(w_fbtn);
 
-		JCheckBox i_sbtn = new JCheckBox("if 转 switch");
-		i_sbtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		i_sbtn.setBounds(662, 198, 103, 23);
-		showText.add(i_sbtn);
+        JCheckBox i_sbtn = new JCheckBox("switch转if");
+        i_sbtn.setFont(new Font("宋体", Font.BOLD, 14));
+        i_sbtn.setBounds(657, 198, 133, 23);
+        showText.add(i_sbtn);
 
-		JCheckBox s_ibtn = new JCheckBox("多if 转 switch");
-		s_ibtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		//监听事件
-		i_sbtn.addChangeListener(new ChangeListener() {
-			public void stateChanged(ChangeEvent es) {
-				JCheckBox checkBox = (JCheckBox) es.getSource();
-				if(checkBox.isSelected()) {
-					//这里是指被选中了！！！！！！！！！
-					s_ibtn.setSelected(false);
-				}
-			}
-		});
-		////监听事件
-		s_ibtn.addChangeListener(new ChangeListener() {
-			public void stateChanged(ChangeEvent es) {
-				JCheckBox checkBox = (JCheckBox) es.getSource();
-				if(checkBox.isSelected()) {
-					//这里是指被选中了！！！！！！！！！
-					i_sbtn.setSelected(false);
-				}
-			}
-		});
-		s_ibtn.setBounds(662, 223, 103, 23);
-		showText.add(s_ibtn);
+        JCheckBox s_ibtn = new JCheckBox("多if转switch");
+        s_ibtn.setFont(new Font("宋体", Font.BOLD, 14));
+        //监听事件
+        i_sbtn.addChangeListener(es -> {
+            JCheckBox checkBox = (JCheckBox) es.getSource();
+            if(checkBox.isSelected()) {
+                //这里是指被选中了！！！！！！！！！
+                s_ibtn.setSelected(false);
+            }
+        });
+        ////监听事件
+        s_ibtn.addChangeListener(es -> {
+            JCheckBox checkBox = (JCheckBox) es.getSource();
+            if(checkBox.isSelected()) {
+                //这里是指被选中了！！！！！！！！！
+                i_sbtn.setSelected(false);
+            }
+        });
+        s_ibtn.setBounds(657, 223, 133, 23);
+        showText.add(s_ibtn);
 
-		JCheckBox if_ifsbtn = new JCheckBox("多if 转 单if");
-		if_ifsbtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		if_ifsbtn.setBounds(662, 248, 103, 23);
-		showText.add(if_ifsbtn);
+        JCheckBox if_ifsbtn = new JCheckBox("多if转单if");
+        if_ifsbtn.setFont(new Font("宋体", Font.BOLD, 14));
+        if_ifsbtn.setBounds(657, 248, 133, 23);
+        showText.add(if_ifsbtn);
 
-		JCheckBox ifs_ifbtn = new JCheckBox("单if 转 多if");
-		ifs_ifbtn.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		//监听事件
-		if_ifsbtn.addChangeListener(new ChangeListener() {
-			public void stateChanged(ChangeEvent es) {
-				JCheckBox checkBox = (JCheckBox) es.getSource();
-				if(checkBox.isSelected()) {
-					//这里是指被选中了！！！！！！！！！
-					ifs_ifbtn.setSelected(false);
-				}
-			}
-		});
-		//监听事件
-		ifs_ifbtn.addChangeListener(new ChangeListener() {
-			public void stateChanged(ChangeEvent es) {
-				JCheckBox checkBox = (JCheckBox) es.getSource();
-				if(checkBox.isSelected()) {
-					//这里是指被选中了！！！！！！！！！
-					if_ifsbtn.setSelected(false);
-				}
-			}
-		});
-		ifs_ifbtn.setBounds(662, 273, 103, 23);
-		showText.add(ifs_ifbtn);
+        JCheckBox ifs_ifbtn = new JCheckBox("单if转多if");
+        ifs_ifbtn.setFont(new Font("宋体", Font.BOLD, 14));
+        //监听事件
+        if_ifsbtn.addChangeListener(es -> {
+            JCheckBox checkBox = (JCheckBox) es.getSource();
+            if(checkBox.isSelected()) {
+                //这里是指被选中了！！！！！！！！！
+                ifs_ifbtn.setSelected(false);
+            }
+        });
+        //监听事件
+        ifs_ifbtn.addChangeListener(es -> {
+            JCheckBox checkBox = (JCheckBox) es.getSource();
+            if(checkBox.isSelected()) {
+                //这里是指被选中了！！！！！！！！！
+                if_ifsbtn.setSelected(false);
+            }
+        });
+        ifs_ifbtn.setBounds(657, 273, 133, 23);
+        showText.add(ifs_ifbtn);
 
 		JLabel label_1 = new JLabel("处理前代码：");
-		label_1.setFont(new Font("宋体", Font.BOLD, 14));
+		label_1.setFont(new Font("宋体", Font.PLAIN, 14));
 		label_1.setBounds(181, 0, 100, 15);
 		showText.add(label_1);
 
 		JLabel label_2 = new JLabel("处理后代码：");
-		label_2.setFont(new Font("宋体", Font.BOLD, 14));
+		label_2.setFont(new Font("宋体", Font.PLAIN, 14));
 		label_2.setBounds(792, 0, 100, 15);
 		showText.add(label_2);
 
 //		frame.getContentPane().setLayout(groupLayout);
 
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(5, 20, 165, 510);
+		scrollPane_2.setBounds(5, 20, 165, 465);
 		showText.add(scrollPane_2);
 
 		JList list = new JList();
 		list.addListSelectionListener(new ListSelectionListener() {
-			public void valueChanged(ListSelectionEvent arg0) {
-				/**监听事件**/
+			public void valueChanged(ListSelectionEvent e) {
+			    try {
+                    /**监听事件**/
+                    int i;
+                    selectFileNum=list.getSelectedIndex();
+                    i=selectFileNum;
+                    rightPath=paths.get(i);
+                    sourceFile.setText(rightPath);
+                    String otext = readTxt(sourceFile.getText());//保存了读取出的文本内容（含换行符）
+                    oldText.setText(otext);
+                    String ntext = results.get(i);//保存了读取出的文本内容（含换行符）
+					//数组栈溢出
+                    newText.setText(ntext);
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
 
-				oldText.setText("hhhhhhhhhhhhhh");
+//                JOptionPane.showMessageDialog(null, i);
+//				oldText.setText("hhhhhhhhhhhhhh");
+
 			}
 		});
 		scrollPane_2.setViewportView(list);
 		/**加个自动排序？**/
-		list.setListData(listdata);
 		frame.getContentPane().setLayout(groupLayout);
+
+        JButton btnFastButton = new JButton("一键重构");
+        btnFastButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                results.clear();
+                ArrayList<String> source=new ArrayList<>();
+                ArrayList<Boolean> judge=new ArrayList<>();
+
+                judge.add(f_wbtn.isSelected());
+                judge.add(w_fbtn.isSelected());
+                judge.add(i_sbtn.isSelected());
+                judge.add(s_ibtn.isSelected());
+                judge.add(if_ifsbtn.isSelected());
+                judge.add(ifs_ifbtn.isSelected());
+                if(paths.size()==0){
+                    JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
+                }
+                else{
+                    for(String path:paths){
+                        source = FileProcessing.readFile(path);//按行读取文件内容（无换行符
+                        MainRun theMain=new MainRun(source,judge);
+                        result=theMain.run();
+                        results.add(result);
+                    }
+                    JOptionPane.showMessageDialog(null, "done");
+                }
+            }
+        });
+        btnFastButton.setBounds(38, 507, 105, 23);
+        btnFastButton.setFont(new Font("宋体", Font.PLAIN, 15));
+        btnFastButton.setBackground(Color.LIGHT_GRAY);
+        showText.add(btnFastButton);
+        frame.getContentPane().setLayout(groupLayout);
+
+        JLabel lblNewLabel_1 = new JLabel("文件目录：");
+        lblNewLabel_1.setFont(new Font("宋体", Font.PLAIN, 14));
+        lblNewLabel_1.setBounds(10, 0, 100, 15);
+        showText.add(lblNewLabel_1);
+        frame.getContentPane().setLayout(groupLayout);
 
 		//转换按钮
 		btnChangeButton.addActionListener(new ActionListener() {
@@ -366,86 +414,142 @@ public class GUITest {
 				judge.add(if_ifsbtn.isSelected());
 				judge.add(ifs_ifbtn.isSelected());
 
-				if("".equals(path)) {
-					JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
-				}
+				if(results.size()==0){
+                    JOptionPane.showMessageDialog(null, "请先点击“一键重构");
+                }
+				else if("".equals(rightPath)) {
+                    JOptionPane.showMessageDialog(null, "请在文件目录中选择一个文件");
+                }
 				else {
-					source = FileProcessing.readFile(path);//按行读取文件内容（无换行符
+					source = FileProcessing.readFile(rightPath);//按行读取文件内容（无换行符
+                    //主程序
+                    MainRun theMain=new MainRun(source,judge);
+                    result=theMain.run();
+                    results.set(selectFileNum,result);
+                    //结果显示
+                    newText.setText(result);//转换完成
 				}
-				//主程序
-				MainRun theMain=new MainRun(source,judge);
-				result=theMain.run();
-				//结果显示
-				newText.setText(result);//转换完成
 			}
 		});
 		//选择源文件
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFileChooser jfc=new JFileChooser();
-				jfc.showOpenDialog(jfc);
-				File file = jfc.getSelectedFile();
+			    //清空
+			    clearAll();
+			    oldText.setText("");
+			    newText.setText("");
 
-				try{
-					path=file.getPath();
-					sourceFile.setText(file.getPath());
-					String[] strArray = path.split("\\\\");
-					String[] splitStr = strArray[strArray.length-1].split("\\.");
-					className = splitStr[0];     // 保存的文件名
-				}
-				catch(Exception exception ) {
-					exception.printStackTrace();
-				}
+                JFileChooser jfc=new JFileChooser();
 
-				extensionName = getExtensionName(sourceFile.getText());
-				/**如果是java或者txt文件*/
-				if ("java".equals(extensionName) || "txt".equals(extensionName)) {
-					String text = readTxt(sourceFile.getText());//保存了读取出的文本内容（含换行符）
-					oldText.setText(text);
-				}
-				else {
-					oldText.setText(null);
-					JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
-				}
+                jfc.setMultiSelectionEnabled(true);
+                boolean someFileWrong = false;
+                int option = jfc.showOpenDialog(jfc);
+                if(option == JFileChooser.APPROVE_OPTION) {
+                    sourcefiles = jfc.getSelectedFiles();
+					String path;
+
+                    for(File file:sourcefiles) {
+//						fileNames += file.getName() + " ";
+//						JOptionPane.showMessageDialog(null, fileNames);
+                        try{
+                            path = file.getPath();
+                            paths.add(path);
+//                            sourceFile.setText(file.getPath());
+                            String[] strArray = path.split("\\\\");
+                            String[] splitStr = strArray[strArray.length-1].split("\\.");
+                            className = splitStr[0];     // 保存的文件名
+                            fileNames.add(className);
+                        }
+                        catch(Exception exception ) {
+                            exception.printStackTrace();
+                        }
+
+//                        extensionName = getExtensionName(sourceFile.getText());
+
+
+
+                        //判断输入文件是否符合要求
+                        extensionName = getExtensionName(file.getPath());
+                        /**如果是java或者txt文件*/
+                        if ("java".equals(extensionName) || "txt".equals(extensionName)) {
+//                            String text = readTxt(file.getPath());//保存了读取出的文本内容（含换行符）
+//                            oldText.setText(text);
+                        }
+                        else {
+                            someFileWrong = true;
+//                            oldText.setText(null);
+//                            JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
+                        }
+
+
+
+
+
+                    }
+                }
+                if(someFileWrong){
+                    JOptionPane.showMessageDialog(null, "上传文件存在非java/txt文件");
+                }
+                else{
+                    list.setListData(fileNames.toArray());
+                }
 
 			}
 		});
 		//退出按钮
-		btnExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
+		btnExit.addActionListener(e -> System.exit(0));
 		//下载按钮
-		btnDownload.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnDownload.addActionListener(e -> {
 
-				JFileChooser fc = new JFileChooser();
-				fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-				File f = null;
-				int flag = fc.showOpenDialog(null);
-				if(flag == JFileChooser.APPROVE_OPTION)
-				{
-					f = fc.getSelectedFile();
-					downloadpath=f.getPath();                // path是保存好的下载路径，可以输出一下
+			JFileChooser fc = new JFileChooser();
+			fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			File f = null;
+			int flag = fc.showOpenDialog(null);
+			if(flag == JFileChooser.APPROVE_OPTION)
+			{
+				f = fc.getSelectedFile();
+				downloadpath=f.getPath();                // path是保存好的下载路径，可以输出一下
+			}
+
+
+
+			String newfilePath = downloadpath+"\\"+"_new";//新建一个文件夹存放结果
+			File newFile = new File(newfilePath);
+			//如果文件夹不存在则创建
+			if  (!newFile .exists()  && !newFile .isDirectory())
+			{
+				newFile .mkdir();
+			}
+
+
+			for(int i=0;i<paths.size();i++){
+
+			}
+			FileProcessing.clearFile(newfilePath);
+			FileProcessing.writeFile(newfilePath,result);
+			if(result!="") {
+				if(flag == JFileChooser.APPROVE_OPTION) {
+					JOptionPane.showMessageDialog(null, "下载成功！");
 				}
-				String newfile = downloadpath+"\\"+className+"_new"+ ".java";
-				FileProcessing.clearFile(newfile);
-				FileProcessing.writeFile(newfile,result);
-				if(result!="") {
-					if(flag == JFileChooser.APPROVE_OPTION) {
-						JOptionPane.showMessageDialog(null, "下载成功！");
-					}
-					else if(flag == JFileChooser.CANCEL_OPTION){
-						JOptionPane.showMessageDialog(null, "取消下载！");
-					}
-				}
-				else if(result=="") {
-					JOptionPane.showMessageDialog(null, "下载错误！");
+				else if(flag == JFileChooser.CANCEL_OPTION){
+					JOptionPane.showMessageDialog(null, "取消下载！");
 				}
 			}
+			else if(result=="") {
+				JOptionPane.showMessageDialog(null, "下载错误！");
+			}
+
+
 		});
 	}
+
+	//清空记录
+    private void clearAll(){
+	    paths.clear();
+	    fileNames.clear();
+	    sourcefiles=null;
+	    results.clear();
+    }
 
 	//获取用户上传的文件名
 	private String getExtensionName(String filename) {
