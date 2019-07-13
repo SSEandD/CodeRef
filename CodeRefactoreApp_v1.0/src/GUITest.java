@@ -66,7 +66,6 @@ public class GUITest {
     private String extensionName="";//文件后缀名
     private String className="";//文件名字
     private String downloadpath="";//下载路径
-//	String listdata[]= {"1fsdfdsfsdfdsfdsfsdfdsfdsfsd","2dfdsfsd","3fsfdsfdfsd"};
     private ArrayList<String> fileNames = new ArrayList<>();//记录文件名
     private ArrayList<String> paths = new ArrayList<>();//记录文件名
     private ArrayList<String> results = new ArrayList<>();//记录文件名
@@ -349,11 +348,8 @@ public class GUITest {
                         newText.setText(n_text);
                     }
                 }catch (Exception ex){
-                    ex.printStackTrace();
+//                    ex.printStackTrace();
                 }
-
-//                JOptionPane.showMessageDialog(null, i);
-//				oldText.setText("hhhhhhhhhhhhhh");
 
 			}
 		});
@@ -488,6 +484,7 @@ newText.setText(result);//转换完成
                     JOptionPane.showMessageDialog(null, "上传文件存在非java/txt文件");
                 }
                 else{
+                    /**有错误**/
                     list.setListData(fileNames.toArray());
                 }
 
