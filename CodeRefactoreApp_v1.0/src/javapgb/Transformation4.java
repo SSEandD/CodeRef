@@ -18,121 +18,161 @@ public class Transformation4 {
 		int endJ = -1 ;
 		int endI1 = 0;
 		int endJ1 = 0 ;
+		int endI2 = 0;
+		int endJ2 = 0;
 		String temp="";
 		String firstWord = "";
+		String firstWord1 = "";
 		String previousWord = "";
 		ArrayList nextWord = new ArrayList();
 		for(int i=0;i<arrayList.size();i++){
 			try{
 				arrayListTemp = (ArrayList) arrayList.get(i);
-				System.out.println("arrayListTemp="+arrayListTemp);
 				for(int j=0;j<arrayListTemp.size();j++){
 					try{
 						temp = String.valueOf(arrayListTemp.get(j));
 						if(temp.equals("if")){
+							//如果前面一个是else则不进行处理
 							previousWord=findPreviousWord(arrayList,i,j);
 							if(previousWord.equals("else")){
 								continue;
 							}
 							//找（）和{}内容
 							arrayListTempParentheses = generalMethod.returnBracketsMatching(arrayList, i, j, "(");
-							endI=Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-2)));
-							endJ=Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-1)));
-							arrayListTempParentheses = generalMethod.deleteSurplus(arrayListTempParentheses);
 							//如果括号内不是匹对==就退出
 							if(!hasEquals(arrayListTempParentheses)){
 								continue;
+							}
+							//()里面有与或也不转换
+							if(hasAnd(arrayListTempParentheses)||hasOr(arrayListTempParentheses)){
+								continue;
+							}
+							endI=Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-2)));
+							endJ=Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-1)));
+							arrayListTempParentheses = generalMethod.deleteSurplus(arrayListTempParentheses);
+							//取大括号内容
+							arrayListTempBraces = generalMethod.bracesMatching(arrayList, endI, endJ, "{");
+							//如果{}部分存在break则不处理
+							if(hasBreak(arrayListTempBraces)){
+								continue;
+							}
+							endI1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
+							endJ1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
+							//找}后下一个单词
+							nextWord = findNextWord(arrayList,endI1,endJ1);
+							if(nextWord.size()!=0){
+								firstWord = String.valueOf(nextWord.get(0));
+								endI2 = Integer.parseInt(String.valueOf(nextWord.get(nextWord.size()-2)));
+								endJ2 = Integer.parseInt(String.valueOf(nextWord.get(nextWord.size()-1)));
 							}else{
-								arrayListTempBraces = generalMethod.bracesMatching(arrayList, endI, endJ, "{");
+								firstWord = "";
+							}
+							System.out.println("1");
+							//取出代码块if、else、else if 代码块
+							boolean hasBreak=false;
+							System.out.println("first="+firstWord);
+							while(firstWord.equals("else")){
+								//判断else后面是否为if
+								nextWord = findNextWord(arrayList,endI2,endJ2);
+								if(nextWord.size()!=0){
+									firstWord1 = String.valueOf(nextWord.get(0));
+									if(!firstWord1.equals("if")){
+										break;
+									}
+								}
+								System.out.println("??");
+								endI=endI1;
+								endJ=endJ1;
+								arrayListTempParentheses = generalMethod.returnBracketsMatching(arrayList, endI1, endJ1, "(");
+								//如果（）没有==也退出
+								if(!hasEquals(arrayListTempParentheses)){
+									hasBreak=true;
+									break;
+								}
+								//()里面有与或也不转换
+								if(hasAnd(arrayListTempParentheses)||hasOr(arrayListTempParentheses)){
+									hasBreak=true;
+									break;
+								}
+								endI1 = Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-2)));
+								endI1 = Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-1)));
+								arrayListTempBraces = generalMethod.bracesMatching(arrayList, endI1, endJ1, "{");
+								System.out.println("arrayListTempBraces="+arrayListTempBraces);
+								//{}内有break则不可以转换，跳出
 								if(hasBreak(arrayListTempBraces)){
-									continue;
+									hasBreak=true;
+									break;
 								}
 								endI1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
 								endJ1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
-								nextWord = findNextWord(arrayList,endI1,endJ1);
+								nextWord = findNextWord(arrayList,endI,endJ);
 								if(nextWord.size()!=0){
 									firstWord = String.valueOf(nextWord.get(0));
+									System.out.println(firstWord+"?");
 								}else{
 									firstWord = "";
 								}
-								System.out.println("1");
-								//取出代码块if、else、else if 代码块
-								boolean hasBreak=false;
-								System.out.println("first="+firstWord);
-								while(firstWord.equals("if")){
-									//下一个还是if则endI、endJ保存
-									System.out.println("?");
-									endI=endI1;
-									endJ=endJ1;
-									arrayListTempParentheses = generalMethod.returnBracketsMatching(arrayList, endI1, endJ1, "(");
-									endI1 = Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-2)));
-									endI1 = Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-1)));
-									arrayListTempBraces = generalMethod.bracesMatching(arrayList, endI1, endJ1, "{");
-									System.out.println("arrayListTempBraces="+arrayListTempBraces);
-									//{}内有break则不可以转换，跳出
-									if(hasBreak(arrayListTempBraces)){
-										hasBreak=true;
-										break;
-									}
-									endI1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
-									endJ1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
-									nextWord = findNextWord(arrayList,endI,endJ);
-									if(nextWord.size()!=0){
-										firstWord = String.valueOf(nextWord.get(0));
-									}else{
-										firstWord = "";
-									}
-								}
-								if(hasBreak){
-									continue;
-								}
-								if(!firstWord.equals("else")){
-									endI=endI1;
-									endJ=endJ1;
-								}
-								System.out.println("2");
-								arrayListIf = getIfArrayList(arrayList,i,j,endI,endJ);
-								System.out.println("arrayListIf="+arrayListIf);
-								arrayListCondition = isSameCondition1(arrayListIf);
-								if(String.valueOf(arrayListCondition.get(0)).equals("false")){
-									continue;
-								}
-								int s=0;
-								int e=0;
-								String s1 = String.valueOf(arrayListCondition.get(arrayListCondition.size()-2));
-								String e1 = String.valueOf(arrayListCondition.get(arrayListCondition.size()-1));
-								while(!e1.equals("|")){
-									s = Integer.parseInt(s1);
-									e = Integer.parseInt(e1);
-									arrayListIf = generalMethod.arrayListRemove1(arrayListIf, s, e);
-									arrayListCondition.remove(arrayListCondition.size()-1);
-									arrayListCondition.remove(arrayListCondition.size()-1);
-									s1 = String.valueOf(arrayListCondition.get(arrayListCondition.size()-2));
-									e1 = String.valueOf(arrayListCondition.get(arrayListCondition.size()-1));
-								}
+							}
+							//后面的else if/else存在break，不转换//括号中不存在==不转换//（）里面有与或不转换
+							if(hasBreak){
+								continue;
+							}
+							//下一个不为else则确定范围了,下一个是else则包括else{}内容
+							System.out.println(firstWord+"?");
+							if(!firstWord.equals("else")){
+								System.out.println("?");
+								endI=endI1;
+								endJ=endJ1;
+							}else{
+								System.out.println("?1");
+								arrayListTempBraces = generalMethod.returnBracketsMatching(arrayList, endI1, endJ1, "{");
+								endI1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
+								endJ1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
+								endI=endI1;
+								endJ=endJ1;
+							}
+							arrayListIf = getIfArrayList(arrayList,i,j,endI,endJ);
+							System.out.println("arrayListIf="+arrayListIf);
+							arrayListCondition = isSameCondition1(arrayListIf);
+							System.out.println("arrayListCondition="+arrayListCondition);
+							if(String.valueOf(arrayListCondition.get(0)).equals("false")){
+								continue;
+							}
+							int s=0;
+							int e=0;
+							String s1 = String.valueOf(arrayListCondition.get(arrayListCondition.size()-2));
+							String e1 = String.valueOf(arrayListCondition.get(arrayListCondition.size()-1));
+							while(!e1.equals("|")){
+								s = Integer.parseInt(s1);
+								e = Integer.parseInt(e1);
+								arrayListIf = generalMethod.arrayListRemove1(arrayListIf, s, e);
 								arrayListCondition.remove(arrayListCondition.size()-1);
-								arrayListAfterDelete= deleteIfAndElse(arrayListIf);
-								ArrayList arrayListResult = new ArrayList();
-								arrayListResult.add("switch");
-								arrayListResult.add("(");
-								arrayListResult = generalMethod.addArrayListToArrayList1(arrayListResult, arrayListCondition);
-								arrayListResult.add(")");
-								arrayListResult.add("{");
-								arrayListResult=generalMethod.addArrayListToArrayList1(arrayListResult, bracketsToCase(arrayListAfterDelete));
-								arrayListResult.add("}");
-								arrayList = generalMethod.arrayListRemove(arrayList, i, j, endI, endJ);
-								arrayList = generalMethod.arrayListAdd(arrayList, i, j, arrayListResult, 0);
-								int size = arrayListResult.size();
-								if(i==endI){
-									arrayListTemp = (ArrayList) arrayList.get(i);
-									j=endJ-j+size;
-								}else{
-									for(int k=i;k<endI;k++){
-										arrayList.remove(i+1);
-									}
-									arrayListTemp = (ArrayList) arrayList.get(i);
-									j=-1;
+								arrayListCondition.remove(arrayListCondition.size()-1);
+								s1 = String.valueOf(arrayListCondition.get(arrayListCondition.size()-2));
+								e1 = String.valueOf(arrayListCondition.get(arrayListCondition.size()-1));
+							}
+							arrayListCondition.remove(arrayListCondition.size()-1);
+							arrayListAfterDelete= deleteIfAndElse(arrayListIf);
+							ArrayList arrayListResult = new ArrayList();
+							arrayListResult.add("switch");
+							arrayListResult.add("(");
+							arrayListResult = generalMethod.addArrayListToArrayList1(arrayListResult, arrayListCondition);
+							arrayListResult.add(")");
+							arrayListResult.add("{");
+							arrayListResult=generalMethod.addArrayListToArrayList1(arrayListResult, bracketsToCase(arrayListAfterDelete));
+							arrayListResult.add("}");
+							arrayList = generalMethod.arrayListRemove(arrayList, i, j, endI, endJ);
+							arrayList = generalMethod.arrayListAdd(arrayList, i, j, arrayListResult, 0);
+							int size = arrayListResult.size();
+							if(i==endI){
+								arrayListTemp = (ArrayList) arrayList.get(i);
+								j=endJ-j+size;
+							}else{
+								for(int k=i;k<endI;k++){
+									arrayList.remove(i+1);
 								}
+								arrayListTemp = (ArrayList) arrayList.get(i);
+								j=-1;
 							}
 						}
 					}catch(Exception e){
