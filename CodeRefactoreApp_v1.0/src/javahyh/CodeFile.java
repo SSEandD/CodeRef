@@ -38,10 +38,12 @@ public class CodeFile {
                     word = list.get(++i);
                 } while (!word.equals(";"));
                 importGroup.add(word);
-            } else if (word.matches("/\\*(.|\\s)*\\*/") || word.matches("//(.|\\s)*")) {
+            } else if (word.matches("/\\*(.|\\s)*\\*/")) {
                 classGroup.add(word);
                 classGroup.add("\r");
                 classGroup.add("\n");
+            } else if(word.matches("//(.|\\s)*")) {
+                classGroup.add(word);
             } else if ("public".equals(word) || "abstract".equals(word) || "final".equals(word) ||
                     "class".equals(word) || "interface".equals(word)) {
                 classGroup.add("THE_FLAG_IS_TOP_CLASS");
