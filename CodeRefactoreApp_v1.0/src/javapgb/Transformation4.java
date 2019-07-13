@@ -13,6 +13,9 @@ public class Transformation4 {
 		ArrayList arrayListTempParentheses1 = new ArrayList();
 		ArrayList arrayListIf = new ArrayList();
 		ArrayList arrayListCondition = new ArrayList();
+		ArrayList arrayListCondition1 = new ArrayList();
+		ArrayList arrayListCondition2 = new ArrayList();
+		ArrayList arrayListCondition3 = new ArrayList();
 		ArrayList arrayListAfterDelete = new ArrayList();
 		int endI = -1;
 		int endJ = -1 ;
@@ -67,10 +70,64 @@ public class Transformation4 {
 							}else{
 								firstWord = "";
 							}
-							System.out.println("1");
+							//判断下一个是否为else，不是则直接单个if转switch
+							if(!firstWord.equals("else")){
+								arrayListCondition1 = getCondition1(arrayListTempParentheses);
+								arrayListCondition2 = getCondition2(arrayListTempParentheses);
+								arrayListTemp1 = (ArrayList) arrayList.get(endI1);
+								//1==i
+								if(isConstant(arrayListCondition1)&&(!isConstant(arrayListCondition2))){
+									arrayListCondition3 = arrayListCondition1;
+									arrayListCondition1 = arrayListCondition2;
+								}
+								//i==1
+								else if(isConstant(arrayListCondition2)&&(!isConstant(arrayListCondition1))){
+									arrayListCondition3 = arrayListCondition2;
+								}
+								//不是一常量一变量则退出
+								else{
+									continue;
+								}
+								//}前添加break;  {后加case 1:
+								if(String.valueOf(arrayListTemp1.get(endJ1)).equals("}")){
+									arrayListTemp1.add(endJ1,";");
+									arrayListTemp1.add(endJ1,"break");
+									endI2 = Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-4)));
+									endJ2 = Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-3)));
+									arrayListTemp1=(ArrayList) arrayList.get(endI2);
+									arrayListTemp1.add(endJ2+1,":");
+									for(int z=arrayListCondition3.size()-1;z>-1;z--){
+										arrayListTemp1.add(endJ2+1,String.valueOf(arrayListCondition3.get(z)));
+									}
+									arrayListTemp1.add(endJ2+1," ");
+									arrayListTemp1.add(endJ2+1,"case");
+								}else{
+									arrayListTemp1.add(endJ1+1,"}");
+									arrayListTemp1.add(endJ1+1,";");
+									arrayListTemp1.add(endJ1+1,"break");
+									//)后加{case 1：
+									arrayListTemp1=(ArrayList) arrayList.get(endI);
+									arrayListTemp1.add(endJ+1,":");
+									for(int z=arrayListCondition3.size()-1;z>-1;z--){
+										arrayListTemp1.add(endJ+1,String.valueOf(arrayListCondition3.get(z)));
+									}
+									arrayListTemp1.add(endJ+1," ");
+									arrayListTemp1.add(endJ+1,"case");
+									arrayListTemp1.add(endJ+1,"{");
+								}
+								//删除if（i==1）
+								arrayList = generalMethod.arrayListRemove(arrayList, i, j, endI, endJ);
+								arrayListTemp1 = (ArrayList) arrayList.get(i);
+								arrayListTemp1.add(j,")");
+								for(int z=arrayListCondition1.size()-1;z>-1;z--){
+									arrayListTemp1.add(j,String.valueOf(arrayListCondition1.get(z)));
+								}
+								arrayListTemp1.add(j,"(");
+								arrayListTemp1.add(j,"switch");
+								continue;
+							}
 							//取出代码块if、else、else if 代码块
 							boolean hasBreak=false;
-							System.out.println("first="+firstWord);
 							while(firstWord.equals("else")){
 								//判断else后面是否为if
 								nextWord = findNextWord(arrayList,endI2,endJ2);
@@ -80,7 +137,6 @@ public class Transformation4 {
 										break;
 									}
 								}
-								System.out.println("??");
 								endI=endI1;
 								endJ=endJ1;
 								arrayListTempParentheses = generalMethod.returnBracketsMatching(arrayList, endI1, endJ1, "(");
@@ -95,9 +151,8 @@ public class Transformation4 {
 									break;
 								}
 								endI1 = Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-2)));
-								endI1 = Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-1)));
+								endJ1 = Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-1)));
 								arrayListTempBraces = generalMethod.bracesMatching(arrayList, endI1, endJ1, "{");
-								System.out.println("arrayListTempBraces="+arrayListTempBraces);
 								//{}内有break则不可以转换，跳出
 								if(hasBreak(arrayListTempBraces)){
 									hasBreak=true;
@@ -105,10 +160,11 @@ public class Transformation4 {
 								}
 								endI1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
 								endJ1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
-								nextWord = findNextWord(arrayList,endI,endJ);
+								nextWord = findNextWord(arrayList,endI1,endJ1);
 								if(nextWord.size()!=0){
 									firstWord = String.valueOf(nextWord.get(0));
-									System.out.println(firstWord+"?");
+									endI2 = Integer.parseInt(String.valueOf(nextWord.get(nextWord.size()-2)));
+									endJ2 = Integer.parseInt(String.valueOf(nextWord.get(nextWord.size()-1)));
 								}else{
 									firstWord = "";
 								}
@@ -118,13 +174,10 @@ public class Transformation4 {
 								continue;
 							}
 							//下一个不为else则确定范围了,下一个是else则包括else{}内容
-							System.out.println(firstWord+"?");
 							if(!firstWord.equals("else")){
-								System.out.println("?");
 								endI=endI1;
 								endJ=endJ1;
 							}else{
-								System.out.println("?1");
 								arrayListTempBraces = generalMethod.returnBracketsMatching(arrayList, endI1, endJ1, "{");
 								endI1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
 								endJ1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
@@ -132,9 +185,7 @@ public class Transformation4 {
 								endJ=endJ1;
 							}
 							arrayListIf = getIfArrayList(arrayList,i,j,endI,endJ);
-							System.out.println("arrayListIf="+arrayListIf);
 							arrayListCondition = isSameCondition1(arrayListIf);
-							System.out.println("arrayListCondition="+arrayListCondition);
 							if(String.valueOf(arrayListCondition.get(0)).equals("false")){
 								continue;
 							}
@@ -176,11 +227,11 @@ public class Transformation4 {
 							}
 						}
 					}catch(Exception e){
-						continue;
+						e.printStackTrace();//continue;
 					}
 				}
 			}catch(Exception e){
-				continue;
+				e.printStackTrace();//continue;
 			}
 		}
 		return arrayList;
@@ -540,7 +591,6 @@ public class Transformation4 {
 		boolean isEquals = false;
 		for(int i=0;i<arrayList.size();i++){
 			temp = String.valueOf(arrayList.get(i));
-			
 		}
 		return arrayListResult;
 	}
@@ -635,5 +685,31 @@ public class Transformation4 {
 			}
 		}
 		return t;
+	}
+	public ArrayList getCondition1(ArrayList arrayList){
+		String temp = "";
+		ArrayList arrayListResult = new ArrayList();
+		for(int i=1;i<arrayList.size();i++){
+			temp = String.valueOf(arrayList.get(i));
+			if(temp.equals("=")&&String.valueOf(arrayList.get(i+1)).equals("=")){
+				return arrayListResult;
+			}else{
+				arrayListResult.add(temp);
+			}
+		}
+		return arrayList;
+	}
+	public ArrayList getCondition2(ArrayList arrayList){
+		String temp = "";
+		ArrayList arrayListResult = new ArrayList();
+		for(int i=arrayList.size()-2;i>-1;i--){
+			temp = String.valueOf(arrayList.get(i));
+			if(temp.equals("=")&&String.valueOf(arrayList.get(i-1)).equals("=")){
+				return arrayListResult;
+			}else{
+				arrayListResult.add(0,temp);
+			}
+		}
+		return arrayList;
 	}
 }

@@ -18,9 +18,6 @@ public class LexicalAnalysis {
             "*=", "/=", "%=", "&=", "|=",
             "^=", "~=", "<<=", ">>=", ">>>=",
     };
-
-    //文件地址
-    private String addName = "";
     //字符流
     private ArrayList<Character> resources = null;
     //读取位置标识
@@ -28,9 +25,8 @@ public class LexicalAnalysis {
 
     //接收路径
     public LexicalAnalysis(String addName) {
-        this.addName = addName;
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(this.addName));
+            BufferedReader reader = new BufferedReader(new FileReader(addName));
             resources = new ArrayList<Character>(500);
             int ch;
             while ((ch = reader.read()) != -1) {
@@ -89,7 +85,9 @@ public class LexicalAnalysis {
                         resources.add(aC);
                     }
                 }
-                resources.add('\n');
+                if(resources.get(resources.size()-1) != '\n') {
+                    resources.add('\n');
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
