@@ -145,7 +145,7 @@ public class StandardName {
 							ArrayList addNotes = new ArrayList();
 							addNotes = addNotes(arrayList,i,j);
 							arrayListTemp = (ArrayList) arrayList.get(Integer.parseInt(String.valueOf(addNotes.get(0))));
-							arrayListTemp.add(Integer.parseInt(String.valueOf(addNotes.get(1)))+1,"\r\n/***** Suggest:Method's name must be hump structure  *****/\r\n");
+							//arrayListTemp.add(Integer.parseInt(String.valueOf(addNotes.get(1)))+1,"\r\n/***** Suggest:Method's name must be hump structure  *****/\r\n");
 						}
 					}
 				}else if(temp.equals("(")){
@@ -235,7 +235,7 @@ public class StandardName {
 								ArrayList addNotes = new ArrayList();
 								addNotes = addNotes(arrayList,i,j);
 								arrayListTemp = (ArrayList) arrayList.get(Integer.parseInt(String.valueOf(addNotes.get(0))));
-								arrayListTemp.add(Integer.parseInt(String.valueOf(addNotes.get(1)))+1,"\r\n/***** Suggest:Method's name must be hump structure  *****/\r\n");
+								//arrayListTemp.add(Integer.parseInt(String.valueOf(addNotes.get(1)))+1,"\r\n/***** Suggest:Method's name must be hump structure  *****/\r\n");
 							}
 						}catch(Exception e){
 							continue;
