@@ -136,6 +136,8 @@ public class Transformation1 {
 								arrayListTemp.add(k,String.valueOf(arrayListInitialization.get(i1)));
 								k++;
 							}
+							arrayListTemp.add(j,"/***** Revised:for transform while! :( *****/");
+							j++;
 						}
 						
 					}catch(Exception e){
