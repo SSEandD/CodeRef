@@ -5,10 +5,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class FileProcessing {
@@ -16,7 +16,6 @@ public class FileProcessing {
 	/**
 	 * 文件读取到缓冲区
 	 * @param path 文件路径
-	 * @return array 文件存储数组
 	 */
 	public static ArrayList<String> readFile(String path) {
 		ArrayList<String> line = new ArrayList<String>();
@@ -24,9 +23,9 @@ public class FileProcessing {
 		InputStreamReader read = null;
 		try {
 //			FileReader fileReader = new FileReader(path);
-			read = new InputStreamReader(new FileInputStream(file), "utf-8");
+			read = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8);
 			BufferedReader br = new BufferedReader(read);
-			String temp = null;
+			String temp;
 			while ((temp = br.readLine()) != null) {
 				line.add(temp);
 			}
@@ -42,9 +41,6 @@ public class FileProcessing {
 	
 	/**
 	 * 追加方式写文件
-	 * @param args	需要写入字符串
-	 * @return	true : success
-	 * 		   false : filed
 	 */
 	public static boolean writeFile(String path,String args) {
 		try {

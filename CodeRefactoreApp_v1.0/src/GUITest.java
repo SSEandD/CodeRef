@@ -1,35 +1,60 @@
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import javahyh.CodeFile;
+import javahyh.lexical.LexicalAnalysis;
+import javapgb.All;
+import javasss.BlankCharacter;
 import javasss.FileProcessing;
+import javasss.OrderBlock;
+
 import java.awt.*;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JTextPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
+import javax.swing.JLayeredPane;
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
+import javax.swing.JSplitPane;
+import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JCheckBox;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
+import static com.sun.javafx.scene.control.skin.Utils.getResource;
 
 public class GUITest {
 
@@ -41,7 +66,6 @@ public class GUITest {
     private String extensionName="";//文件后缀名
     private String className="";//文件名字
     private String downloadpath="";//下载路径
-//	String listdata[]= {"1fsdfdsfsdfdsfdsfsdfdsfdsfsd","2dfdsfsd","3fsfdsfdfsd"};
     private ArrayList<String> fileNames = new ArrayList<>();//记录文件名
     private ArrayList<String> paths = new ArrayList<>();//记录文件名
     private ArrayList<String> results = new ArrayList<>();//记录文件名
@@ -139,6 +163,7 @@ public class GUITest {
 
 		JTextArea newText = new JTextArea();//存放已处理内容
 		newText.setEditable(false);
+        newText.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		scrollPane_1.setViewportView(newText);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -146,6 +171,7 @@ public class GUITest {
 		showText.add(scrollPane);
 
 		JTextArea oldText = new JTextArea();//存放未处理的文件内容
+        oldText.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		scrollPane.setViewportView(oldText);
 		oldText.setEditable(false);
 
@@ -308,6 +334,7 @@ public class GUITest {
 		showText.add(scrollPane_2);
 
 		JList list = new JList();
+        list.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
 			    try {
@@ -324,11 +351,8 @@ public class GUITest {
                         newText.setText(n_text);
                     }
                 }catch (Exception ex){
-                    //ex.printStackTrace();
+//                    ex.printStackTrace();
                 }
-
-//                JOptionPane.showMessageDialog(null, i);
-//				oldText.setText("hhhhhhhhhhhhhh");
 
 			}
 		});
@@ -463,6 +487,7 @@ newText.setText(result);//转换完成
                     JOptionPane.showMessageDialog(null, "上传文件存在非java/txt文件");
                 }
                 else{
+                    /**有错误**/
                     list.setListData(fileNames.toArray());
                 }
 

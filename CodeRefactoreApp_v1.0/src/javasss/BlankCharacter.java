@@ -1,6 +1,5 @@
 package javasss;
 import java.util.ArrayList;
-import javasss.FileProcessing;
 
 public class BlankCharacter {
     private int i = 0;
@@ -14,15 +13,7 @@ public class BlankCharacter {
     private String thisline="";
     private ArrayList<String> line = new ArrayList<String>();
     private ArrayList<String> record = new ArrayList<String>();
-    public BlankCharacter() {
-    }
-    /**
-    * 读取指定路径文件
-    * @param fileSrc 读取文件路径
-    */
-    public BlankCharacter(String fileSrc, String outputSrc) {
-        line = FileProcessing.readFile(fileSrc);
-    }
+
     public BlankCharacter(ArrayList<String> array) {
         line = array;
     }
@@ -120,11 +111,14 @@ public class BlankCharacter {
     /**注释内容*/
     public boolean isAnnotation() {
         boolean isOut=false;
+        //获取第一个字符
         int a = getFirstCh();
         if(fch=='/') {
+            //读取下一个字符
             fch = line.get(j).charAt(a++);
             if(fch=='/') {
-                record.add(blankStr);
+                //若为 ‘//’ 注释内容
+                record.add(blankStr);//缩进
                 while(i<line.get(j).length()) {
                     getChar();
                     deleteBC();
@@ -136,6 +130,7 @@ public class BlankCharacter {
                 return true;
             }
             else if(fch=='*') {
+                //若为 ‘/*’
                 while(true) {
                     record.add(blankStr);
                     while(i<line.get(j).length()) {
@@ -234,10 +229,7 @@ public class BlankCharacter {
 
         }
     }
-    /***
-    * 
-    * 
-    * *****/
+
     /**
     * 词法分析
     */
@@ -246,14 +238,17 @@ public class BlankCharacter {
 //        FileProcessing.clearFile(outputPath);//清空文件
         while(j<line.size()) {
             i=0;
+            //删除空行
             if(deleteBlankLine()) {
                 j++;
                 continue;
             }
+            //注释内容
             if(isAnnotation()) {
                 j++;
                 continue;
             }
+            //添加缩进
             if(flag!=1) {
                 addRetact();
             }
@@ -261,8 +256,9 @@ public class BlankCharacter {
             //getFirstCh();
             while(i<line.get(j).length()) {
                 getChar();
-                deleteBC();
+                deleteBC();//删除空白符
                 if(i==line.get(j).length()&&Character.isWhitespace(ch)) {
+                    //已经为最后一个字符
                     flag=1;//换行,跳过制表符造成的空行
                     strToken = "";
                     continue;
@@ -279,6 +275,7 @@ public class BlankCharacter {
                 strToken="";
             }
             if(flag==1) {
+                //跳过
                 j++;
                 continue;
             }
