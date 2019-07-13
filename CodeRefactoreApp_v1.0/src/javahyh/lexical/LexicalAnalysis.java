@@ -85,7 +85,9 @@ public class LexicalAnalysis {
                         resources.add(aC);
                     }
                 }
-                resources.add('\n');
+                if(resources.get(resources.size()-1) != '\n') {
+                    resources.add('\n');
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

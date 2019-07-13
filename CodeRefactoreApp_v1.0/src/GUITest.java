@@ -1,60 +1,35 @@
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import javahyh.CodeFile;
-import javahyh.lexical.LexicalAnalysis;
-import javapgb.All;
-import javasss.BlankCharacter;
 import javasss.FileProcessing;
-import javasss.OrderBlock;
-
 import java.awt.*;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
-import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
-import javax.swing.SwingConstants;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JTextPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
-import javax.swing.JLayeredPane;
 import javax.swing.ImageIcon;
-import javax.swing.UIManager;
-import javax.swing.JSplitPane;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JCheckBox;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.List;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
-import static com.sun.javafx.scene.control.skin.Utils.getResource;
 
 public class GUITest {
 
@@ -349,7 +324,7 @@ public class GUITest {
                         newText.setText(n_text);
                     }
                 }catch (Exception ex){
-                    ex.printStackTrace();
+                    //ex.printStackTrace();
                 }
 
 //                JOptionPane.showMessageDialog(null, i);
