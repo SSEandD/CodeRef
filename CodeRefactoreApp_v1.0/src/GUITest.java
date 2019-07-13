@@ -508,37 +508,38 @@ newText.setText(result);//转换完成
 				downloadpath=f.getPath();                // path是保存好的下载路径，可以输出一下
 			}
 
-
-
 			String newfilePath = downloadpath+"\\"+"_new";//新建一个文件夹存放结果
 			File newFile = new File(newfilePath);
-			//如果文件夹不存在则创建
-			if  (!newFile .exists()  && !newFile .isDirectory())
-			{
-				newFile .mkdir();
-			}
 
             String result;
 			String path;
-			try {
+//			try {
                 if(flag == JFileChooser.APPROVE_OPTION) {
-                    for(int i=0;i<paths.size();i++){
-                        result=results.get(i);
-                        path= newfilePath + "\\" + fileNames.get(i)+".java";
 
-                        FileProcessing.clearFile(path);
-                        FileProcessing.writeFile(path,result);
-                    }
-                    JOptionPane.showMessageDialog(null, "下载成功！");
+					//如果文件夹不存在则创建
+					if  (!newFile .exists()  && !newFile .isDirectory())
+					{
+						newFile .mkdir();
+					}
+					try{
+						for(int i=0;i<paths.size();i++){
+							result=results.get(i);
+							path= newfilePath + "\\" + fileNames.get(i)+".java";
+
+							FileProcessing.clearFile(path);
+							FileProcessing.writeFile(path,result);
+						}
+						if(results.size()!=0){
+							JOptionPane.showMessageDialog(null, "下载成功！");
+						}
+					}
+					catch (Exception ex){
+						JOptionPane.showMessageDialog(null, "下载错误！");
+					}
                 }
                 else if(flag == JFileChooser.CANCEL_OPTION){
                     JOptionPane.showMessageDialog(null, "取消下载！");
                 }
-            }
-            catch (Exception ex){
-                JOptionPane.showMessageDialog(null, "下载错误！");
-            }
-
 		});
 	}
 
