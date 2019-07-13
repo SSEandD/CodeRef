@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
@@ -61,7 +62,7 @@ public class GUITest {
 	private JTextField sourceFile;
 
     private String rightPath="";//当前路径
-    private String result="";//最后输出结果
+//    private String result="";//最后输出结果
     private String extensionName="";//文件后缀名
     private String className="";//文件名字
     private String downloadpath="";//下载路径
@@ -76,16 +77,14 @@ public class GUITest {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUITest window = new GUITest();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		EventQueue.invokeLater(() -> {
+            try {
+                GUITest window = new GUITest();
+                window.frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
 	}
 
 	/**
@@ -337,16 +336,18 @@ public class GUITest {
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
 			    try {
-                    /**监听事件**/
+                    //监听事件
                     int i;
                     selectFileNum=list.getSelectedIndex();
                     i=selectFileNum;
                     rightPath=paths.get(i);
                     sourceFile.setText(rightPath);
-                    String otext = readTxt(sourceFile.getText());//保存了读取出的文本内容（含换行符）
-                    oldText.setText(otext);
-                    String ntext = results.get(i);//保存了读取出的文本内容（含换行符）
-                    newText.setText(ntext);
+                    String o_text = readTxt(sourceFile.getText());//保存了读取出的文本内容（含换行符）
+                    oldText.setText(o_text);
+                    if(results.size()!=0){
+                        String n_text = results.get(i);//保存了读取出的文本内容（含换行符）
+                        newText.setText(n_text);
+                    }
                 }catch (Exception ex){
                     ex.printStackTrace();
                 }
@@ -361,30 +362,29 @@ public class GUITest {
 		frame.getContentPane().setLayout(groupLayout);
 
         JButton btnFastButton = new JButton("一键重构");
-        btnFastButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                results.clear();
-                ArrayList<String> source=new ArrayList<>();
-                ArrayList<Boolean> judge=new ArrayList<>();
+        btnFastButton.addActionListener(e -> {
+            results.clear();
+            String result;
+            ArrayList<String> source;
+            ArrayList<Boolean> judge=new ArrayList<>();
 
-                judge.add(f_wbtn.isSelected());
-                judge.add(w_fbtn.isSelected());
-                judge.add(i_sbtn.isSelected());
-                judge.add(s_ibtn.isSelected());
-                judge.add(if_ifsbtn.isSelected());
-                judge.add(ifs_ifbtn.isSelected());
-                if(paths.size()==0){
-                    JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
+            judge.add(f_wbtn.isSelected());
+            judge.add(w_fbtn.isSelected());
+            judge.add(i_sbtn.isSelected());
+            judge.add(s_ibtn.isSelected());
+            judge.add(if_ifsbtn.isSelected());
+            judge.add(ifs_ifbtn.isSelected());
+            if(paths.size()==0){
+                JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
+            }
+            else{
+                for(String path:paths){
+                    source = FileProcessing.readFile(path);//按行读取文件内容（无换行符
+                    MainRun theMain=new MainRun(source,judge);
+                    result=theMain.run();
+                    results.add(result);
                 }
-                else{
-                    for(String path:paths){
-                        source = FileProcessing.readFile(path);//按行读取文件内容（无换行符
-                        MainRun theMain=new MainRun(source,judge);
-                        result=theMain.run();
-                        results.add(result);
-                    }
-                    JOptionPane.showMessageDialog(null, "done");
-                }
+//                    JOptionPane.showMessageDialog(null, "done");
             }
         });
         btnFastButton.setBounds(38, 507, 105, 23);
@@ -400,36 +400,34 @@ public class GUITest {
         frame.getContentPane().setLayout(groupLayout);
 
 		//转换按钮
-		btnChangeButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				result="";
-				ArrayList<String> source=new ArrayList<>();
-				ArrayList<Boolean> judge=new ArrayList<>();
+		btnChangeButton.addActionListener(arg0 -> {
+//				result="";
+            ArrayList<String> source;
+            ArrayList<Boolean> judge=new ArrayList<>();
 
-				judge.add(f_wbtn.isSelected());
-				judge.add(w_fbtn.isSelected());
-				judge.add(i_sbtn.isSelected());
-				judge.add(s_ibtn.isSelected());
-				judge.add(if_ifsbtn.isSelected());
-				judge.add(ifs_ifbtn.isSelected());
+            judge.add(f_wbtn.isSelected());
+            judge.add(w_fbtn.isSelected());
+            judge.add(i_sbtn.isSelected());
+            judge.add(s_ibtn.isSelected());
+            judge.add(if_ifsbtn.isSelected());
+            judge.add(ifs_ifbtn.isSelected());
 
-				if(results.size()==0){
-                    JOptionPane.showMessageDialog(null, "请先点击“一键重构");
-                }
-				else if("".equals(rightPath)) {
-                    JOptionPane.showMessageDialog(null, "请在文件目录中选择一个文件");
-                }
-				else {
-					source = FileProcessing.readFile(rightPath);//按行读取文件内容（无换行符
-                    //主程序
-                    MainRun theMain=new MainRun(source,judge);
-                    result=theMain.run();
-                    results.set(selectFileNum,result);
-                    //结果显示
-                    newText.setText(result);//转换完成
-				}
-			}
-		});
+            if(results.size()==0){
+JOptionPane.showMessageDialog(null, "请先点击“一键重构");
+}
+            else if("".equals(rightPath)) {
+JOptionPane.showMessageDialog(null, "请在文件目录中选择一个文件");
+}
+            else {
+                source = FileProcessing.readFile(rightPath);//按行读取文件内容（无换行符
+//主程序
+MainRun theMain=new MainRun(source,judge);
+String result=theMain.run();
+results.set(selectFileNum,result);
+//结果显示
+newText.setText(result);//转换完成
+            }
+        });
 		//选择源文件
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -469,8 +467,8 @@ public class GUITest {
 
                         //判断输入文件是否符合要求
                         extensionName = getExtensionName(file.getPath());
-                        /**如果是java或者txt文件*/
-                        if ("java".equals(extensionName) || "txt".equals(extensionName)) {
+                        //如果是java或者txt文件
+                        if("java".equals(extensionName) || "txt".equals(extensionName)) {
 //                            String text = readTxt(file.getPath());//保存了读取出的文本内容（含换行符）
 //                            oldText.setText(text);
                         }
@@ -496,39 +494,51 @@ public class GUITest {
 			}
 		});
 		//退出按钮
-		btnExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
+		btnExit.addActionListener(e -> System.exit(0));
 		//下载按钮
-		btnDownload.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnDownload.addActionListener(e -> {
 
-				JFileChooser fc = new JFileChooser();
-				fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-				File f = null;
-				int flag = fc.showOpenDialog(null);
-				if(flag == JFileChooser.APPROVE_OPTION)
-				{
-					f = fc.getSelectedFile();
-					downloadpath=f.getPath();                // path是保存好的下载路径，可以输出一下
-				}
-				String newfile = downloadpath+"\\"+className+"_new"+ ".java";
-				FileProcessing.clearFile(newfile);
-				FileProcessing.writeFile(newfile,result);
-				if(result!="") {
-					if(flag == JFileChooser.APPROVE_OPTION) {
-						JOptionPane.showMessageDialog(null, "下载成功！");
-					}
-					else if(flag == JFileChooser.CANCEL_OPTION){
-						JOptionPane.showMessageDialog(null, "取消下载！");
-					}
-				}
-				else if(result=="") {
-					JOptionPane.showMessageDialog(null, "下载错误！");
-				}
+			JFileChooser fc = new JFileChooser();
+			fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			File f;
+			int flag = fc.showOpenDialog(null);
+			if(flag == JFileChooser.APPROVE_OPTION)
+			{
+				f = fc.getSelectedFile();
+				downloadpath=f.getPath();                // path是保存好的下载路径，可以输出一下
 			}
+
+
+
+			String newfilePath = downloadpath+"\\"+"_new";//新建一个文件夹存放结果
+			File newFile = new File(newfilePath);
+			//如果文件夹不存在则创建
+			if  (!newFile .exists()  && !newFile .isDirectory())
+			{
+				newFile .mkdir();
+			}
+
+            String result;
+			String path;
+			try {
+                if(flag == JFileChooser.APPROVE_OPTION) {
+                    for(int i=0;i<paths.size();i++){
+                        result=results.get(i);
+                        path= newfilePath + "\\" + fileNames.get(i)+".java";
+
+                        FileProcessing.clearFile(path);
+                        FileProcessing.writeFile(path,result);
+                    }
+                    JOptionPane.showMessageDialog(null, "下载成功！");
+                }
+                else if(flag == JFileChooser.CANCEL_OPTION){
+                    JOptionPane.showMessageDialog(null, "取消下载！");
+                }
+            }
+            catch (Exception ex){
+                JOptionPane.showMessageDialog(null, "下载错误！");
+            }
+
 		});
 	}
 
@@ -558,12 +568,12 @@ public class GUITest {
 		}
 		StringBuffer buffer = new StringBuffer();
 		File file = new File(path);
-		InputStreamReader read = null;
+		InputStreamReader read;
 		try {
 //			FileReader fileReader = new FileReader(path);
-			read = new InputStreamReader(new FileInputStream(file), "utf-8");
+			read = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8);
 			BufferedReader br = new BufferedReader(read);
-			String temp = null;
+			String temp;
 			while ((temp = br.readLine()) != null) {
 				buffer.append(temp);
 				buffer.append("\r");

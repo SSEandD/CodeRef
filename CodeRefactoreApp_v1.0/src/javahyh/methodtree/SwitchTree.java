@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SwitchTree extends NodeTree {
 
-    private List<String> conLine=new ArrayList<>();
+    private List<String> conLine;
 
     public SwitchTree(List<String> conLine, List<String> allWord, int level, int space) {
         this.conLine = conLine;
@@ -41,6 +41,19 @@ public class SwitchTree extends NodeTree {
                 if(i+1 == allWord.size()) break;
                 word=allWord.get(++i);
                 while (!"case".equals(word) && !"default".equals(word)){
+                    if ("switch".equals(word)) {
+                        int theNum=0;
+                        do{
+                            all.add(word);
+                            if(i+1 == allWord.size()) break;
+                            word=allWord.get(++i);
+                            if("{".equals(word)) theNum++;
+                            if("}".equals(word)) {
+                                theNum--;
+                                if(theNum==0) break;
+                            }
+                        }while (true);
+                    }
                     all.add(word);
                     if(i+1 == allWord.size()) break;
                     word=allWord.get(++i);
