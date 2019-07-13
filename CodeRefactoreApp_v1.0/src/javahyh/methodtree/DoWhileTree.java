@@ -5,7 +5,7 @@ import java.util.List;
 
 public class DoWhileTree extends NodeTree {
 
-    private List<String> doWhileLine =new ArrayList<>();
+    private List<String> doWhileLine;
 
     public DoWhileTree(List<String> conLine, List<String> allWord, int level, int space){
         this.doWhileLine =conLine;
@@ -32,6 +32,13 @@ public class DoWhileTree extends NodeTree {
         super.reStructure();
         newWord.remove(newWord.size()-1);
         newWord.remove(newWord.size()-1);
+        for(int i=0;i<doWhileLine.size();i++){
+            if(i+1==doWhileLine.size()) break;
+            String word1=doWhileLine.get(i);
+            String word2=doWhileLine.get(i+1);
+            if(" ".equals(word1) || ".".equals(word1)) continue;
+            if(!" ".equals(word2) && !".".equals(word2)) doWhileLine.add(i+1," ");
+        }
         newWord.addAll(doWhileLine);
         newWord.add("\r");
         newWord.add("\n");
