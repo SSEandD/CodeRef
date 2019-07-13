@@ -68,8 +68,8 @@ public class StandardName {
 						}
 					}
 					if(!isIdentical(oldPackageName,newPackageName)){
-						//arrayListTemp = (ArrayList) arrayList.get(i);
-						//arrayListTemp.add(j,"/***** Suggest:package's name must consist of lowercase! *****/");
+						arrayListTemp = (ArrayList) arrayList.get(0);
+						arrayListTemp.add(0,"/***** Suggest:package's name must consist of lowercase! *****/");
 					}
 				}
 				else if(temp.equals("class")){
@@ -136,7 +136,7 @@ public class StandardName {
 							ArrayList addNotes = new ArrayList();
 							addNotes = addNotes(arrayList,i,j);
 							arrayListTemp = (ArrayList) arrayList.get(Integer.parseInt(String.valueOf(addNotes.get(0))));
-							arrayListTemp.add(Integer.parseInt(String.valueOf(addNotes.get(1)))+1,"\r\n/***** Suggest:constant's name must be uppercase  *****/\r\n");
+							//arrayListTemp.add(Integer.parseInt(String.valueOf(addNotes.get(1)))+1,"\r\n/***** Suggest:constant's name must be uppercase  *****/\r\n");
 						}
 					}else if(type==1){
 						newName = englishWordRecognition.englishWordRecognition(oldName, 0);
@@ -225,6 +225,11 @@ public class StandardName {
 					}else{
 						try{
 							if((!isClassName(arrayListClass,oldName))&&needChange&&(arrayListNew.size()>1)){
+								if(oldName.length()==1){
+									if(generalMethod.isOperator(String.valueOf(oldName).charAt(0))){
+										continue;
+									}
+								}
 								newName =  englishWordRecognition.englishWordRecognition(oldName, 0);
 								arrayList = newName(arrayList,oldName,newName);
 								ArrayList addNotes = new ArrayList();

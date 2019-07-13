@@ -14,6 +14,10 @@ public class PackageProcess {
         String word;
         for (int i = 0; i < packageGroup.size(); i++) {
             word = packageGroup.get(i);
+            if(word.matches("/\\*(.|\\s)*\\*/")) {
+                i++;
+                packageGroup.add(i, "\r\n");
+            }
             if (word.equals(";")) {
                 i++;
                 packageGroup.add(i, "\r\n\r\n");

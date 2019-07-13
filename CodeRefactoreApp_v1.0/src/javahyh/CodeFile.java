@@ -39,9 +39,13 @@ public class CodeFile {
                 } while (!word.equals(";"));
                 importGroup.add(word);
             } else if (word.matches("/\\*(.|\\s)*\\*/")) {
-                classGroup.add(word);
-                classGroup.add("\r");
-                classGroup.add("\n");
+                if(i==0) {
+                    packageGroup.add(word);
+                }else {
+                    classGroup.add(word);
+                    classGroup.add("\r");
+                    classGroup.add("\n");
+                }
             } else if(word.matches("//(.|\\s)*")) {
                 classGroup.add(word);
             } else if ("public".equals(word) || "abstract".equals(word) || "final".equals(word) ||
