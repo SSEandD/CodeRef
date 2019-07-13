@@ -1,10 +1,6 @@
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import javahyh.CodeFile;
-import javahyh.lexical.LexicalAnalysis;
-import javapgb.All;
-import javasss.BlankCharacter;
+import ManyFileProcess.FileTree;
+import ManyFileProcess.FilesNode;
 import javasss.FileProcessing;
-import javasss.OrderBlock;
 
 import java.awt.*;
 
@@ -12,49 +8,27 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
-import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
-import javax.swing.SwingConstants;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JTextPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
-import javax.swing.JLayeredPane;
 import javax.swing.ImageIcon;
-import javax.swing.UIManager;
-import javax.swing.JSplitPane;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JCheckBox;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.List;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
-import static com.sun.javafx.scene.control.skin.Utils.getResource;
 
 public class GUITest {
 
@@ -64,13 +38,16 @@ public class GUITest {
     private String rightPath="";//当前路径
 //    private String result="";//最后输出结果
     private String extensionName="";//文件后缀名
-    private String className="";//文件名字
-    private String downloadpath="";//下载路径
+//    private String className="";//文件名字
+    private String downLoadPath ="";//下载路径
     private ArrayList<String> fileNames = new ArrayList<>();//记录文件名
     private ArrayList<String> paths = new ArrayList<>();//记录文件名
     private ArrayList<String> results = new ArrayList<>();//记录文件名
-    private File[] sourcefiles ;
+    private File[] souFiles;
     private int selectFileNum;
+	private String sourceFolderPath;
+	private FileTree root;
+	private boolean isFolder = false;
 	/**
      *
 	 * Launch the application.
@@ -385,6 +362,7 @@ public class GUITest {
                 }
 //                    JOptionPane.showMessageDialog(null, "done");
             }
+            list.clearSelection();
         });
         btnFastButton.setBounds(38, 507, 105, 23);
         btnFastButton.setFont(new Font("宋体", Font.PLAIN, 15));
@@ -428,6 +406,7 @@ newText.setText(result);//转换完成
             }
         });
 		//选择源文件
+		//要不就选一个项目，要不就选多个文件
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			    //清空
@@ -438,56 +417,59 @@ newText.setText(result);//转换完成
                 JFileChooser jfc=new JFileChooser();
 
                 jfc.setMultiSelectionEnabled(true);
+                //文件夹文件均可
+				jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES );
                 boolean someFileWrong = false;
                 int option = jfc.showOpenDialog(jfc);
                 if(option == JFileChooser.APPROVE_OPTION) {
-                    sourcefiles = jfc.getSelectedFiles();
+                    souFiles = jfc.getSelectedFiles();
 					String path;
 
-                    for(File file:sourcefiles) {
+                    for(File file: souFiles) {
 //						fileNames += file.getName() + " ";
 //						JOptionPane.showMessageDialog(null, fileNames);
-                        try{
-                            path = file.getPath();
-                            paths.add(path);
-//                            sourceFile.setText(file.getPath());
-                            String[] strArray = path.split("\\\\");
-                            String[] splitStr = strArray[strArray.length-1].split("\\.");
-                            className = splitStr[0];     // 保存的文件名
-                            fileNames.add(className);
-                        }
-                        catch(Exception exception ) {
-                            exception.printStackTrace();
-                        }
+						try{
+							//如果是文件夹我就遍历它
+							if(file.isDirectory() && souFiles.length==1){
+								isFolder = true;
+								sourceFolderPath = file.getPath();
+								root=new FilesNode(sourceFolderPath);
+								paths=root.getFileList();
+								for(String p:paths){
+									fileNames.add(getFileNames(p));
+								}
+							}
+							else if(souFiles.length>0 && file.isFile()){
+								//文件单独判断类型
+								path = file.getPath();
+								paths.add(path);
+								fileNames.add(getFileNames(path));
 
-//                        extensionName = getExtensionName(sourceFile.getText());
-
-
-
-                        //判断输入文件是否符合要求
-                        extensionName = getExtensionName(file.getPath());
-                        //如果是java或者txt文件
-                        if("java".equals(extensionName) || "txt".equals(extensionName)) {
-//                            String text = readTxt(file.getPath());//保存了读取出的文本内容（含换行符）
-//                            oldText.setText(text);
-                        }
-                        else {
-                            someFileWrong = true;
-//                            oldText.setText(null);
-//                            JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
-                        }
-
-
-
-
-
+								//判断输入文件是否符合要求
+								extensionName = getExtensionName(file.getPath());
+								//如果是java或者txt文件
+								if("java".equals(extensionName) || "txt".equals(extensionName)) {
+								}
+								else {
+									someFileWrong = true;
+								}
+							}
+							else {
+								clearAll();
+								JOptionPane.showMessageDialog(null,"请选择一个项目文件夹，或至少一个java文件上传");
+							}
+						}
+						catch (Exception ex){
+							ex.printStackTrace();
+						}
                     }
                 }
                 if(someFileWrong){
-                    JOptionPane.showMessageDialog(null, "上传文件存在非java/txt文件");
+                	clearAll();
+                    JOptionPane.showMessageDialog(null, "请选择一个项目文件夹，或至少一个java文件上传");
                 }
                 else{
-                    /**有错误**/
+//                    /**有错误**/
                     list.setListData(fileNames.toArray());
                 }
 
@@ -502,29 +484,45 @@ newText.setText(result);//转换完成
 			fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 			File f;
 			int flag = fc.showOpenDialog(null);
-			if(flag == JFileChooser.APPROVE_OPTION)
-			{
-				f = fc.getSelectedFile();
-				downloadpath=f.getPath();                // path是保存好的下载路径，可以输出一下
-			}
-
-			String newfilePath = downloadpath+"\\"+"_new";//新建一个文件夹存放结果
-			File newFile = new File(newfilePath);
+//			if(flag == JFileChooser.APPROVE_OPTION)
+//			{
+//				f = fc.getSelectedFile();
+//				downLoadPath =f.getPath();                // path是保存好的下载路径，可以输出一下
+//			}
 
             String result;
 			String path;
-//			try {
-                if(flag == JFileChooser.APPROVE_OPTION) {
+//			String right_name;
+			if (flag != JFileChooser.APPROVE_OPTION) {
+				if(flag == JFileChooser.CANCEL_OPTION){
+					JOptionPane.showMessageDialog(null, "取消下载！");
+				}
+			} else {
 
+				f = fc.getSelectedFile();
+				downLoadPath =f.getPath();                // path是保存好的下载路径，可以输出一下
+				String new_filePath = downLoadPath +"\\"+"_new";//新建一个文件夹存放结果
+				if(isFolder){
+					File srcFile = new File(sourceFolderPath);
+					File desFile = new File(new_filePath);
+					try {
+						copyFolder(srcFile,desFile);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+				}
+				else{
+					File newFile = new File(new_filePath);
 					//如果文件夹不存在则创建
 					if  (!newFile .exists()  && !newFile .isDirectory())
 					{
 						newFile .mkdir();
 					}
+
 					try{
 						for(int i=0;i<paths.size();i++){
 							result=results.get(i);
-							path= newfilePath + "\\" + fileNames.get(i)+".java";
+							path= new_filePath + "\\" + fileNames.get(i)+".java";
 
 							FileProcessing.clearFile(path);
 							FileProcessing.writeFile(path,result);
@@ -536,18 +534,100 @@ newText.setText(result);//转换完成
 					catch (Exception ex){
 						JOptionPane.showMessageDialog(null, "下载错误！");
 					}
-                }
-                else if(flag == JFileChooser.CANCEL_OPTION){
-                    JOptionPane.showMessageDialog(null, "取消下载！");
-                }
+
+
+				}
+
+
+
+
+//				ArrayList<String> allPaths = root.getAllFileList();
+//				int j=0;
+//				for(int i=0;i<allPaths.size();i++){
+//					path=allPaths.get(i);
+//					newFile = new File(path);
+//					if(newFile.isDirectory()){
+//						right_name=getFileNames(path);
+////						path = new_filePath + "\\" + fileNames.get(i)+".java";
+//						path = new_filePath + "\\" + right_name;
+//					}
+
+
+
+//				}
+
+			}
+
 		});
 	}
+
+	//复制文件夹
+	private void copyFolder(File srcFile, File destFile) throws IOException {
+		int count=0;
+
+		if(srcFile.isDirectory()){
+			File newFolder=new File(destFile,srcFile.getName());
+			newFolder.mkdirs();
+			File[] fileArray=srcFile.listFiles();
+
+			for(File file:fileArray){
+				copyFolder(file, newFolder);
+			}
+
+		}else{
+			File newFile=new File(destFile,srcFile.getName());
+			copyFile(srcFile,newFile,count);
+			count++;
+		}
+
+	}
+
+	//复制文件
+	private void copyFile(File srcFile, File newFile,int count) throws IOException{
+
+		String extensionName = getExtensionName(srcFile.getName());
+		String result;
+		String newFilePath;
+		if(extensionName.equals(".java")){
+			result = results.get(count);
+			newFilePath = newFile.getPath();
+			newFilePath = newFilePath + fileNames.get(count) + ".java";
+			FileProcessing.clearFile(newFilePath);
+			FileProcessing.writeFile(newFilePath,result);
+//			BufferedInputStream bis=new BufferedInputStream(result);
+		}
+		else{
+			// TODO Auto-generated method stub
+			BufferedInputStream bis=new BufferedInputStream(new FileInputStream(srcFile));
+			BufferedOutputStream bos=new BufferedOutputStream(new FileOutputStream(newFile));
+
+			byte[] bys=new byte[1024];
+			int len;
+			while((len=bis.read(bys))!=-1){
+				bos.write(bys,0,len);
+			}
+			bos.close();
+			bis.close();
+		}
+
+	}
+
+	//通过路径获取文件名称
+	private String getFileNames(String path){
+			String className;
+			String[] strArray = path.split("\\\\");
+			String[] splitStr = strArray[strArray.length-1].split("\\.");
+			className = splitStr[0];     // 保存的文件名
+//			fileNames.add(className);
+		return className;
+	}
+
 
 	//清空记录
     private void clearAll(){
 	    paths.clear();
 	    fileNames.clear();
-	    sourcefiles=null;
+	    souFiles =null;
 	    results.clear();
     }
 

@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class FileTree {
-    public static void main(String[] args){
-        FileTree root=new FilesNode("C:\\Users\\Lumia-man\\Desktop\\Test");
-        root.print();
-    }
+//    public static void main(String[] args){
+////        FileTree root=new FilesNode("C:\\Users\\Lumia-man\\Desktop\\Test");
+////        root.print();
+//    }
     //此节点文件地址
     String nowAddress;
     //节点的子树，也就是它里面的文件或文件夹
@@ -18,6 +18,7 @@ public abstract class FileTree {
     public String getAddress(){
         return nowAddress;
     }
+
     //获取所有文件的地址
     public ArrayList<String> getAllFileList(){
         ArrayList<String> allFileList=new ArrayList<>();
@@ -42,7 +43,7 @@ public abstract class FileTree {
     }
     //打印找到的java或txt文件地址列表
     public void print(){
-        for (String add:getAllFileList()){
+        for (String add:getFileList()){
             System.out.println(add);
         }
     }
