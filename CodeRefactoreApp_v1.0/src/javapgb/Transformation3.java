@@ -88,7 +88,7 @@ public class Transformation3 {
 									j1++;
 								}
 							}
-							arrayListTemp.add(j,"/***** Revised:switch transform if! :( *****/");
+							arrayListTemp.add(j,"\r\n/***** Revised:switch transform if! :( *****/\r\n");
 							j++;
 						}
 					}catch(Exception e){

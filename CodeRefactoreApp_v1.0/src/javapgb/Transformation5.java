@@ -15,15 +15,23 @@ public class Transformation5 {
 		ArrayList arrayListParentheses3 = new ArrayList();
 		ArrayList arrayListNextWord = new ArrayList();
 		String temp ="";
+		String previousWord = "";
 		//0-4:)}if)}下标
 		int endI[]={0,0,0,0,0,0};
 		int endJ[]={0,0,0,0,0,0};
 		for(int i = 0 ;i<arrayList.size();i++){
+			try{
 			arrayListTemp = (ArrayList) arrayList.get(i);
 			for(int j=0;j<arrayListTemp.size();j++){
+				try{
 				temp = String.valueOf(arrayListTemp.get(j));
 				//找到if
 				if(temp.equals("if")){
+					//如果是else的if就不转
+					previousWord=findPreviousWord(arrayList,i,j);
+					if(previousWord.equals("else")){
+						continue;
+					}
 					//找到（）{}部分
 					arrayListParentheses1 = generalMethod.returnBracketsMatching(arrayList, i, j, "(");
 					endJ[0] = Integer.parseInt(String.valueOf(arrayListParentheses1.get(arrayListParentheses1.size()-1)));
@@ -71,7 +79,7 @@ public class Transformation5 {
 							arrayListNextWord = generalMethod.findNextWord2(arrayList, endI[0], endJ[0]);
 							endJ[3]=Integer.parseInt(String.valueOf(arrayListNextWord.get(arrayListNextWord.size()-1)));
 							endI[3]=Integer.parseInt(String.valueOf(arrayListNextWord.get(arrayListNextWord.size()-2)));
-							arrayListParentheses2 = generalMethod.returnBracketsMatching1(arrayListBraces1, endI[3], "(");
+							arrayListParentheses2 = generalMethod.returnBracketsMatching(arrayList, endI[3], endJ[3], "(");
 							endI[4]=Integer.parseInt(String.valueOf(arrayListParentheses2.get(arrayListParentheses2.size()-2)));
 							endJ[4]=Integer.parseInt(String.valueOf(arrayListParentheses2.get(arrayListParentheses2.size()-1)));
 							arrayListBraces2 = generalMethod.returnBracketsMatching(arrayList, endI[4], endJ[4], "{");
@@ -82,8 +90,6 @@ public class Transformation5 {
 								arrayListParentheses1.remove(arrayListParentheses1.size()-1);
 								arrayListBraces1.remove(arrayListBraces1.size()-1);
 								arrayListBraces2.remove(arrayListBraces2.size()-1);
-							}
-							for(int z = 0;z<2;z++){
 								arrayListParentheses2.remove(arrayListParentheses2.size()-1);
 							}
 							//删除要合并的if(i==0)部分
@@ -105,11 +111,23 @@ public class Transformation5 {
 								arrayListTemp1.add(++endJ[0],temp1);
 							}
 							arrayListTemp.add(j+1,"(");
+							arrayListTemp = (ArrayList) arrayList.get(i);
+							if(j!=0){
+								if(!String.valueOf(arrayListTemp.get(j-1)).equals("\r\n/***** Revised:ifs transform if! :( *****/\r\n")){
+									arrayListTemp.add(j,"\r\n/***** Revised:ifs transform if! :( *****/\r\n");
+								}
+							}
 						}else{
 							continue;
 						}
 					}
 				}
+				}catch(Exception e){
+					e.printStackTrace();//continue;
+				}
+			}
+			}catch(Exception e){
+				e.printStackTrace();//continue;
 			}
 		}
 		return arrayList;
@@ -190,5 +208,32 @@ public class Transformation5 {
 			}
 		}
 		return arrayListResult;
+	}
+	public String findPreviousWord(ArrayList arrayList,int i,int j){
+		String result = "";
+		String temp="";
+		boolean isBreak = false;
+		ArrayList arrayListTemp = new ArrayList();
+		for(int i1=i;i1>-1;i1--){
+			arrayListTemp = (ArrayList) arrayList.get(i1);
+			int j1=0;
+			if(i1==i){
+				j1=j-1;
+			}else{
+				j1=arrayListTemp.size()-1;
+			}
+			for(;j1>-1;j1--){
+				temp=String.valueOf(arrayListTemp.get(j1));
+				if(!temp.equals(" ")){
+					result = temp;
+					isBreak = true;
+					break;
+				}
+			}
+			if(isBreak){
+				break;
+			}
+		}
+		return result;
 	}
 }

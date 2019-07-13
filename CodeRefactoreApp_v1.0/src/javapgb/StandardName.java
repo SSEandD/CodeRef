@@ -11,6 +11,8 @@ public class StandardName {
 		ArrayList arrayListTemp = new ArrayList();
 		ArrayList arrayListTemp1 = new ArrayList();
 		ArrayList arrayListClass = new ArrayList();
+		ArrayList oldPackageName = new ArrayList();
+		ArrayList newPackageName = new ArrayList();
 		String temp="";
 		String temp1="";
 		String oldName="";
@@ -21,9 +23,13 @@ public class StandardName {
 			arrayListTemp=(ArrayList) arrayList.get(i);
 			for(int j=0;j<arrayListTemp.size();j++){
 				temp=String.valueOf(arrayListTemp.get(j));
+				//发现package
 				if(temp.equals("package")){
 					boolean isBreak=false;
+					oldPackageName = new ArrayList();
+					newPackageName = new ArrayList();
 					for(int i1=i;i1<arrayList.size();i1++){
+						//循环查找该行
 						arrayListTemp1=(ArrayList) arrayList.get(i1);
 						int j1=0;
 						if(i==i1){
@@ -33,6 +39,7 @@ public class StandardName {
 						}
 						for(;j1<arrayListTemp1.size();j1++){
 							temp1=String.valueOf(arrayListTemp1.get(j1));
+							//发现；时为该语句终点
 							if(temp1.equals(";")){
 								isBreak=true;
 								break;
@@ -41,7 +48,9 @@ public class StandardName {
 								if((!generalMethod.isOperator(temp1.charAt(0)))
 										&&(!generalMethod.isSpace(temp1.charAt(0)))
 											&&(!generalMethod.isSeparator(temp1.charAt(0)))){
+									oldPackageName.add(temp1);
 									arrayListTemp1.set(j1, temp1.toLowerCase());
+									newPackageName.add(temp1.toLowerCase());
 								}else{
 									continue;
 								}
@@ -50,11 +59,17 @@ public class StandardName {
 									continue;
 								}
 								arrayListTemp1.set(j1, temp1.toLowerCase());
+								oldPackageName.add(temp1);
+								newPackageName.add(temp1.toLowerCase());
 							}
 						}
 						if(isBreak){
 							break;
 						}
+					}
+					if(!isIdentical(oldPackageName,newPackageName)){
+						//arrayListTemp = (ArrayList) arrayList.get(i);
+						//arrayListTemp.add(j,"/***** Suggest:package's name must consist of lowercase! *****/");
 					}
 				}
 				else if(temp.equals("class")){
@@ -67,13 +82,17 @@ public class StandardName {
 						arrayListClass.add(newName);
 						if(!oldName.equals(newName)){
 							arrayList = newName(arrayList,oldName,newName);
+							ArrayList classNameAddNotes = new ArrayList();
+							classNameAddNotes = addNotes(arrayList,i,j);
+							arrayListTemp = (ArrayList) arrayList.get(Integer.parseInt(String.valueOf(classNameAddNotes.get(0))));
+							arrayListTemp.add(Integer.parseInt(String.valueOf(classNameAddNotes.get(1)))+1,"\r\n/***** Suggest:class name must be great hump structure  *****/\r\n");
 						}
 					}catch(Exception e){
 						continue;
 					}
 				}else if(temp.equals("final")){
 					boolean isBreak=false;
-					//0方法1属性2类
+					//0属性1常量2类
 					int type = 0;
 					int words=0;
 					for(int i1=i;i1<arrayList.size();i1++){
@@ -113,10 +132,20 @@ public class StandardName {
 						if(!newName.equals(oldName)){
 							arrayList = newName(arrayList,oldName,newName);
 						}
+						if(!oldName.equals(oldName.toUpperCase())){
+							ArrayList addNotes = new ArrayList();
+							addNotes = addNotes(arrayList,i,j);
+							arrayListTemp = (ArrayList) arrayList.get(Integer.parseInt(String.valueOf(addNotes.get(0))));
+							arrayListTemp.add(Integer.parseInt(String.valueOf(addNotes.get(1)))+1,"\r\n/***** Suggest:constant's name must be uppercase  *****/\r\n");
+						}
 					}else if(type==1){
 						newName = englishWordRecognition.englishWordRecognition(oldName, 0);
 						if(!newName.equals(oldName)){
 							arrayList = newName(arrayList,oldName,newName);
+							ArrayList addNotes = new ArrayList();
+							addNotes = addNotes(arrayList,i,j);
+							arrayListTemp = (ArrayList) arrayList.get(Integer.parseInt(String.valueOf(addNotes.get(0))));
+							arrayListTemp.add(Integer.parseInt(String.valueOf(addNotes.get(1)))+1,"\r\n/***** Suggest:Method's name must be hump structure  *****/\r\n");
 						}
 					}
 				}else if(temp.equals("(")){
@@ -198,6 +227,10 @@ public class StandardName {
 							if((!isClassName(arrayListClass,oldName))&&needChange&&(arrayListNew.size()>1)){
 								newName =  englishWordRecognition.englishWordRecognition(oldName, 0);
 								arrayList = newName(arrayList,oldName,newName);
+								ArrayList addNotes = new ArrayList();
+								addNotes = addNotes(arrayList,i,j);
+								arrayListTemp = (ArrayList) arrayList.get(Integer.parseInt(String.valueOf(addNotes.get(0))));
+								arrayListTemp.add(Integer.parseInt(String.valueOf(addNotes.get(1)))+1,"\r\n/***** Suggest:Method's name must be hump structure  *****/\r\n");
 							}
 						}catch(Exception e){
 							continue;
@@ -302,5 +335,65 @@ public class StandardName {
 			}
 		}
 		return arrayList;
+	}
+	public boolean isIdentical(ArrayList arrayList1,ArrayList arrayList2){
+		//比较是否相同
+		if(arrayList1.size()!=arrayList2.size()){
+			return false;
+		}else{
+			String temp1 = "";
+			String temp2 = "";
+			for(int i=0;i<arrayList1.size();i++){
+				temp1 = String.valueOf(arrayList1.get(i));
+				temp2 = String.valueOf(arrayList2.get(i));
+				if(!temp1.equals(temp2)){
+					return false;
+				}
+			}
+			return true;
+		}
+	}
+	public ArrayList addNotes(ArrayList arrayList,int i1,int j1){
+		String temp = "";
+		int endI=0;
+		int endJ=0;
+		ArrayList arrayListTemp = new ArrayList();
+		ArrayList arrayListResult = new ArrayList();
+		if(j1==0){
+			for(int i=i1-1;i>-1;i--){
+				arrayListTemp = (ArrayList) arrayList.get(i);
+				for(int j=arrayListTemp.size()-1;j>-1;j--){
+					temp = String.valueOf(arrayListTemp.get(j));
+					if(temp.equals(";")||temp.equals("{")||temp.equals("}")){
+						endI=i;
+						endJ=j;
+						arrayListResult.add(endI);
+						arrayListResult.add(endJ);
+						return arrayListResult;
+					}
+				}
+			}
+		}else{
+			for(int i=i1;i>-1;i--){
+				arrayListTemp = (ArrayList) arrayList.get(i);
+				int k=0;
+				if(i==i1){
+					k=j1;
+				}else{
+					k=arrayListTemp.size()-1;
+				}
+				for(int j=k;j>-1;j--){
+					temp = String.valueOf(arrayListTemp.get(j));
+					if(temp.equals(";")||temp.equals("{")||temp.equals("}")){
+						arrayListResult.add(i);
+						arrayListResult.add(j);
+						return arrayListResult;
+					}
+				}
+			}
+		}
+		arrayListResult.add(endI);
+		arrayListResult.add(endJ);
+		return arrayListResult;
 	}
 }
