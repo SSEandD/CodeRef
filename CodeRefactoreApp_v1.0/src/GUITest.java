@@ -68,7 +68,6 @@ public class GUITest {
 	 */
 	public GUITest() {
 		initialize();
-//		JOptionPane.showMessageDialog(null, "1.请选择java/txt文件上传 \n2.请确保选择的源文件可以通过编译\n3.可实现大驼峰及小驼峰命名");
 	}
 
 	/**
@@ -89,7 +88,6 @@ public class GUITest {
 
 		sourceFile = new JTextField();//存放读取文件路径
 		sourceFile.setColumns(10);
-
 
 		//定义选择按钮
 		JButton btnBrowse = new JButton("选择");
@@ -159,7 +157,9 @@ public class GUITest {
 		lblNewLabel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				JOptionPane.showMessageDialog(null, "1.请选择java/txt文件上传 \n2.请确保选择的源文件可以通过编译\n3.可实现大驼峰及小驼峰命名");
+				JOptionPane.showMessageDialog(null, "1.请选择一个java项目/至少一个java文件上传\n" +
+						"2.请确保选择的源文件可以通过编译\n" +
+						"3.请先”一键重构“格式处理，再选择单个文件进行转换\n");
 			}
 		});
 		lblNewLabel.setIcon(new ImageIcon(GUITest.class.getResource("icon.png")));
@@ -304,8 +304,6 @@ public class GUITest {
 		label_2.setBounds(792, 0, 100, 15);
 		showText.add(label_2);
 
-//		frame.getContentPane().setLayout(groupLayout);
-
 		JScrollPane scrollPane_2 = new JScrollPane();
 		scrollPane_2.setBounds(5, 20, 165, 465);
 		showText.add(scrollPane_2);
@@ -334,7 +332,6 @@ public class GUITest {
 			}
 		});
 		scrollPane_2.setViewportView(list);
-		/**加个自动排序？**/
 		frame.getContentPane().setLayout(groupLayout);
 
         JButton btnFastButton = new JButton("一键重构");
@@ -351,7 +348,7 @@ public class GUITest {
             judge.add(if_ifsbtn.isSelected());
             judge.add(ifs_ifbtn.isSelected());
             if(paths.size()==0){
-                JOptionPane.showMessageDialog(null, "请选择java/txt文件上传");
+                JOptionPane.showMessageDialog(null, "请选择一个java项目/至少一个java文件上传");
             }
             else{
                 for(String path:paths){
@@ -447,8 +444,9 @@ newText.setText(result);//转换完成
 
 								//判断输入文件是否符合要求
 								extensionName = getExtensionName(file.getPath());
-								//如果是java或者txt文件
-								if("java".equals(extensionName) || "txt".equals(extensionName)) {
+								//如果是java文件
+//								if("java".equals(extensionName) || "txt".equals(extensionName)) {
+								if("java".equals(extensionName)) {
 								}
 								else {
 									someFileWrong = true;
@@ -456,7 +454,7 @@ newText.setText(result);//转换完成
 							}
 							else {
 								clearAll();
-								JOptionPane.showMessageDialog(null,"请选择一个项目文件夹，或至少一个java文件上传");
+								JOptionPane.showMessageDialog(null,"请选择一个java项目/至少一个java文件上传");
 							}
 						}
 						catch (Exception ex){
@@ -466,7 +464,7 @@ newText.setText(result);//转换完成
                 }
                 if(someFileWrong){
                 	clearAll();
-                    JOptionPane.showMessageDialog(null, "请选择一个项目文件夹，或至少一个java文件上传");
+                    JOptionPane.showMessageDialog(null, "请选择一个java项目/至少一个java文件上传");
                 }
                 else{
 //                    /**有错误**/
@@ -484,25 +482,20 @@ newText.setText(result);//转换完成
 			fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 			File f;
 			int flag = fc.showOpenDialog(null);
-//			if(flag == JFileChooser.APPROVE_OPTION)
-//			{
-//				f = fc.getSelectedFile();
-//				downLoadPath =f.getPath();                // path是保存好的下载路径，可以输出一下
-//			}
-
             String result;
 			String path;
-//			String right_name;
 			if (flag != JFileChooser.APPROVE_OPTION) {
+				//如果没有点击确定按钮
 				if(flag == JFileChooser.CANCEL_OPTION){
 					JOptionPane.showMessageDialog(null, "取消下载！");
 				}
 			} else {
-
+				//点击了确定按钮
 				f = fc.getSelectedFile();
 				downLoadPath =f.getPath();                // path是保存好的下载路径，可以输出一下
 				String new_filePath = downLoadPath +"\\"+"_new";//新建一个文件夹存放结果
 				if(isFolder){
+					//如果导入的是项目
 					File srcFile = new File(sourceFolderPath);
 					File desFile = new File(new_filePath);
 					try {
@@ -512,8 +505,8 @@ newText.setText(result);//转换完成
 					}
 				}
 				else{
+					//如果导入的是多个或一个文件
 					File newFile = new File(new_filePath);
-					//如果文件夹不存在则创建
 					if  (!newFile .exists()  && !newFile .isDirectory())
 					{
 						newFile .mkdir();
@@ -521,41 +514,21 @@ newText.setText(result);//转换完成
 
 					try{
 						for(int i=0;i<paths.size();i++){
-							result=results.get(i);
-							path= new_filePath + "\\" + fileNames.get(i)+".java";
-
+							result=results.get(i);//获取处理结果
+							path= new_filePath + "\\" + fileNames.get(i)+".java";//文件路径
+							//写入文件
 							FileProcessing.clearFile(path);
 							FileProcessing.writeFile(path,result);
 						}
 						if(results.size()!=0){
+							//指没有一键导入的情况
 							JOptionPane.showMessageDialog(null, "下载成功！");
 						}
 					}
 					catch (Exception ex){
 						JOptionPane.showMessageDialog(null, "下载错误！");
 					}
-
-
 				}
-
-
-
-
-//				ArrayList<String> allPaths = root.getAllFileList();
-//				int j=0;
-//				for(int i=0;i<allPaths.size();i++){
-//					path=allPaths.get(i);
-//					newFile = new File(path);
-//					if(newFile.isDirectory()){
-//						right_name=getFileNames(path);
-////						path = new_filePath + "\\" + fileNames.get(i)+".java";
-//						path = new_filePath + "\\" + right_name;
-//					}
-
-
-
-//				}
-
 			}
 
 		});
