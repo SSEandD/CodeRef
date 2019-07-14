@@ -22,7 +22,7 @@ public class IfToSwitch {
 		ArrayList nextTwoWords = new ArrayList();
 		for(int i=0;i<arrayList.size();i++){
 			arrayListTemp = (ArrayList) arrayList.get(i);
-			System.out.println("arrayListTemp="+arrayListTemp);
+//			System.out.println("arrayListTemp="+arrayListTemp);
 			for(int j=0;j<arrayListTemp.size();j++){
 				temp = String.valueOf(arrayListTemp.get(j));
 				if(temp.equals("if")){

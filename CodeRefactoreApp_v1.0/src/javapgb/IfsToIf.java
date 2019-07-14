@@ -42,7 +42,7 @@ public class IfsToIf {
 					if(!onlyIf(arrayListTempBraces)){
 						continue;
 					}
-					System.out.println("arrayListTempBraces="+arrayListTempBraces);
+//					System.out.println("arrayListTempBraces="+arrayListTempBraces);
 					endI=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
 					endJ=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
 					nextWord = findNextWord(arrayList,endI,endJ);
@@ -58,7 +58,7 @@ public class IfsToIf {
 							endJ++;
 						}
 						arrayListTempBraces = generalMethod.bracesMatching(arrayList, endI, endJ,"{");
-						System.out.println("arrayListTempBraces="+arrayListTempBraces);
+//						System.out.println("arrayListTempBraces="+arrayListTempBraces);
 						endI=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
 						endJ=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
 						nextWord = findNextWord(arrayList,endI,endJ);
@@ -66,8 +66,8 @@ public class IfsToIf {
 					//ȡ��if���ΪArrayList
 					arrayListIf = getIfArrayList(arrayList,i,j,endI,endJ);
 					//��������{}�ڲ������Ƿ�һ�£���һ��������һ�����if
-					System.out.println("i="+i);
-					System.out.println("arrayListIf111="+arrayListIf);
+//					System.out.println("i="+i);
+//					System.out.println("arrayListIf111="+arrayListIf);
 					arrayListInBraces = getAllInBraces(arrayListIf);
 					System.out.println("arrayListInBraces111="+arrayListInBraces);
 					if(arrayListInBraces.size()==1&&String.valueOf(arrayListInBraces.get(0)).equals("false")){
@@ -83,13 +83,13 @@ public class IfsToIf {
 							if(!temp1.equals("}")){
 								int start = Integer.parseInt(String.valueOf(arrayListInBraces.get(z-1)));
 								int end = Integer.parseInt(temp1);
-								System.out.println("arrayListIf11111="+arrayListIf);
+//								System.out.println("arrayListIf11111="+arrayListIf);
 								arrayListIf=arrayListRemove(arrayListIf,start,end);
-								System.out.println("arrayListIf11111="+arrayListIf);
+//								System.out.println("arrayListIf11111="+arrayListIf);
 							}
 							//ȡ��{}����
 							else if(temp1.equals("}")){
-								System.out.println("arrayListInBraces1="+arrayListInBraces);
+//								System.out.println("arrayListInBraces1="+arrayListInBraces);
 								for(int z1=1;z1<z;z1++){
 									arrayListInBracesDeleteOther.add(String.valueOf(arrayListInBraces.get(z1)));
 								}

@@ -6,21 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="界面格式小修改">
+    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/CodeFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/CodeFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/DoWhileTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/DoWhileTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/ForTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/ForTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/IfTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/IfTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/WhileTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/methodtree/WhileTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/PackageProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javahyh/process/PackageProcess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/StandardName.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/StandardName.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManyFileProcess/FileNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManyFileProcess/FileNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javapgb/IfsToIf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javapgb/IfsToIf.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,26 +41,26 @@
     <session id="-2054185890">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="15" />
+          <entry key="java" value="16" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="15" />
+          <entry key="JAVA" value="16" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2913" />
-          <entry key="txt" value="169" />
+          <entry key="java" value="2928" />
+          <entry key="txt" value="214" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2913" />
-          <entry key="PLAIN_TEXT" value="169" />
+          <entry key="JAVA" value="2928" />
+          <entry key="PLAIN_TEXT" value="214" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -91,11 +79,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUITest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4557">
-              <caret line="397" lean-forward="true" selection-start-line="397" selection-end-line="397" />
+            <state relative-caret-position="85">
+              <caret line="638" column="4" selection-start-line="638" selection-start-column="4" selection-end-line="638" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1990#1991#0" expanded="true" />
@@ -106,13 +94,20 @@
                 <element signature="e#9537#9748#0" />
                 <element signature="e#10188#10402#0" />
                 <element signature="e#10456#10670#0" />
-                <element signature="method#copyFolder#0;class#GUITest#0" />
                 <element signature="method#copyFile#0;class#GUITest#0" />
                 <element signature="method#getFileNames#0;class#GUITest#0" />
                 <element signature="method#clearAll#0;class#GUITest#0" />
                 <element signature="method#getExtensionName#0;class#GUITest#0" />
-                <element signature="method#readTxt#0;class#GUITest#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/javapgb/IfsToIf.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="88" column="29" lean-forward="true" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -184,6 +179,7 @@
       <find>选择</find>
       <find>重构</find>
       <find>下载</find>
+      <find>out</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -192,7 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/methodtree/IfTree.java" />
         <option value="$PROJECT_DIR$/src/Table.java" />
         <option value="$PROJECT_DIR$/src/process/Table.java" />
         <option value="$PROJECT_DIR$/src/methodtree/TryOrFinTree.java" />
@@ -243,6 +238,7 @@
         <option value="$PROJECT_DIR$/src/ManyFileProcess/FileTree.java" />
         <option value="$PROJECT_DIR$/src/ManyFileProcess/FileNode.java" />
         <option value="$PROJECT_DIR$/src/GUITest.java" />
+        <option value="$PROJECT_DIR$/src/javapgb/IfsToIf.java" />
       </list>
     </option>
   </component>
@@ -283,6 +279,12 @@
               <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="javapgb" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -294,7 +296,7 @@
     <property name="ToolWindowAnt Build.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563072965266" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563073679946" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/_new/CodeRefactoreApp_v1.0" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -315,6 +317,116 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\src\javapgb" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javapgb/StandardName.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -503,7 +615,7 @@
       <workItem from="1562914018480" duration="610000" />
       <workItem from="1562933852539" duration="11558000" />
       <workItem from="1562982892727" duration="30898000" />
-      <workItem from="1563069116629" duration="3804000" />
+      <workItem from="1563069116629" duration="4346000" />
     </task>
     <task id="LOCAL-00001" summary="hyh">
       <created>1562913727422</created>
@@ -596,11 +708,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563070172761</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="使下载功能完善（可替换原文件&#10;删除一些注释&#10;改为不可处理txt文件">
+      <created>1563073143945</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1563073143945</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="385247000" />
+    <option name="totallyTimeSpent" value="385789000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -615,7 +734,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.18154311" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.18154311" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -625,7 +744,7 @@
       <window_info anchor="bottom" id="Duplicates" order="0" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" weight="0.3087028" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" visible="true" weight="0.43349755" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.54031116" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -703,7 +822,8 @@
     <MESSAGE value="添加一些注释，删除一些无用的方法" />
     <MESSAGE value="界面格式小修改" />
     <MESSAGE value="界面提示小修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="界面提示小修改" />
+    <MESSAGE value="使下载功能完善（可替换原文件&#10;删除一些注释&#10;改为不可处理txt文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="使下载功能完善（可替换原文件&#10;删除一些注释&#10;改为不可处理txt文件" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -812,9 +932,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/java/util/annotations.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javapgb/EnglishRecognition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -1253,13 +1370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ManyFileProcess/FileNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javapgb/StandardName.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -1267,10 +1377,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ManyFileProcess/FileNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4557">
-          <caret line="397" lean-forward="true" selection-start-line="397" selection-end-line="397" />
+        <state relative-caret-position="85">
+          <caret line="638" column="4" selection-start-line="638" selection-start-column="4" selection-end-line="638" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1990#1991#0" expanded="true" />
@@ -1281,13 +1398,18 @@
             <element signature="e#9537#9748#0" />
             <element signature="e#10188#10402#0" />
             <element signature="e#10456#10670#0" />
-            <element signature="method#copyFolder#0;class#GUITest#0" />
             <element signature="method#copyFile#0;class#GUITest#0" />
             <element signature="method#getFileNames#0;class#GUITest#0" />
             <element signature="method#clearAll#0;class#GUITest#0" />
             <element signature="method#getExtensionName#0;class#GUITest#0" />
-            <element signature="method#readTxt#0;class#GUITest#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javapgb/IfsToIf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="88" column="29" lean-forward="true" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
         </state>
       </provider>
     </entry>
