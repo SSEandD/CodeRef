@@ -7,18 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/CodeRefactoreApp_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/CodeRefactoreApp_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/CodeRefactoreApp_jar/CodeRefactoreApp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CodeRefactoreApp_jar/CodeRefactoreApp.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/GUITest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/IfToSwitch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/IfToSwitch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/IfsToIf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/IfsToIf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/StandardName.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/StandardName.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javapgb/StandardName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javapgb/StandardName.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,35 +45,36 @@
     <session id="-2054185890">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="36" />
+          <entry key="java" value="39" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="36" />
+          <entry key="JAVA" value="39" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2949" />
-          <entry key="txt" value="222" />
+          <entry key="java" value="2954" />
+          <entry key="txt" value="228" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2949" />
-          <entry key="PLAIN_TEXT" value="222" />
+          <entry key="JAVA" value="2954" />
+          <entry key="PLAIN_TEXT" value="228" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="3" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.57" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
     </session>
@@ -92,8 +87,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUITest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
+            <state relative-caret-position="88">
+              <caret line="323" column="27" selection-start-line="323" selection-start-column="20" selection-end-line="323" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#copyFile#0;class#GUITest#0" />
@@ -101,6 +96,15 @@
                 <element signature="method#clearAll#0;class#GUITest#0" />
                 <element signature="method#getExtensionName#0;class#GUITest#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainRun.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -240,6 +244,11 @@
               <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -251,7 +260,7 @@
     <property name="ToolWindowAnt Build.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563080016053" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563081266893" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/_new/CodeRefactoreApp_v1.0" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -263,125 +272,16 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\gitlearn\CodeRef\CodeRefactoreApp_v1.0\src\javapgb" />
+      <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\src\javapgb" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\src" />
       <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp" />
       <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\src\javapgb\standardName\word" />
       <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\test" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\文档\IntelliJ IDEA\CodeRefactoreApp\src\javapgb" />
-    </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/javapgb/StandardName.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -571,6 +471,7 @@
       <workItem from="1562933852539" duration="11558000" />
       <workItem from="1562982892727" duration="30898000" />
       <workItem from="1563069116629" duration="7247000" />
+      <workItem from="1563080088111" duration="1226000" />
     </task>
     <task id="LOCAL-00001" summary="hyh">
       <created>1562913727422</created>
@@ -677,11 +578,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563073743530</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="更新">
+      <created>1563080293262</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1563080293262</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388690000" />
+    <option name="totallyTimeSpent" value="389916000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -695,7 +603,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.18154311" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.18381241" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -705,14 +613,14 @@
       <window_info anchor="bottom" id="Duplicates" order="0" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" weight="0.43349755" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" visible="true" weight="0.43349755" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.54031116" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32840723" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.6486043" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.39737275" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067025" side_tool="true" weight="0.33521923" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32840723" />
       <window_info anchor="bottom" id="Ant Build" order="13" show_stripe_button="false" weight="0.24752475" />
@@ -819,7 +727,8 @@
     <MESSAGE value="界面提示小修改" />
     <MESSAGE value="使下载功能完善（可替换原文件&#10;删除一些注释&#10;改为不可处理txt文件" />
     <MESSAGE value="注释打印" />
-    <option name="LAST_COMMIT_MESSAGE" value="注释打印" />
+    <MESSAGE value="更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1244,13 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ManyFileProcess/FilesNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1307,13 +1209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javapgb/IfToSwitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javapgb/LengthStack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9">
@@ -1343,13 +1238,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javapgb/Transformation3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javapgb/Transformation4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
@@ -1405,10 +1293,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javapgb/IfToSwitch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="878">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javapgb/Transformation4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="7" column="50" lean-forward="true" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
+        <state relative-caret-position="88">
+          <caret line="323" column="27" selection-start-line="323" selection-start-column="20" selection-end-line="323" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#copyFile#0;class#GUITest#0" />

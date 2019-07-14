@@ -322,9 +322,11 @@ public class GUITest {
                     sourceFile.setText(rightPath);
                     String o_text = readTxt(sourceFile.getText());//保存了读取出的文本内容（含换行符）
                     oldText.setText(o_text);
+					oldText.setCaretPosition(0);
                     if(results.size()!=0){
                         String n_text = results.get(i);//保存了读取出的文本内容（含换行符）
                         newText.setText(n_text);
+						newText.setCaretPosition(0);
                     }
                 }catch (Exception ex){
 //                    ex.printStackTrace();
