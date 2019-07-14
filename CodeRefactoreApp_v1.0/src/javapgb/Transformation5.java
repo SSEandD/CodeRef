@@ -16,116 +16,116 @@ public class Transformation5 {
 		ArrayList arrayListNextWord = new ArrayList();
 		String temp ="";
 		String previousWord = "";
-		//0-4:)}if)}ÏÂ±ê
+		//0-4:)}if)}ä¸‹æ ‡
 		int endI[]={0,0,0,0,0,0};
 		int endJ[]={0,0,0,0,0,0};
 		for(int i = 0 ;i<arrayList.size();i++){
 			try{
-			arrayListTemp = (ArrayList) arrayList.get(i);
-			for(int j=0;j<arrayListTemp.size();j++){
-				try{
-				temp = String.valueOf(arrayListTemp.get(j));
-				//ÕÒµ½if
-				if(temp.equals("if")){
-					//Èç¹ûÊÇelseµÄif¾Í²»×ª
-					previousWord=findPreviousWord(arrayList,i,j);
-					if(previousWord.equals("else")){
-						continue;
-					}
-					//ÕÒµ½£¨£©{}²¿·Ö
-					arrayListParentheses1 = generalMethod.returnBracketsMatching(arrayList, i, j, "(");
-					endJ[0] = Integer.parseInt(String.valueOf(arrayListParentheses1.get(arrayListParentheses1.size()-1)));
-					endI[0] = Integer.parseInt(String.valueOf(arrayListParentheses1.get(arrayListParentheses1.size()-2)));
-					arrayListBraces1 = generalMethod.returnBracketsMatching(arrayList, endI[0], endJ[0], "{");
-					endJ[1] = Integer.parseInt(String.valueOf(arrayListBraces1.get(arrayListBraces1.size()-1)));
-					endI[1] = Integer.parseInt(String.valueOf(arrayListBraces1.get(arrayListBraces1.size()-2)));
-					arrayListNextWord = generalMethod.findNextWord2(arrayList, endI[1], endJ[1]);
-					//ÅÐ¶Ï}ÏÂÒ»¸öÊÇ·ñÎªif
-					if(String.valueOf(arrayListNextWord.get(0)).equals("if")){
-						endJ[2] = Integer.parseInt(String.valueOf(arrayListNextWord.get(arrayListNextWord.size()-1)));
-						endI[2] = Integer.parseInt(String.valueOf(arrayListNextWord.get(arrayListNextWord.size()-2)));
-						arrayListParentheses2 = generalMethod.returnBracketsMatching(arrayList, endI[2], endJ[2], "(");
-						endJ[3] = Integer.parseInt(String.valueOf(arrayListParentheses2.get(arrayListParentheses2.size()-1)));
-						endI[3] = Integer.parseInt(String.valueOf(arrayListParentheses2.get(arrayListParentheses2.size()-2)));
-						arrayListBraces2 = generalMethod.returnBracketsMatching(arrayList, endI[3], endJ[3], "{");
-						endJ[4] = Integer.parseInt(String.valueOf(arrayListBraces2.get(arrayListBraces2.size()-1)));
-						endI[4] = Integer.parseInt(String.valueOf(arrayListBraces2.get(arrayListBraces2.size()-2)));
-						//É¾µôºóÃæ×ø±ê
-						for(int z=0;z<4;z++){
-							arrayListParentheses1.remove(arrayListParentheses1.size()-1);
-							arrayListBraces1.remove(arrayListBraces1.size()-1);
-							arrayListParentheses2.remove(arrayListParentheses2.size()-1);
-							arrayListBraces2.remove(arrayListBraces2.size()-1);
-						}
-						//ÅÐ¶Ï´úÂë¿éÊÇ·ñÏàÍ¬
-						if(isIdentical(arrayListBraces1,arrayListBraces2)){
-							arrayList = generalMethod.arrayListRemove(arrayList, endI[2], endJ[2], endI[4], endJ[4]);
-							arrayListParentheses2.remove(0);
-							arrayListParentheses2.remove(arrayListParentheses2.size()-1);
-							arrayListTemp1 = (ArrayList) arrayList.get(endI[0]);
-							arrayListTemp1 = addCondition(arrayListTemp1,arrayListParentheses2,endJ[0]);
-							if(j==0){
-								i--;
-								arrayListTemp1=(ArrayList)arrayList.get(i);
-								j=arrayListTemp1.size()-1;
+				arrayListTemp = (ArrayList) arrayList.get(i);
+				for(int j=0;j<arrayListTemp.size();j++){
+					try{
+						temp = String.valueOf(arrayListTemp.get(j));
+						//æ‰¾åˆ°if
+						if(temp.equals("if")){
+							//å¦‚æžœæ˜¯elseçš„ifå°±ä¸è½¬
+							previousWord=findPreviousWord(arrayList,i,j);
+							if(previousWord.equals("else")){
+								continue;
+							}
+							//æ‰¾åˆ°ï¼ˆï¼‰{}éƒ¨åˆ†
+							arrayListParentheses1 = generalMethod.returnBracketsMatching(arrayList, i, j, "(");
+							endJ[0] = Integer.parseInt(String.valueOf(arrayListParentheses1.get(arrayListParentheses1.size()-1)));
+							endI[0] = Integer.parseInt(String.valueOf(arrayListParentheses1.get(arrayListParentheses1.size()-2)));
+							arrayListBraces1 = generalMethod.returnBracketsMatching(arrayList, endI[0], endJ[0], "{");
+							endJ[1] = Integer.parseInt(String.valueOf(arrayListBraces1.get(arrayListBraces1.size()-1)));
+							endI[1] = Integer.parseInt(String.valueOf(arrayListBraces1.get(arrayListBraces1.size()-2)));
+							arrayListNextWord = generalMethod.findNextWord2(arrayList, endI[1], endJ[1]);
+							//åˆ¤æ–­}ä¸‹ä¸€ä¸ªæ˜¯å¦ä¸ºif
+							if(String.valueOf(arrayListNextWord.get(0)).equals("if")){
+								endJ[2] = Integer.parseInt(String.valueOf(arrayListNextWord.get(arrayListNextWord.size()-1)));
+								endI[2] = Integer.parseInt(String.valueOf(arrayListNextWord.get(arrayListNextWord.size()-2)));
+								arrayListParentheses2 = generalMethod.returnBracketsMatching(arrayList, endI[2], endJ[2], "(");
+								endJ[3] = Integer.parseInt(String.valueOf(arrayListParentheses2.get(arrayListParentheses2.size()-1)));
+								endI[3] = Integer.parseInt(String.valueOf(arrayListParentheses2.get(arrayListParentheses2.size()-2)));
+								arrayListBraces2 = generalMethod.returnBracketsMatching(arrayList, endI[3], endJ[3], "{");
+								endJ[4] = Integer.parseInt(String.valueOf(arrayListBraces2.get(arrayListBraces2.size()-1)));
+								endI[4] = Integer.parseInt(String.valueOf(arrayListBraces2.get(arrayListBraces2.size()-2)));
+								//åˆ æŽ‰åŽé¢åæ ‡
+								for(int z=0;z<4;z++){
+									arrayListParentheses1.remove(arrayListParentheses1.size()-1);
+									arrayListBraces1.remove(arrayListBraces1.size()-1);
+									arrayListParentheses2.remove(arrayListParentheses2.size()-1);
+									arrayListBraces2.remove(arrayListBraces2.size()-1);
+								}
+								//åˆ¤æ–­ä»£ç å—æ˜¯å¦ç›¸åŒ
+								if(isIdentical(arrayListBraces1,arrayListBraces2)){
+									arrayList = generalMethod.arrayListRemove(arrayList, endI[2], endJ[2], endI[4], endJ[4]);
+									arrayListParentheses2.remove(0);
+									arrayListParentheses2.remove(arrayListParentheses2.size()-1);
+									arrayListTemp1 = (ArrayList) arrayList.get(endI[0]);
+									arrayListTemp1 = addCondition(arrayListTemp1,arrayListParentheses2,endJ[0]);
+									if(j==0){
+										i--;
+										arrayListTemp1=(ArrayList)arrayList.get(i);
+										j=arrayListTemp1.size()-1;
+									}else{
+										j--;
+									}
+									continue;
+								}
 							}else{
-								j--;
-							}
-							continue;
-						}
-					}else{
-						//Èç¹ûÏÂÃæÊÇifÇÒÖ»ÄÒÀ¨if¾ä×ÓÔò¿É½øÐÐ&&ÐÞ¸Ä
-						if(nextIsOnlyIf(arrayListBraces1)){
-							arrayListNextWord = generalMethod.findNextWord2(arrayList, endI[0], endJ[0]);
-							endJ[3]=Integer.parseInt(String.valueOf(arrayListNextWord.get(arrayListNextWord.size()-1)));
-							endI[3]=Integer.parseInt(String.valueOf(arrayListNextWord.get(arrayListNextWord.size()-2)));
-							arrayListParentheses2 = generalMethod.returnBracketsMatching(arrayList, endI[3], endJ[3], "(");
-							endI[4]=Integer.parseInt(String.valueOf(arrayListParentheses2.get(arrayListParentheses2.size()-2)));
-							endJ[4]=Integer.parseInt(String.valueOf(arrayListParentheses2.get(arrayListParentheses2.size()-1)));
-							arrayListBraces2 = generalMethod.returnBracketsMatching(arrayList, endI[4], endJ[4], "{");
-							endJ[5]=Integer.parseInt(String.valueOf(arrayListBraces2.get(arrayListBraces2.size()-1)));
-							endI[5]=Integer.parseInt(String.valueOf(arrayListBraces2.get(arrayListBraces2.size()-2)));
-							//É¾µôºóÃæ×ø±ê
-							for(int z=0;z<4;z++){
-								arrayListParentheses1.remove(arrayListParentheses1.size()-1);
-								arrayListBraces1.remove(arrayListBraces1.size()-1);
-								arrayListBraces2.remove(arrayListBraces2.size()-1);
-								arrayListParentheses2.remove(arrayListParentheses2.size()-1);
-							}
-							//É¾³ýÒªºÏ²¢µÄif(i==0)²¿·Ö
-							arrayList = generalMethod.arrayListRemove(arrayList, endI[3], endJ[3], endI[1], endJ[1]);
-							arrayListTemp1 = (ArrayList) arrayList.get(endI[0]);
-							//½«ÄÚ²¿ifµÄ{}´úÌæÍâ²ã{}
-							int endJTemp=endJ[0];
-							String temp1="";
-							for(int z=0;z<arrayListBraces2.size();z++){
-								temp1 = String.valueOf(arrayListBraces2.get(z));
-								arrayListTemp1.add(++endJTemp,temp1);
-							}
-							arrayListParentheses2.remove(0);
-							arrayListParentheses2.remove(arrayListParentheses2.size()-1);
-							arrayListTemp1.add(endJ[0],")");
-							arrayListTemp1.add(++endJ[0],"&&");
-							for(int z=0;z<arrayListParentheses2.size();z++){
-								temp1 = String.valueOf(arrayListParentheses2.get(z));
-								arrayListTemp1.add(++endJ[0],temp1);
-							}
-							arrayListTemp.add(j+1,"(");
-							arrayListTemp = (ArrayList) arrayList.get(i);
-							if(j!=0){
-								if(!String.valueOf(arrayListTemp.get(j-1)).equals("\r\n/***** Revised:ifs transform if! :( *****/\r\n")){
-									arrayListTemp.add(j,"\r\n/***** Revised:ifs transform if! :( *****/\r\n");
+								//å¦‚æžœä¸‹é¢æ˜¯ifä¸”åªå›Šæ‹¬ifå¥å­åˆ™å¯è¿›è¡Œ&&ä¿®æ”¹
+								if(nextIsOnlyIf(arrayListBraces1)){
+									arrayListNextWord = generalMethod.findNextWord2(arrayList, endI[0], endJ[0]);
+									endJ[3]=Integer.parseInt(String.valueOf(arrayListNextWord.get(arrayListNextWord.size()-1)));
+									endI[3]=Integer.parseInt(String.valueOf(arrayListNextWord.get(arrayListNextWord.size()-2)));
+									arrayListParentheses2 = generalMethod.returnBracketsMatching(arrayList, endI[3], endJ[3], "(");
+									endI[4]=Integer.parseInt(String.valueOf(arrayListParentheses2.get(arrayListParentheses2.size()-2)));
+									endJ[4]=Integer.parseInt(String.valueOf(arrayListParentheses2.get(arrayListParentheses2.size()-1)));
+									arrayListBraces2 = generalMethod.returnBracketsMatching(arrayList, endI[4], endJ[4], "{");
+									endJ[5]=Integer.parseInt(String.valueOf(arrayListBraces2.get(arrayListBraces2.size()-1)));
+									endI[5]=Integer.parseInt(String.valueOf(arrayListBraces2.get(arrayListBraces2.size()-2)));
+									//åˆ æŽ‰åŽé¢åæ ‡
+									for(int z=0;z<4;z++){
+										arrayListParentheses1.remove(arrayListParentheses1.size()-1);
+										arrayListBraces1.remove(arrayListBraces1.size()-1);
+										arrayListBraces2.remove(arrayListBraces2.size()-1);
+										arrayListParentheses2.remove(arrayListParentheses2.size()-1);
+									}
+									//åˆ é™¤è¦åˆå¹¶çš„if(i==0)éƒ¨åˆ†
+									arrayList = generalMethod.arrayListRemove(arrayList, endI[3], endJ[3], endI[1], endJ[1]);
+									arrayListTemp1 = (ArrayList) arrayList.get(endI[0]);
+									//å°†å†…éƒ¨ifçš„{}ä»£æ›¿å¤–å±‚{}
+									int endJTemp=endJ[0];
+									String temp1="";
+									for(int z=0;z<arrayListBraces2.size();z++){
+										temp1 = String.valueOf(arrayListBraces2.get(z));
+										arrayListTemp1.add(++endJTemp,temp1);
+									}
+									arrayListParentheses2.remove(0);
+									arrayListParentheses2.remove(arrayListParentheses2.size()-1);
+									arrayListTemp1.add(endJ[0],")");
+									arrayListTemp1.add(++endJ[0],"&&");
+									for(int z=0;z<arrayListParentheses2.size();z++){
+										temp1 = String.valueOf(arrayListParentheses2.get(z));
+										arrayListTemp1.add(++endJ[0],temp1);
+									}
+									arrayListTemp.add(j+1,"(");
+									arrayListTemp = (ArrayList) arrayList.get(i);
+									if(j!=0){
+										if(!String.valueOf(arrayListTemp.get(j-1)).equals("\r\n/***** Revised:ifs transform if! :( *****/\r\n")){
+											arrayListTemp.add(j,"\r\n/***** Revised:ifs transform if! :( *****/\r\n");
+										}
+									}
+								}else{
+									continue;
 								}
 							}
-						}else{
-							continue;
 						}
+					}catch(Exception e){
+						e.printStackTrace();//continue;
 					}
 				}
-				}catch(Exception e){
-					e.printStackTrace();//continue;
-				}
-			}
 			}catch(Exception e){
 				e.printStackTrace();//continue;
 			}
@@ -133,10 +133,10 @@ public class Transformation5 {
 		return arrayList;
 	}
 	public boolean isIdentical(ArrayList arrayList1,ArrayList arrayList2){
-		//É¾³ý¿Õ¸ñºÍ×¢ÊÍ
+		//åˆ é™¤ç©ºæ ¼å’Œæ³¨é‡Š
 		arrayList1 = deleteSpaceAndNote(arrayList1);
 		arrayList2 = deleteSpaceAndNote(arrayList2);
-		//±È½ÏÊÇ·ñÏàÍ¬
+		//æ¯”è¾ƒæ˜¯å¦ç›¸åŒ
 		if(arrayList1.size()!=arrayList2.size()){
 			return false;
 		}else{
@@ -176,7 +176,7 @@ public class Transformation5 {
 	public boolean nextIsOnlyIf(ArrayList arrayList){
 		ArrayList arrayListBraces = new ArrayList();
 		ArrayList arrayListNextWord = new ArrayList();
-		//ÕÒÏÂÒ»¸öÊÇ·ñÎªif
+		//æ‰¾ä¸‹ä¸€ä¸ªæ˜¯å¦ä¸ºif
 		arrayListNextWord = findNextWord(arrayList,0);
 		if(!String.valueOf(arrayListNextWord.get(0)).equals("if")){
 			return false;
@@ -190,7 +190,7 @@ public class Transformation5 {
 			}else{
 				return false;
 			}
-		}	
+		}
 	}
 	public ArrayList findNextWord(ArrayList arrayList,int j){
 		ArrayList arrayListResult = new ArrayList();

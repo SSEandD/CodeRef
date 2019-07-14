@@ -2,7 +2,7 @@ package javapgb;
 
 public class WordStack {
 
-    public int maxSize;// Õ»µÄ´óĞ¡
+    public int maxSize;// æ ˆçš„å¤§å°
     public int top;
     public String[] arr;
 
@@ -12,27 +12,27 @@ public class WordStack {
         arr = new String[maxSize];
     }
 
-    public void push(String value) { // Ñ¹ÈëÊı¾İ
+    public void push(String value) { // å‹å…¥æ•°æ®
 
         arr[++top] = value;
     }
 
-    public String pop() { // µ¯³öÊı¾İ
+    public String pop() { // å¼¹å‡ºæ•°æ®
 
         return arr[top--];
     }
 
-    public String peek() { // ·ÃÎÊÕ»¶¥ÔªËØ
+    public String peek() { // è®¿é—®æ ˆé¡¶å…ƒç´ 
 
         return arr[top];
     }
 
-    public boolean isFull() { // Õ»ÊÇ·ñÂúÁË
+    public boolean isFull() { // æ ˆæ˜¯å¦æ»¡äº†
 
         return maxSize - 1 == top;
     }
 
-    public boolean isEmpty() { // Õ»ÊÇ·ñÎª¿Õ
+    public boolean isEmpty() { // æ ˆæ˜¯å¦ä¸ºç©º
 
         return top == -1;
     }

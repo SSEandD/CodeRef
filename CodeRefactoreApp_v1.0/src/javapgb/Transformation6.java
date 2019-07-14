@@ -23,7 +23,7 @@ public class Transformation6 {
 			for(int j=0;j<arrayListTemp.size();j++){
 				temp=String.valueOf(arrayListTemp.get(j));
 				if(temp.equals("if")){
-					//Èç¹ûÊÇelseµÄif¾Í²»×ª
+					//å¦‚æžœæ˜¯elseçš„ifå°±ä¸è½¬
 					previousWord=findPreviousWord(arrayList,i,j);
 					if(previousWord.equals("else")){
 						continue;
@@ -34,7 +34,7 @@ public class Transformation6 {
 					arrayListTempBraces = generalMethod.bracesMatching(arrayList, endI, endJ, "{");
 					endI=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
 					endJ=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
-					//¼ì²éÏÂÒ»¸öÊÇ·ñÎªelse,ÊÇÔòÍË³ö
+					//æ£€æŸ¥ä¸‹ä¸€ä¸ªæ˜¯å¦ä¸ºelse,æ˜¯åˆ™é€€å‡º
 					boolean isElse=false;
 					boolean isBreak=false;
 					for(int i1=endI;i1<arrayList.size();i1++){
@@ -68,7 +68,7 @@ public class Transformation6 {
 					}
 					if(isElse){
 						continue;
-					}else{//·ñÔòÅÐ¶ÏÐ¡À¨ºÅÄÚÊÇ·ñÃ»ÓÐ&ºÍ|
+					}else{//å¦åˆ™åˆ¤æ–­å°æ‹¬å·å†…æ˜¯å¦æ²¡æœ‰&å’Œ|
 						boolean isOnlyOneCondition = true;
 						for(int i1=0;i1<arrayListTempParentheses.size();i1++){
 							temp1=String.valueOf(arrayListTempParentheses.get(i1));
@@ -79,13 +79,13 @@ public class Transformation6 {
 						}
 						if(isOnlyOneCondition){
 							continue;
-						}else{//Á½¸ö¶¼²»·ûºÏÔò¿ªÊ¼·Ö½âÄÚÈÝ,±ä³Éºó×ºÊ½×Ó
+						}else{//ä¸¤ä¸ªéƒ½ä¸ç¬¦åˆåˆ™å¼€å§‹åˆ†è§£å†…å®¹,å˜æˆåŽç¼€å¼å­
 							ArrayList arrayListTempPostfix = new ArrayList();
 							arrayListTempPostfix = deleteSurplus(arrayListTempParentheses);
 							arrayListTempParentheses = deleteSurplusParentheses(arrayListTempParentheses);
 							arrayListTempPostfix = addBraces(arrayListTempPostfix);
 							arrayListTempPostfix=postfix(arrayListTempPostfix);
-							//·Ö½â³É¶à¸öif
+							//åˆ†è§£æˆå¤šä¸ªif
 							arrayListTempBraces=deleteSurplus(arrayListTempBraces);
 							if(String.valueOf(arrayListTempBraces.get(0)).equals("{")){
 								arrayListTempBraces.remove(arrayListTempBraces.size()-1);
@@ -205,7 +205,7 @@ public class Transformation6 {
 		String right="";
 		String temp="";
 		String result="";
-		//ÕÒ³öÁ½¸ö¶ÔÓ¦ÁÐ±í¡£²»°üº¬{}
+		//æ‰¾å‡ºä¸¤ä¸ªå¯¹åº”åˆ—è¡¨ã€‚ä¸åŒ…å«{}
 		if(i1!=i2){
 			for(int i=i1+1;i<i2;i++){
 				temp=String.valueOf(arrayList.get(i));
@@ -222,7 +222,7 @@ public class Transformation6 {
 		}else{
 			arrayListTemp2.add(String.valueOf(arrayList.get(i3)));
 		}
-		//¼ÆËã³¤¶È£¬Èô´óÓÚÒ»Ö±½Óopen,·ñÔò¼ì²âÊÇ·ñÕ¹¿ªÁË£¬µÃµ½½á¹ûÊÇ·ñÕ¹¿ª
+		//è®¡ç®—é•¿åº¦ï¼Œè‹¥å¤§äºŽä¸€ç›´æŽ¥open,å¦åˆ™æ£€æµ‹æ˜¯å¦å±•å¼€äº†ï¼Œå¾—åˆ°ç»“æžœæ˜¯å¦å±•å¼€
 		if(!(arrayListTemp1.size()==1)){
 			left+=open(arrayListTemp1);
 		}else{
@@ -237,7 +237,7 @@ public class Transformation6 {
 			right=temp;
 			rightHas=hasOpen(arrayListTemp2);
 		}
-		//¼ÆËã½á¹ûSring
+		//è®¡ç®—ç»“æžœSring
 		if(leftHas&&rightHas){
 			for(int i=0;i<left.length();i++){
 				if(left.charAt(i)=='{'){
@@ -274,11 +274,11 @@ public class Transformation6 {
 		}else{
 			result+="if("+left+"){if("+right+"){}}";
 		}
-		//É¾µôi1-i4²¿·Ö
+		//åˆ æŽ‰i1-i4éƒ¨åˆ†
 		for(int i=i1;i<i4+1;i++){
 			arrayList.remove(i1);
 		}
-		//¼ÓÈë½á¹û
+		//åŠ å…¥ç»“æžœ
 		arrayList.add(i1,result);
 		return arrayList;
 	}
@@ -291,7 +291,7 @@ public class Transformation6 {
 		String right="";
 		String temp="";
 		String result="";
-		//ÕÒ³öÁ½¸ö¶ÔÓ¦ÁÐ±í¡£²»°üº¬{}
+		//æ‰¾å‡ºä¸¤ä¸ªå¯¹åº”åˆ—è¡¨ã€‚ä¸åŒ…å«{}
 		if(i1!=i2){
 			for(int i=i1+1;i<i2;i++){
 				temp=String.valueOf(arrayList.get(i));
@@ -308,7 +308,7 @@ public class Transformation6 {
 		}else{
 			arrayListTemp2.add(String.valueOf(arrayList.get(i3)));
 		}
-		//¼ÆËã³¤¶È£¬Èô´óÓÚÒ»Ö±½Óopen,·ñÔò¼ì²âÊÇ·ñÕ¹¿ªÁË£¬µÃµ½½á¹ûÊÇ·ñÕ¹¿ª
+		//è®¡ç®—é•¿åº¦ï¼Œè‹¥å¤§äºŽä¸€ç›´æŽ¥open,å¦åˆ™æ£€æµ‹æ˜¯å¦å±•å¼€äº†ï¼Œå¾—åˆ°ç»“æžœæ˜¯å¦å±•å¼€
 		if(!(arrayListTemp1.size()==1)){
 			left+=open(arrayListTemp1);
 		}else{
@@ -323,7 +323,7 @@ public class Transformation6 {
 			right=temp;
 			rightHas=hasOpen(arrayListTemp2);
 		}
-		//¼ÆËã½á¹ûString
+		//è®¡ç®—ç»“æžœString
 		if(leftHas&&rightHas){
 			result+=left+right;
 		}else if(leftHas&&!rightHas){
@@ -333,11 +333,11 @@ public class Transformation6 {
 		}else{
 			result+="if("+left+"){}if("+right+"){}";
 		}
-		//É¾µôi1-i4²¿·Ö
+		//åˆ æŽ‰i1-i4éƒ¨åˆ†
 		for(int i=i1;i<i4+1;i++){
 			arrayList.remove(i1);
 		}
-		//¼ÓÈë½á¹û
+		//åŠ å…¥ç»“æžœ
 		arrayList.add(i1,result);
 		return arrayList;
 	}
@@ -416,7 +416,7 @@ public class Transformation6 {
 		}
 		arrayList.set(0, "{");
 		arrayList.set(arrayList.size()-1, "}");
-		//¶àÓàÐ¡À¨ºÅ×ª»»³ÉÖÐÀ¨ºÅ
+		//å¤šä½™å°æ‹¬å·è½¬æ¢æˆä¸­æ‹¬å·
 		for(int i=0;i<arrayList.size();i++){
 			temp=String.valueOf(arrayList.get(i));
 			if(temp.equals("{")){

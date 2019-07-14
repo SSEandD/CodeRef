@@ -2,7 +2,7 @@ package javapgb;
 
 public class LengthStack {
 
-    public int maxSize;// Õ»µÄ´óĞ¡
+    public int maxSize;// æ ˆçš„å¤§å°
     public int top;
     public int[] arr;
 
@@ -12,27 +12,27 @@ public class LengthStack {
         arr = new int[maxSize];
     }
 
-    public void push(int value) { // Ñ¹ÈëÊı¾İ
+    public void push(int value) { // å‹å…¥æ•°æ®
 
         arr[++top] = value;
     }
 
-    public int pop() { // µ¯³öÊı¾İ
+    public int pop() { // å¼¹å‡ºæ•°æ®
 
         return arr[top--];
     }
 
-    public int peek() { // ·ÃÎÊÕ»¶¥ÔªËØ
+    public int peek() { // è®¿é—®æ ˆé¡¶å…ƒç´ 
 
         return arr[top];
     }
 
-    public boolean isFull() { // Õ»ÊÇ·ñÂúÁË
+    public boolean isFull() { // æ ˆæ˜¯å¦æ»¡äº†
 
         return maxSize - 1 == top;
     }
 
-    public boolean isEmpty() { // Õ»ÊÇ·ñÎª¿Õ
+    public boolean isEmpty() { // æ ˆæ˜¯å¦ä¸ºç©º
 
         return top == -1;
     }

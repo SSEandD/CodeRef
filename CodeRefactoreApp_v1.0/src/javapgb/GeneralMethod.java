@@ -518,7 +518,7 @@ public class GeneralMethod {
 							arrayListResult.add(String.valueOf(arrayListTemp2.get(z)));
 						}
 						i=Integer.parseInt(String.valueOf(arrayListTemp2.get(arrayListTemp2.size()-2)));
-						j=Integer.parseInt(String.valueOf(arrayListTemp2.get(arrayListTemp2.size()-j)));
+						j=Integer.parseInt(String.valueOf(arrayListTemp2.get(arrayListTemp2.size()-1)));
 						arrayListTemp = (ArrayList) arrayList.get(i);
 					}else if(temp.equals(";")){
 						arrayListResult.add(temp);

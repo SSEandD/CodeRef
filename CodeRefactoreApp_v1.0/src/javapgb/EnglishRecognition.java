@@ -14,8 +14,8 @@ public class EnglishRecognition {
 	public void setI1(int i1) {
 		this.i1 = i1;
 	}
-	/*ÊäÈëÎªÒ»¸ö×Ö·û´®£¨ÀàÃûÖ®Àà£©,typeÎªÀàĞÍ£¬0ÎªĞ¡ÍÕ·å£¬1Îª´óÍÕ·å
-	 * Êä³öÎª±ä³ÉĞ¡ÍÕ·åµÄ×Ö·û´®
+	/*è¾“å…¥ä¸ºä¸€ä¸ªå­—ç¬¦ä¸²ï¼ˆç±»åä¹‹ç±»ï¼‰,typeä¸ºç±»å‹ï¼Œ0ä¸ºå°é©¼å³°ï¼Œ1ä¸ºå¤§é©¼å³°
+	 * è¾“å‡ºä¸ºå˜æˆå°é©¼å³°çš„å­—ç¬¦ä¸²
 	 */
 	public String englishWordRecognition(String s,int type){
 		if(hasOther(s)){
@@ -42,7 +42,7 @@ public class EnglishRecognition {
 				}
 			}
 		}
-		String initials;//Ê××ÖÄ¸
+		String initials;//é¦–å­—æ¯
 		String result="";
 		String path1;
 		String path2;
@@ -51,35 +51,35 @@ public class EnglishRecognition {
 		char c1=' ';
 		char c2=' ';
 		int z=0;
-		String temp="";//ÓÃÓÚ´æ·ÅÏÂÒ»¸öÎŞ·¨Æ¥Åä³É¹¦£¬ÉÏÒ»¸öÒªÈ¡³öÀ´µÄµ¥´Ê
-		String temp1="";//ÓÃÓÚ´æ·ÅÉ¾µô×îºóÒ»¸ö×ÖÄ¸µÄtemp×Ö·û´®
+		String temp="";//ç”¨äºå­˜æ”¾ä¸‹ä¸€ä¸ªæ— æ³•åŒ¹é…æˆåŠŸï¼Œä¸Šä¸€ä¸ªè¦å–å‡ºæ¥çš„å•è¯
+		String temp1="";//ç”¨äºå­˜æ”¾åˆ æ‰æœ€åä¸€ä¸ªå­—æ¯çš„tempå­—ç¬¦ä¸²
 		int length=s.length();
 		for(int i=0;i<length;i++){
-			//½øÀ´ÏÈÊ¶±ğÊ××ÖÄ¸
+			//è¿›æ¥å…ˆè¯†åˆ«é¦–å­—æ¯
 			initials=s.substring(i,i+1);
 			path1 = "src/standardName/word/";
 			path2=".txt";
 			path=path1+initials+path2;
 			File filename = new File(path);
-			//¿ªÊ¼¶ÁÈ¡¶ÔÓ¦Ê××ÖÄ¸txt
+			//å¼€å§‹è¯»å–å¯¹åº”é¦–å­—æ¯txt
 			try {
 				InputStreamReader reader = new InputStreamReader(new FileInputStream(filename));
 				BufferedReader br = new BufferedReader(reader);
-				boolean isPair;//ÊÇ·ñÅä¶Ô³É¹¦
+				boolean isPair;//æ˜¯å¦é…å¯¹æˆåŠŸ
 				boolean isEntry=false;
-				//¶ÁÈ¡
+				//è¯»å–
 				while((line=br.readLine())!=null){
-					//Èç¹ûµ¥´Ê±È×Ö·û´®Ê£Óà³¤¶È»¹¶Ì¾ÍÌø¹ı
+					//å¦‚æœå•è¯æ¯”å­—ç¬¦ä¸²å‰©ä½™é•¿åº¦è¿˜çŸ­å°±è·³è¿‡
 					if(line.length()>length-i){
 						continue;
 					}
 					if(i!=length-1&&line.length()!=1){
-						//µ±µÚ¶ş¸ö×Ö·û£¨c£©´ó¹ıÒªÆ¥¶ÔµÄ(b)Ê±ÔòÖ±½ÓÌø³öÑ­»·
+						//å½“ç¬¬äºŒä¸ªå­—ç¬¦ï¼ˆcï¼‰å¤§è¿‡è¦åŒ¹å¯¹çš„(b)æ—¶åˆ™ç›´æ¥è·³å‡ºå¾ªç¯
 						if((int)s.charAt(i+1)<(int)line.charAt(1)){
-							if(z==0)//i±»¸Ä±äÁË
+							if(z==0)//iè¢«æ”¹å˜äº†
 							break;
 						}
-						//µ±µÚ¶ş¸ö×Ö·û(b)Ğ¡¹ıÒªÆ¥ÅäµÄ(c)Ê±Ö±½ÓÌø¹ıµ½ÏÂÒ»¸ö
+						//å½“ç¬¬äºŒä¸ªå­—ç¬¦(b)å°è¿‡è¦åŒ¹é…çš„(c)æ—¶ç›´æ¥è·³è¿‡åˆ°ä¸‹ä¸€ä¸ª
 						else if((int)s.charAt(i+1)>(int)line.charAt(1)){
 							continue;
 						}
@@ -96,7 +96,7 @@ public class EnglishRecognition {
 						}
 					}
 					if(isPair){
-						//ºóÃæÑ¡³öÀ´µÄ±Ø±ÈÖ®Ç°½øÈëµÄ³¤£¬ÔòÖ»ÒªÑ¡µ½¾ÍÇ°³öºó½ø
+						//åé¢é€‰å‡ºæ¥çš„å¿…æ¯”ä¹‹å‰è¿›å…¥çš„é•¿ï¼Œåˆ™åªè¦é€‰åˆ°å°±å‰å‡ºåè¿›
 						if(!isEntry){
 							if(!ws.isFull()){
 								ws.push(line);
@@ -108,26 +108,26 @@ public class EnglishRecognition {
 						}
 					}
 				}
-				//ÈôÎ´ÄÜÆ¥¶ÔÉÏ
+				//è‹¥æœªèƒ½åŒ¹å¯¹ä¸Š
 				if(!isEntry){
-					//¼ì²éÊÇ·ñÓĞÈëÕ»£¬ÎŞÈëÕ»ÎªÒ»¸öµ¥´Ê£¬ÎŞ·¨Ê¶±ğ£¬ÍË³ö
+					//æ£€æŸ¥æ˜¯å¦æœ‰å…¥æ ˆï¼Œæ— å…¥æ ˆä¸ºä¸€ä¸ªå•è¯ï¼Œæ— æ³•è¯†åˆ«ï¼Œé€€å‡º
 					if(ws.isEmpty()){
 						break;
-					//ÓĞÈëÕ»ÔòÈ¡³ö£¬È¥µô×îºóÒ»¸ö×ÖÄ¸²¢Åä¶Ô£¬ÈôÓĞÒ»ÑùµÄµ¥´ÊÔòÈëÕ»¼ÌĞø£¬ÈôÉ¾Íê×ÖÄ¸ÔòÔÚ·µ»ØÉÏÒ»¼¶È¡ÔªËØ
+					//æœ‰å…¥æ ˆåˆ™å–å‡ºï¼Œå»æ‰æœ€åä¸€ä¸ªå­—æ¯å¹¶é…å¯¹ï¼Œè‹¥æœ‰ä¸€æ ·çš„å•è¯åˆ™å…¥æ ˆç»§ç»­ï¼Œè‹¥åˆ å®Œå­—æ¯åˆ™åœ¨è¿”å›ä¸Šä¸€çº§å–å…ƒç´ 
 					}else{
-						//µ±Õ»²»Îª¿ÕÊ±È¡³öÔªËØ
+						//å½“æ ˆä¸ä¸ºç©ºæ—¶å–å‡ºå…ƒç´ 
 						while(!ws.isEmpty()){
 							temp=ws.pop();
-							//Èôµ¥´ÊÖ»ÓĞÒ»¸ö×ÖÄ¸ÔòÈ¡Ç°Ò»¸öÔªËØ
+							//è‹¥å•è¯åªæœ‰ä¸€ä¸ªå­—æ¯åˆ™å–å‰ä¸€ä¸ªå…ƒç´ 
 							i=i-temp.length();
 							if(temp.length()==1){
 								continue;
 							}else{
 								String pathTemp=path1+temp.substring(0,1)+path2;
 								File flienameTemp=new File(pathTemp);
-								//ÊÇ·ñÓĞÅä¶ÔµÄµ¥´Ê²¢ÇÒ×Ö·û¶ÌÒ»Ğ©
+								//æ˜¯å¦æœ‰é…å¯¹çš„å•è¯å¹¶ä¸”å­—ç¬¦çŸ­ä¸€äº›
 								temp1=hasPairWord(temp,flienameTemp);
-								//ÈôÎŞÆ¥Åä
+								//è‹¥æ— åŒ¹é…
 								if(temp1.equals("")){
 									continue;
 								}else{
@@ -167,9 +167,9 @@ public class EnglishRecognition {
 		try {
 			InputStreamReader reader = new InputStreamReader(new FileInputStream(filename));
 			BufferedReader br = new BufferedReader(reader);
-			//¶ÁÈ¡
+			//è¯»å–
 			while((line=br.readLine())!=null){
-				//Èç¹ûµ¥´Ê±È×Ö·û´®Ê£Óà³¤¶È»¹³¤¾ÍÌø¹ı
+				//å¦‚æœå•è¯æ¯”å­—ç¬¦ä¸²å‰©ä½™é•¿åº¦è¿˜é•¿å°±è·³è¿‡
 				if(line.length()>s.length()){
 					continue;
 				}
@@ -211,10 +211,10 @@ public class EnglishRecognition {
 		result=(char)((int)c-32)+s.substring(1,s.length());
 		return result;
 	}
-	public int Hybrid(String s){//0£º¿ªÍ·´óĞ´ºóÃæÓĞĞ¡Ğ´1£ºÈ«´óĞ´ 2:¿ªÍ·Ğ¡Ğ´ºóÃæÓĞ´óĞ´£¬3£ºÈ«Ğ¡Ğ´
+	public int Hybrid(String s){//0ï¼šå¼€å¤´å¤§å†™åé¢æœ‰å°å†™1ï¼šå…¨å¤§å†™ 2:å¼€å¤´å°å†™åé¢æœ‰å¤§å†™ï¼Œ3ï¼šå…¨å°å†™
 		int t= -1;
 		char c=s.charAt(0);
-		if((int)c<=90&&(int)c>=65){//¿ªÍ·´óĞ´×ÖÄ¸
+		if((int)c<=90&&(int)c>=65){//å¼€å¤´å¤§å†™å­—æ¯
 			for(int i=1;i<s.length();i++){
 				c=s.charAt(i);
 				if((int)c<=122&&(int)c>=97){

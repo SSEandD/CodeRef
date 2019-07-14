@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Transformation2 {
 	GeneralMethod generalMethod = new GeneralMethod();
-	//ÏÈÄ¬ÈÏ"xxx"ÀïÃæÎªÒ»¸ö
+	//å…ˆé»˜è®¤"xxx"é‡Œé¢ä¸ºä¸€ä¸ª
 	public ArrayList transformation(ArrayList arrayList){
 		ArrayList<String> arrayListTemp = new ArrayList();
 		ArrayList<String> arrayListTempParentheses = new ArrayList();
@@ -26,7 +26,7 @@ public class Transformation2 {
 				try{
 					tempJ=arrayListTemp.get(j);
 					if(tempJ.equals("while")){
-						//ÏÈÅĞ¶ÏÊÇ·ñÓĞ¶àÓàÀ¨ºÅ£¬ÓĞÏÈÉ¾µô
+						//å…ˆåˆ¤æ–­æ˜¯å¦æœ‰å¤šä½™æ‹¬å·ï¼Œæœ‰å…ˆåˆ æ‰
 						arrList = generalMethod.returnBracketsMatching(arrayList, i,j,"(");
 						startI=Integer.parseInt(String.valueOf(arrList.get(arrList.size()-4)));
 						startJ=Integer.parseInt(String.valueOf(arrList.get(arrList.size()-3)));

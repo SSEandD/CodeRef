@@ -35,33 +35,33 @@ public class Transformation4 {
 					try{
 						temp = String.valueOf(arrayListTemp.get(j));
 						if(temp.equals("if")){
-							//Èç¹ûÇ°ÃæÒ»¸öÊÇelseÔò²»½øĞĞ´¦Àí
+							//å¦‚æœå‰é¢ä¸€ä¸ªæ˜¯elseåˆ™ä¸è¿›è¡Œå¤„ç†
 							previousWord=findPreviousWord(arrayList,i,j);
 							if(previousWord.equals("else")){
 								continue;
 							}
-							//ÕÒ£¨£©ºÍ{}ÄÚÈİ
+							//æ‰¾ï¼ˆï¼‰å’Œ{}å†…å®¹
 							arrayListTempParentheses = generalMethod.returnBracketsMatching(arrayList, i, j, "(");
-							//Èç¹ûÀ¨ºÅÄÚ²»ÊÇÆ¥¶Ô==¾ÍÍË³ö
+							//å¦‚æœæ‹¬å·å†…ä¸æ˜¯åŒ¹å¯¹==å°±é€€å‡º
 							if(!hasEquals(arrayListTempParentheses)){
 								continue;
 							}
-							//()ÀïÃæÓĞÓë»òÒ²²»×ª»»
+							//()é‡Œé¢æœ‰ä¸æˆ–ä¹Ÿä¸è½¬æ¢
 							if(hasAnd(arrayListTempParentheses)||hasOr(arrayListTempParentheses)){
 								continue;
 							}
 							endI=Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-2)));
 							endJ=Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-1)));
 							arrayListTempParentheses = generalMethod.deleteSurplus(arrayListTempParentheses);
-							//È¡´óÀ¨ºÅÄÚÈİ
+							//å–å¤§æ‹¬å·å†…å®¹
 							arrayListTempBraces = generalMethod.bracesMatching(arrayList, endI, endJ, "{");
-							//Èç¹û{}²¿·Ö´æÔÚbreakÔò²»´¦Àí
+							//å¦‚æœ{}éƒ¨åˆ†å­˜åœ¨breakåˆ™ä¸å¤„ç†
 							if(hasBreak(arrayListTempBraces)){
 								continue;
 							}
 							endI1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
 							endJ1=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
-							//ÕÒ}ºóÏÂÒ»¸öµ¥´Ê
+							//æ‰¾}åä¸‹ä¸€ä¸ªå•è¯
 							nextWord = findNextWord(arrayList,endI1,endJ1);
 							if(nextWord.size()!=0){
 								firstWord = String.valueOf(nextWord.get(0));
@@ -70,7 +70,7 @@ public class Transformation4 {
 							}else{
 								firstWord = "";
 							}
-							//ÅĞ¶ÏÏÂÒ»¸öÊÇ·ñÎªelse£¬²»ÊÇÔòÖ±½Óµ¥¸öif×ªswitch
+							//åˆ¤æ–­ä¸‹ä¸€ä¸ªæ˜¯å¦ä¸ºelseï¼Œä¸æ˜¯åˆ™ç›´æ¥å•ä¸ªifè½¬switch
 							if(!firstWord.equals("else")){
 								arrayListCondition1 = getCondition1(arrayListTempParentheses);
 								arrayListCondition2 = getCondition2(arrayListTempParentheses);
@@ -84,11 +84,11 @@ public class Transformation4 {
 								else if(isConstant(arrayListCondition2)&&(!isConstant(arrayListCondition1))){
 									arrayListCondition3 = arrayListCondition2;
 								}
-								//²»ÊÇÒ»³£Á¿Ò»±äÁ¿ÔòÍË³ö
+								//ä¸æ˜¯ä¸€å¸¸é‡ä¸€å˜é‡åˆ™é€€å‡º
 								else{
 									continue;
 								}
-								//}Ç°Ìí¼Óbreak;  {ºó¼Ócase 1:
+								//}å‰æ·»åŠ break;  {ååŠ case 1:
 								if(String.valueOf(arrayListTemp1.get(endJ1)).equals("}")){
 									arrayListTemp1.add(endJ1,";");
 									arrayListTemp1.add(endJ1,"break");
@@ -105,7 +105,7 @@ public class Transformation4 {
 									arrayListTemp1.add(endJ1+1,"}");
 									arrayListTemp1.add(endJ1+1,";");
 									arrayListTemp1.add(endJ1+1,"break");
-									//)ºó¼Ó{case 1£º
+									//)ååŠ {case 1ï¼š
 									arrayListTemp1=(ArrayList) arrayList.get(endI);
 									arrayListTemp1.add(endJ+1,":");
 									for(int z=arrayListCondition3.size()-1;z>-1;z--){
@@ -115,7 +115,7 @@ public class Transformation4 {
 									arrayListTemp1.add(endJ+1,"case");
 									arrayListTemp1.add(endJ+1,"{");
 								}
-								//É¾³ıif£¨i==1£©
+								//åˆ é™¤ifï¼ˆi==1ï¼‰
 								arrayList = generalMethod.arrayListRemove(arrayList, i, j, endI, endJ);
 								arrayListTemp1 = (ArrayList) arrayList.get(i);
 								arrayListTemp1.add(j,")");
@@ -127,10 +127,10 @@ public class Transformation4 {
 								arrayListTemp1.add(j,"\r\n/***** Revised:if transform switch! :( *****/\r\n");
 								continue;
 							}
-							//È¡³ö´úÂë¿éif¡¢else¡¢else if ´úÂë¿é
+							//å–å‡ºä»£ç å—ifã€elseã€else if ä»£ç å—
 							boolean hasBreak=false;
 							while(firstWord.equals("else")){
-								//ÅĞ¶ÏelseºóÃæÊÇ·ñÎªif
+								//åˆ¤æ–­elseåé¢æ˜¯å¦ä¸ºif
 								nextWord = findNextWord(arrayList,endI2,endJ2);
 								if(nextWord.size()!=0){
 									firstWord1 = String.valueOf(nextWord.get(0));
@@ -141,12 +141,12 @@ public class Transformation4 {
 								endI=endI1;
 								endJ=endJ1;
 								arrayListTempParentheses = generalMethod.returnBracketsMatching(arrayList, endI1, endJ1, "(");
-								//Èç¹û£¨£©Ã»ÓĞ==Ò²ÍË³ö
+								//å¦‚æœï¼ˆï¼‰æ²¡æœ‰==ä¹Ÿé€€å‡º
 								if(!hasEquals(arrayListTempParentheses)){
 									hasBreak=true;
 									break;
 								}
-								//()ÀïÃæÓĞÓë»òÒ²²»×ª»»
+								//()é‡Œé¢æœ‰ä¸æˆ–ä¹Ÿä¸è½¬æ¢
 								if(hasAnd(arrayListTempParentheses)||hasOr(arrayListTempParentheses)){
 									hasBreak=true;
 									break;
@@ -154,7 +154,7 @@ public class Transformation4 {
 								endI1 = Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-2)));
 								endJ1 = Integer.parseInt(String.valueOf(arrayListTempParentheses.get(arrayListTempParentheses.size()-1)));
 								arrayListTempBraces = generalMethod.bracesMatching(arrayList, endI1, endJ1, "{");
-								//{}ÄÚÓĞbreakÔò²»¿ÉÒÔ×ª»»£¬Ìø³ö
+								//{}å†…æœ‰breakåˆ™ä¸å¯ä»¥è½¬æ¢ï¼Œè·³å‡º
 								if(hasBreak(arrayListTempBraces)){
 									hasBreak=true;
 									break;
@@ -170,11 +170,11 @@ public class Transformation4 {
 									firstWord = "";
 								}
 							}
-							//ºóÃæµÄelse if/else´æÔÚbreak£¬²»×ª»»//À¨ºÅÖĞ²»´æÔÚ==²»×ª»»//£¨£©ÀïÃæÓĞÓë»ò²»×ª»»
+							//åé¢çš„else if/elseå­˜åœ¨breakï¼Œä¸è½¬æ¢//æ‹¬å·ä¸­ä¸å­˜åœ¨==ä¸è½¬æ¢//ï¼ˆï¼‰é‡Œé¢æœ‰ä¸æˆ–ä¸è½¬æ¢
 							if(hasBreak){
 								continue;
 							}
-							//ÏÂÒ»¸ö²»ÎªelseÔòÈ·¶¨·¶Î§ÁË,ÏÂÒ»¸öÊÇelseÔò°üÀ¨else{}ÄÚÈİ
+							//ä¸‹ä¸€ä¸ªä¸ä¸ºelseåˆ™ç¡®å®šèŒƒå›´äº†,ä¸‹ä¸€ä¸ªæ˜¯elseåˆ™åŒ…æ‹¬else{}å†…å®¹
 							if(!firstWord.equals("else")){
 								endI=endI1;
 								endJ=endJ1;
@@ -229,17 +229,17 @@ public class Transformation4 {
 							}
 						}
 					}catch(Exception e){
-						continue;
+						e.printStackTrace();//continue;
 					}
 				}
 			}catch(Exception e){
-				continue;
+				e.printStackTrace();//continue;
 			}
 		}
 		return arrayList;
 	}
-	/*ÊäÈëÉ¾µôif¡¢else ifµÄÓï¾ä
-	 * Êä³ö×ª³Écase²¿·Ö
+	/*è¾“å…¥åˆ æ‰ifã€else ifçš„è¯­å¥
+	 * è¾“å‡ºè½¬æˆcaseéƒ¨åˆ†
 	 */
 	public ArrayList bracketsToCase(ArrayList arrayList){
 		ArrayList arrayListResult = new ArrayList();
@@ -290,8 +290,8 @@ public class Transformation4 {
 		}
 		return arrayListResult;
 	}
-	/*ÊäÈëif,else¿é,()ÄÚÒÑ´¦Àí
-	 * ·µ»ØÖ»ÓĞ(){}µÄÁĞ±í
+	/*è¾“å…¥if,elseå—,()å†…å·²å¤„ç†
+	 * è¿”å›åªæœ‰(){}çš„åˆ—è¡¨
 	 */
 	public ArrayList deleteIfAndElse(ArrayList arrayList){
 		ArrayList arrayListResult = new ArrayList();
@@ -317,8 +317,8 @@ public class Transformation4 {
 		}
 		return arrayList;
 	}
-	/*ÊäÈëifÁĞ±í
-	 * Êä³öÅĞ¶ÏÌõ¼ş[i,startIndex,endIndex],²»¿ÉÒÔ×ª»»ÔòÊä³ö[false]
+	/*è¾“å…¥ifåˆ—è¡¨
+	 * è¾“å‡ºåˆ¤æ–­æ¡ä»¶[i,startIndex,endIndex],ä¸å¯ä»¥è½¬æ¢åˆ™è¾“å‡º[false]
 	 */
 	public ArrayList isSameCondition1(ArrayList arrayList){
 		ArrayList arrayListResult = new ArrayList();
@@ -349,7 +349,7 @@ public class Transformation4 {
 				arrayListParentheses = generalMethod.returnBracketsMatching1(arrayList, i, "(");
 				end = Integer.parseInt(String.valueOf(arrayListParentheses.get(arrayListParentheses.size()-1)));
 				start = Integer.parseInt(String.valueOf(arrayListParentheses.get(arrayListParentheses.size()-2)));
-				//²»Òª¿ªÍ·µÄ£¨ºÍ½áÎ²µÄ£©
+				//ä¸è¦å¼€å¤´çš„ï¼ˆå’Œç»“å°¾çš„ï¼‰
 				int j=start+1;
 				for(;j<end;j++){
 					temp1=String.valueOf(arrayList.get(j));
@@ -386,7 +386,7 @@ public class Transformation4 {
 					conditionEnd2=j-1;
 				}
 				if(time == 2){
-					//Èç¹û¶¼²»ÏàµÈÔòÃ»ÓĞÒ»ÖÂµÄÅĞ¶ÏÌõ¼ş£¬ÍË³ö
+					//å¦‚æœéƒ½ä¸ç›¸ç­‰åˆ™æ²¡æœ‰ä¸€è‡´çš„åˆ¤æ–­æ¡ä»¶ï¼Œé€€å‡º
 					if((!arrayListEquals(condition11,condition21))&&(!arrayListEquals(condition11,condition22))){
 						if((!arrayListEquals(condition12,condition21))&&(!arrayListEquals(condition12,condition22))){
 							canBeChange = false;
@@ -443,8 +443,8 @@ public class Transformation4 {
 			return result;
 		}
 		if(time==1){
-			//Ò»¸ö³£Á¿Ò»¸ö²»ÊÇ³£Á¿£¬¶øÇÒ·µ»Ø²»Îª³£Á¿ÄÇ¸ö
-			//ºóÃæÄÇ¸öÊÇ³£Á¿Ìí¼ÓÇ°ÃæÄÇ¸ö×÷ÎªÌõ¼ş£¬ºóÃæµÄ×÷ÎªÉ¾³ıÏÂ±ê
+			//ä¸€ä¸ªå¸¸é‡ä¸€ä¸ªä¸æ˜¯å¸¸é‡ï¼Œè€Œä¸”è¿”å›ä¸ä¸ºå¸¸é‡é‚£ä¸ª
+			//åé¢é‚£ä¸ªæ˜¯å¸¸é‡æ·»åŠ å‰é¢é‚£ä¸ªä½œä¸ºæ¡ä»¶ï¼Œåé¢çš„ä½œä¸ºåˆ é™¤ä¸‹æ ‡
 			if(!isConstant(condition11)&&isConstant(condition12)){
 				arrayListResult.add("|");
 				arrayListResult.add(conditionStart1);
@@ -474,8 +474,8 @@ public class Transformation4 {
 			return result;
 		}
 	}
-	/*ÊäÈëÌõ¼ş
-	 * ÅĞ¶ÏÊÇ·ñÎª''»òÕßÊÇ·ñÈ«ÎªÊı×Ö»ò²Ù×÷·û
+	/*è¾“å…¥æ¡ä»¶
+	 * åˆ¤æ–­æ˜¯å¦ä¸º''æˆ–è€…æ˜¯å¦å…¨ä¸ºæ•°å­—æˆ–æ“ä½œç¬¦
 	 */
 	public boolean isConstant(ArrayList arrayList){
 		boolean is = true;
@@ -495,7 +495,7 @@ public class Transformation4 {
 							return false;
 						}
 					}
-					
+
 				}else{
 					for(int j=0;j<temp.length();j++){
 						if(temp.charAt(j)<48||temp.charAt(j)>57){

@@ -14,7 +14,7 @@ public class Transformation1 {
 		ArrayList<String> arrayListInitialization = new ArrayList();
 		ArrayList<String> arrayListCondition = new ArrayList();
 		ArrayList<String> arrayListLoop = new ArrayList();
-		ArrayList arrayListTemp2 = new ArrayList();//´æ³õÊ¼»¯ºÍÑ­»·
+		ArrayList arrayListTemp2 = new ArrayList();//å­˜åˆå§‹åŒ–å’Œå¾ªç¯
 		int startI=0;
 		int endI=0;
 		int startJ=0;
@@ -23,53 +23,53 @@ public class Transformation1 {
 		String tempParentheses="";
 		String tempJ="";
 		String tempK="";
-		//±éÀúÁĞ
+		//éå†åˆ—
 		for(int i=0;i<arrayList.size();i++){
 			try{
 				arrayListTemp=(ArrayList<String>) arrayList.get(i);
-				//±éÀúĞĞ
+				//éå†è¡Œ
 				for(int j=0;j<arrayListTemp.size();j++){
 					try{
 						tempJ=String.valueOf(arrayListTemp.get(j));
-						//Æ¥Åäµ½for
+						//åŒ¹é…åˆ°for
 						if(tempJ.equals("for")){
-							//»ñÈ¡Ğ¡À¨ºÅÄÚÈ«²¿ÄÚÈİ
+							//è·å–å°æ‹¬å·å†…å…¨éƒ¨å†…å®¹
 							arrayListParentheses=generalMethod.returnBracketsMatching(arrayList, i, j, "(");
-							//ÅĞ¶ÏÊÇ·ñÎªÔöÇ¿forÑ­»·£¬ÊÇÔòÍË³ö
+							//åˆ¤æ–­æ˜¯å¦ä¸ºå¢å¼ºforå¾ªç¯ï¼Œæ˜¯åˆ™é€€å‡º
 							if(isStrongFor(arrayListParentheses)){
 								continue;
 							}
-							//ÓÒĞ¡À¨ºÅI
+							//å³å°æ‹¬å·I
 							endI=Integer.valueOf(String.valueOf(arrayListParentheses.get(arrayListParentheses.size()-2)));
-							//ÓÒĞ¡À¨ºÅJ
+							//å³å°æ‹¬å·J
 							endJ=Integer.valueOf(String.valueOf(arrayListParentheses.get(arrayListParentheses.size()-1)));
-							//ÕÒ{}»òÏÂÒ»¸ö¾ä×Ó
+							//æ‰¾{}æˆ–ä¸‹ä¸€ä¸ªå¥å­
 							arrayListBraces=generalMethod.bracesMatching(arrayList, endI, endJ, "{");
-							//¶¨Î»Óï¾ä¿é·¶Î§
+							//å®šä½è¯­å¥å—èŒƒå›´
 							startI=Integer.valueOf(String.valueOf(arrayListBraces.get(arrayListBraces.size()-4)));
 							startJ=Integer.valueOf(String.valueOf(arrayListBraces.get(arrayListBraces.size()-3)));
 							endI=Integer.valueOf(String.valueOf(arrayListBraces.get(arrayListBraces.size()-2)));
 							endJ=Integer.valueOf(String.valueOf(arrayListBraces.get(arrayListBraces.size()-1)));
-							//ÕÒÅĞ¶ÏÌõ¼ş
+							//æ‰¾åˆ¤æ–­æ¡ä»¶
 							arrayListCondition=getCondition(arrayListParentheses);
 							if(arrayListCondition.size()==0){
 								continue;
 							}
-							//ÕÒ³ö³õÊ¼»¯£¨int i = 0£©
+							//æ‰¾å‡ºåˆå§‹åŒ–ï¼ˆint i = 0ï¼‰
 							arrayListInitialization=commaToSemicolon(getInitialization(arrayListParentheses));
-							//ÕÒ³öÑ­»·ÊµÏÖ£¨i++£©
+							//æ‰¾å‡ºå¾ªç¯å®ç°ï¼ˆi++ï¼‰
 							arrayListLoop=commaToSemicolon(getLoop(arrayListParentheses));
-							//ÏÈÔÚ}Ç°²åÈëloop²¿·Ö
+							//å…ˆåœ¨}å‰æ’å…¥loopéƒ¨åˆ†
 							arrayListBraces.remove(arrayListBraces.size()-1);
 							arrayListBraces.remove(arrayListBraces.size()-1);
 							arrayListBraces.remove(arrayListBraces.size()-1);
 							arrayListBraces.remove(arrayListBraces.size()-1);
-							//Èç¹ûÊÇÃ»ÓĞ{}µÄÔòÏÈ¼ÓÉÏ{}
+							//å¦‚æœæ˜¯æ²¡æœ‰{}çš„åˆ™å…ˆåŠ ä¸Š{}
 							if(!String.valueOf(arrayListBraces.get(0)).equals("{")){
 								arrayListBraces.add(arrayListBraces.size(),"}");
 								arrayListBraces.add(0,"{");
 							}
-							//½«i++²¿·Ö²åÈë}Ö®Ç°
+							//å°†i++éƒ¨åˆ†æ’å…¥}ä¹‹å‰
 							int z1=arrayListBraces.size()-1;
 							for(int z=0;z<arrayListLoop.size();z++){
 								arrayListBraces.add(z1,String.valueOf(arrayListLoop.get(z)));
@@ -77,8 +77,8 @@ public class Transformation1 {
 							}
 							arrayList = generalMethod.arrayListRemove(arrayList, startI, startJ, endI, endJ);
 							arrayList = generalMethod.arrayListAdd(arrayList, startI, startJ, arrayListBraces, 0);
-							//É¾µô( =¡·;   ;=¡·)
-							//»ñÈ¡£¨£©ÏÂ±ê
+							//åˆ æ‰( =ã€‹;   ;=ã€‹)
+							//è·å–ï¼ˆï¼‰ä¸‹æ ‡
 							startI=Integer.valueOf(String.valueOf(arrayListParentheses.get(arrayListParentheses.size()-4)));
 							startJ=Integer.valueOf(String.valueOf(arrayListParentheses.get(arrayListParentheses.size()-3)));
 							endI=Integer.valueOf(String.valueOf(arrayListParentheses.get(arrayListParentheses.size()-2)));
@@ -130,7 +130,7 @@ public class Transformation1 {
 							}
 							//for=>while
 							arrayListTemp.set(j, "while");
-							//whileÖ®Ç°²åÈë³õÊ¼»¯
+							//whileä¹‹å‰æ’å…¥åˆå§‹åŒ–
 							int k=j;
 							for(int i1=0;i1<arrayListInitialization.size();i1++){
 								arrayListTemp.add(k,String.valueOf(arrayListInitialization.get(i1)));
@@ -179,7 +179,7 @@ public class Transformation1 {
 	}
 	public ArrayList getCondition(ArrayList arrayList){
 		ArrayList arrayListResult = new ArrayList();
-		//µÚÒ»¸ö;Ç°Îª0£¬Ö®ºóÎª1£¬ÔÙµ½;2£¬Îª1Ê±±£´æ
+		//ç¬¬ä¸€ä¸ª;å‰ä¸º0ï¼Œä¹‹åä¸º1ï¼Œå†åˆ°;2ï¼Œä¸º1æ—¶ä¿å­˜
 		int j = 0;
 		String temp = "";
 		for(int i=0;i<arrayList.size();i++){
@@ -197,7 +197,7 @@ public class Transformation1 {
 		}
 		return arrayListResult;
 	}
-	//»ñÈ¡£¨£©ÄÚi++²¿·Ö
+	//è·å–ï¼ˆï¼‰å†…i++éƒ¨åˆ†
 	public ArrayList getLoop(ArrayList arrayList){
 		ArrayList arrayListResult = new ArrayList();
 		String temp="";

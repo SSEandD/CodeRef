@@ -29,29 +29,29 @@ public class Transformation3 {
 					try{
 						temp=String.valueOf(arrayListTemp.get(j));
 						if(temp.equals("switch")){
-							//ÕÒ(x)
+							//æ‰¾(x)
 							condition1=generalMethod.returnBracketsMatching(arrayList, i, j, "(");
-							//¶¨Î»£©×ø±ê
+							//å®šä½ï¼‰åæ ‡
 							RightParenthesesI=Integer.parseInt(String.valueOf(condition1.get(condition1.size()-2)));
 							RightParenthesesJ=Integer.parseInt(String.valueOf(condition1.get(condition1.size()-1)));
-							//ÕÒ((x))ÖĞ(x)
+							//æ‰¾((x))ä¸­(x)
 							condition1.remove(condition1.size()-1);
 							condition1.remove(condition1.size()-1);
 							condition1.remove(condition1.size()-1);
 							condition1.remove(condition1.size()-1);
 							condition1.remove(condition1.size()-1);
 							condition1.remove(0);
-							//ÕÒµ½{}ÄÚÈİ
+							//æ‰¾åˆ°{}å†…å®¹
 							arrayListTempBraces=generalMethod.returnBracketsMatching(arrayList, RightParenthesesI, RightParenthesesJ, "{");
 							if(isConditionBreak(arrayListTempBraces)){
 								continue;
 							}
 							ArrayList arrayListSwitchToIf = new ArrayList();
 							arrayListSwitchToIf=switchToIf(arrayListTempBraces,condition1);
-							//É¾³ıswitch,¼ÓÈëswitchToIf
+							//åˆ é™¤switch,åŠ å…¥switchToIf
 							RightBracesI=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-2)));
 							RightBracesJ=Integer.parseInt(String.valueOf(arrayListTempBraces.get(arrayListTempBraces.size()-1)));
-							//Èç¹ûswitchºÍ}ÔÚÍ¬Ò»ĞĞ
+							//å¦‚æœswitchå’Œ}åœ¨åŒä¸€è¡Œ
 							if(i==RightBracesI){
 								for(int z=j;z<RightBracesJ+1;z++){
 									arrayListTemp.remove(j);
