@@ -17,7 +17,8 @@ public class FileNode extends FileTree{
         File theFile= new File(nowAddress);
         String name=theFile.getName();
         name=name.substring(name.lastIndexOf(".")+1);
-        if("java".equals(name) || "txt".equals(name)){
+//        if("java".equals(name) || "txt".equals(name)){
+        if("java".equals(name)){
             ArrayList<String> l=new ArrayList<>();
             l.add(nowAddress);
             return l;

@@ -34,11 +34,8 @@ public class GUITest {
 
 	private JFrame frame;
 	private JTextField sourceFile;
-
     private String rightPath="";//当前路径
-//    private String result="";//最后输出结果
     private String extensionName="";//文件后缀名
-//    private String className="";//文件名字
     private String downLoadPath ="";//下载路径
     private ArrayList<String> fileNames = new ArrayList<>();//记录文件名
     private ArrayList<String> paths = new ArrayList<>();//记录文件名
@@ -66,7 +63,7 @@ public class GUITest {
 	/**
 	 * Create the application.
 	 */
-	public GUITest() {
+	private GUITest() {
 		initialize();
 	}
 
@@ -357,7 +354,7 @@ public class GUITest {
                     result=theMain.run();
                     results.add(result);
                 }
-//                    JOptionPane.showMessageDialog(null, "done");
+                    JOptionPane.showMessageDialog(null, "一键重构成功");
             }
             list.clearSelection();
         });
@@ -398,6 +395,7 @@ JOptionPane.showMessageDialog(null, "请在文件目录中选择一个文件");
 MainRun theMain=new MainRun(source,judge);
 String result=theMain.run();
 results.set(selectFileNum,result);
+
 //结果显示
 newText.setText(result);//转换完成
             }
@@ -423,8 +421,6 @@ newText.setText(result);//转换完成
 					String path;
 
                     for(File file: souFiles) {
-//						fileNames += file.getName() + " ";
-//						JOptionPane.showMessageDialog(null, fileNames);
 						try{
 							//如果是文件夹我就遍历它
 							if(file.isDirectory() && souFiles.length==1){
@@ -446,9 +442,7 @@ newText.setText(result);//转换完成
 								extensionName = getExtensionName(file.getPath());
 								//如果是java文件
 //								if("java".equals(extensionName) || "txt".equals(extensionName)) {
-								if("java".equals(extensionName)) {
-								}
-								else {
+								if(!"java".equals(extensionName)) {
 									someFileWrong = true;
 								}
 							}
@@ -561,13 +555,12 @@ newText.setText(result);//转换完成
 		String extensionName = getExtensionName(srcFile.getName());
 		String result;
 		String newFilePath;
-		if(extensionName.equals(".java")){
+		if(extensionName.equals("java")){
 			result = results.get(count);
 			newFilePath = newFile.getPath();
 			newFilePath = newFilePath + fileNames.get(count) + ".java";
 			FileProcessing.clearFile(newFilePath);
 			FileProcessing.writeFile(newFilePath,result);
-//			BufferedInputStream bis=new BufferedInputStream(result);
 		}
 		else{
 			// TODO Auto-generated method stub
@@ -602,6 +595,12 @@ newText.setText(result);//转换完成
 	    fileNames.clear();
 	    souFiles =null;
 	    results.clear();
+	    isFolder=false;
+	    sourceFolderPath="";
+	    rightPath="";
+	    extensionName="";
+	    downLoadPath="";
+	    root=null;
     }
 
 	//获取用户上传的文件名
