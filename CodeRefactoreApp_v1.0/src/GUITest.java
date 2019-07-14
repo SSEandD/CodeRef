@@ -65,6 +65,7 @@ public class GUITest {
 	 */
 	private GUITest() {
 		initialize();
+
 	}
 
 	/**
@@ -146,6 +147,9 @@ public class GUITest {
         oldText.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		scrollPane.setViewportView(oldText);
 		oldText.setEditable(false);
+		oldText.setText("用户须知：\n1.请选择一个java项目/至少一个java文件上传\n" +
+				"2.请确保选择的源文件可以通过编译\n" +
+				"3.请先”一键重构“格式处理，再选择单个文件进行转换\n");
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.LIGHT_GRAY));
