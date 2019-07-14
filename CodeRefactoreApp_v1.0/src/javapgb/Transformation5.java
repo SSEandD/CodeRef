@@ -123,11 +123,11 @@ public class Transformation5 {
 							}
 						}
 					}catch(Exception e){
-						e.printStackTrace();//continue;
+						continue;
 					}
 				}
 			}catch(Exception e){
-				e.printStackTrace();//continue;
+				continue;
 			}
 		}
 		return arrayList;

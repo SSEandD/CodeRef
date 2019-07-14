@@ -229,11 +229,11 @@ public class Transformation4 {
 							}
 						}
 					}catch(Exception e){
-						e.printStackTrace();//continue;
+						continue;
 					}
 				}
 			}catch(Exception e){
-				e.printStackTrace();//continue;
+				continue;
 			}
 		}
 		return arrayList;

@@ -190,7 +190,7 @@ public class EnglishRecognition {
 				}
 			}
 		}catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 		return result;
 	}
