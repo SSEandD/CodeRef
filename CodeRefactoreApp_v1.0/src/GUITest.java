@@ -244,29 +244,14 @@ public class GUITest {
         w_fbtn.setBounds(657, 173, 133, 23);
         showText.add(w_fbtn);
 
-        JCheckBox i_sbtn = new JCheckBox("switch转if");
+        JCheckBox i_sbtn = new JCheckBox("switch转多if");
         i_sbtn.setFont(new Font("宋体", Font.BOLD, 14));
         i_sbtn.setBounds(657, 198, 133, 23);
         showText.add(i_sbtn);
 
         JCheckBox s_ibtn = new JCheckBox("多if转switch");
         s_ibtn.setFont(new Font("宋体", Font.BOLD, 14));
-        //监听事件
-        i_sbtn.addChangeListener(es -> {
-            JCheckBox checkBox = (JCheckBox) es.getSource();
-            if(checkBox.isSelected()) {
-                //这里是指被选中了！！！！！！！！！
-                s_ibtn.setSelected(false);
-            }
-        });
-        ////监听事件
-        s_ibtn.addChangeListener(es -> {
-            JCheckBox checkBox = (JCheckBox) es.getSource();
-            if(checkBox.isSelected()) {
-                //这里是指被选中了！！！！！！！！！
-                i_sbtn.setSelected(false);
-            }
-        });
+
         s_ibtn.setBounds(657, 223, 133, 23);
         showText.add(s_ibtn);
 
@@ -277,15 +262,33 @@ public class GUITest {
 
         JCheckBox ifs_ifbtn = new JCheckBox("单if转多if");
         ifs_ifbtn.setFont(new Font("宋体", Font.BOLD, 14));
-        //监听事件
+        //switch转if监听事件
+        i_sbtn.addChangeListener(es -> {
+            JCheckBox checkBox = (JCheckBox) es.getSource();
+            if(checkBox.isSelected()) {
+                //这里是指被选中了！！！！！！！！！
+                s_ibtn.setSelected(false);
+            }
+        });
+        //多if转switch监听事件
+        s_ibtn.addChangeListener(es -> {
+            JCheckBox checkBox = (JCheckBox) es.getSource();
+            if(checkBox.isSelected()) {
+                //这里是指被选中了！！！！！！！！！
+                i_sbtn.setSelected(false);
+                if_ifsbtn.setSelected(false);
+            }
+        });
+        //多if转单if监听事件
         if_ifsbtn.addChangeListener(es -> {
             JCheckBox checkBox = (JCheckBox) es.getSource();
             if(checkBox.isSelected()) {
                 //这里是指被选中了！！！！！！！！！
                 ifs_ifbtn.setSelected(false);
+                s_ibtn.setSelected(false);
             }
         });
-        //监听事件
+        //单if转多if监听事件
         ifs_ifbtn.addChangeListener(es -> {
             JCheckBox checkBox = (JCheckBox) es.getSource();
             if(checkBox.isSelected()) {
