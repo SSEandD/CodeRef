@@ -163,6 +163,7 @@ public class StandardName {
 							j1=arrayListTemp1.size()-1;
 						}
 						for(;j1>-1;j1--){
+							if(j1>arrayListTemp1.size()) break;
 							temp1 = String.valueOf(arrayListTemp1.get(j1));
 							if(!temp1.equals(" ")){
 								words++;
