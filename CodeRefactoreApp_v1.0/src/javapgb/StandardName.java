@@ -73,8 +73,8 @@ public class StandardName {
                                 }
                             }
                             if (!isIdentical(oldPackageName, newPackageName)) {
-                                // arrayListTemp = (ArrayList) arrayList.get(i);
-                                // arrayListTemp.add(j,"/***** Suggest:package's name must consist of lowercase! *****/");
+                                arrayListTemp = (ArrayList) arrayList.get(0);
+                                arrayListTemp.add(0,"/***** Suggest:package's name must consist of lowercase! *****/");
                             }
                         } else if (temp.equals("class")) {
                             try {
@@ -144,8 +144,8 @@ public class StandardName {
                                     addNotes = addNotes(arrayList, i, j);
                                     arrayListTemp1 =
                                         (ArrayList)arrayList.get(Integer.parseInt(String.valueOf(addNotes.get(0))));
-                                    arrayListTemp1.add(Integer.parseInt(String.valueOf(addNotes.get(1))) + 1,
-                                        "/***** Suggest:constant's name must be uppercase  *****/\r\n");
+//                                    arrayListTemp1.add(Integer.parseInt(String.valueOf(addNotes.get(1))) + 1,
+//                                        "/***** Suggest:constant's name must be uppercase  *****/\r\n");
                                 }
                             } else if (type == 1) {
                                 newName = englishWordRecognition.englishWordRecognition(oldName, 0);
@@ -155,8 +155,8 @@ public class StandardName {
                                     addNotes = addNotes(arrayList, i, j);
                                     arrayListTemp1 =
                                         (ArrayList)arrayList.get(Integer.parseInt(String.valueOf(addNotes.get(0))));
-                                    arrayListTemp1.add(Integer.parseInt(String.valueOf(addNotes.get(1))) + 1,
-                                        "/***** Suggest:Method's name must be hump structure  *****/\r\n");
+//                                    arrayListTemp1.add(Integer.parseInt(String.valueOf(addNotes.get(1))) + 1,
+//                                        "/***** Suggest:Method's name must be hump structure  *****/\r\n");
                                 }
                             }
                         } else if (temp.equals("(")) {
@@ -251,8 +251,8 @@ public class StandardName {
                                         addNotes = addNotes(arrayList, i, j);
                                         arrayListTemp1 =
                                             (ArrayList)arrayList.get(Integer.parseInt(String.valueOf(addNotes.get(0))));
-                                        arrayListTemp1.add(Integer.parseInt(String.valueOf(addNotes.get(1))) + 1,
-                                            "/***** Suggest:Method's name must be hump structure  *****/\r\n");
+//                                        arrayListTemp1.add(Integer.parseInt(String.valueOf(addNotes.get(1))) + 1,
+//                                            "/***** Suggest:Method's name must be hump structure  *****/\r\n");
                                     }
                                 } catch (Exception e) {
                                     continue;
