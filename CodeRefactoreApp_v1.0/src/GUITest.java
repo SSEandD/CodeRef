@@ -45,6 +45,7 @@ public class GUITest {
 	private String sourceFolderPath;
 	private FileTree root;
 	private boolean isFolder = false;
+	private int count=0;
 	/**
      *
 	 * Launch the application.
@@ -499,9 +500,13 @@ newText.setText(result);//转换完成
 					File srcFile = new File(sourceFolderPath);
 					File desFile = new File(new_filePath);
 					try {
+						count=0;
 						copyFolder(srcFile,desFile);
 					} catch (IOException e1) {
 						e1.printStackTrace();
+					}
+					if(count==results.size()){
+						JOptionPane.showMessageDialog(null, "下载成功！");
 					}
 				}
 				else{
@@ -536,7 +541,7 @@ newText.setText(result);//转换完成
 
 	//复制文件夹
 	private void copyFolder(File srcFile, File destFile) throws IOException {
-		int count=0;
+
 
 		if(srcFile.isDirectory()){
 			File newFolder=new File(destFile,srcFile.getName());
@@ -549,24 +554,26 @@ newText.setText(result);//转换完成
 
 		}else{
 			File newFile=new File(destFile,srcFile.getName());
-			copyFile(srcFile,newFile,count);
-			count++;
+			copyFile(srcFile,newFile);
+
 		}
 
 	}
 
 	//复制文件
-	private void copyFile(File srcFile, File newFile,int count) throws IOException{
+	private void copyFile(File srcFile, File newFile) throws IOException{
 
 		String extensionName = getExtensionName(srcFile.getName());
 		String result;
 		String newFilePath;
 		if(extensionName.equals("java")){
+
 			result = results.get(count);
 			newFilePath = newFile.getPath();
-			newFilePath = newFilePath + fileNames.get(count) + ".java";
+//			newFilePath = newFilePath + fileNames.get(count) + ".java";
 			FileProcessing.clearFile(newFilePath);
 			FileProcessing.writeFile(newFilePath,result);
+			count++;
 		}
 		else{
 			// TODO Auto-generated method stub
@@ -607,6 +614,7 @@ newText.setText(result);//转换完成
 	    extensionName="";
 	    downLoadPath="";
 	    root=null;
+	    count = 0;
     }
 
 	//获取用户上传的文件名
