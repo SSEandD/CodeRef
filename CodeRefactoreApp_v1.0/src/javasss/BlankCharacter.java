@@ -22,6 +22,7 @@ public class BlankCharacter {
     */
     public void getChar() {
         ch = line.get(j).charAt(i);
+//        System.out.println(ch);
         i++;
     }
     public void concat() {
@@ -133,7 +134,8 @@ public class BlankCharacter {
                 //ÈôÎª ¡®/*¡¯
                 while(true) {
                     record.add(blankStr);
-                    while(i<line.get(j).length()) {
+//                    System.out.println(j);
+                        while(i<line.get(j).length()) {
                         getChar();
                         if(ch=='*'&&i<line.get(j).length()) {
                             concat();
@@ -146,11 +148,15 @@ public class BlankCharacter {
                         record.add(strToken);
                         strToken="";
                     }
-                    record.add("\n");
+//                    System.out.println(record);
+                    record.add("\r\n");
                     if(isOut) {
                         break;
                     }
                     else {
+                        if(j==line.size()-1){
+                            break;
+                        }
                         j++;
                         i=0;
                     }
@@ -218,12 +224,12 @@ public class BlankCharacter {
     	thisline="";
     	line.clear();
         for(String s:record) {
-            if(s!="\n") {
+            if(s!="\n"&&s!="\r\n") {
             	thisline += s;
             }
             else {
             	line.add(thisline);
-//                System.out.println(thisline);
+                System.out.println(thisline);
             	thisline="";
             }
 

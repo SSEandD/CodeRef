@@ -41,6 +41,8 @@ public class WordAnalysis {
 		}
 		//如果是先把下面的加进去，直到碰到*/
 		if(isUnfinishedNotes){
+			lastWord+='\r';
+			lastWord+='\n';
 			int k=0;
 			boolean hasFinished=false;
 			for(k=0;k<row.length()-1;k++){

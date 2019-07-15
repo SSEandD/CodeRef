@@ -6,13 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="更新下载限定格式UTF-8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/CodeRefactoreApp_jar/CodeRefactoreApp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CodeRefactoreApp_jar/CodeRefactoreApp.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/StandardName.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/StandardName.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javasss/FileProcessing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javasss/FileProcessing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/javasss/FileProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javasss/FileProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/WordAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/WordAnalysis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javasss/BlankCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javasss/BlankCharacter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javapgb/WordAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javapgb/WordAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javasss/BlankCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javasss/BlankCharacter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,38 +45,50 @@
     <session id="-2054185890">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="46" />
+          <entry key="JAVA/" value="2" />
+          <entry key="JAVA/GUITest" value="1" />
+          <entry key="JAVA/ManyFileProcess" value="1" />
+          <entry key="JAVA/javahyh" value="4" />
+          <entry key="JAVA/javapgb" value="1" />
+          <entry key="JAVA/javasss" value="1" />
+          <entry key="java" value="53" />
+          <entry key="lexical" value="1" />
+          <entry key="md" value="1" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="46" />
+          <entry key="JAVA" value="53" />
+          <entry key="Markdown" value="1" />
+          <entry key="UML" value="11" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3080" />
-          <entry key="txt" value="269" />
+          <entry key="java" value="3270" />
+          <entry key="txt" value="288" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3080" />
-          <entry key="PLAIN_TEXT" value="269" />
+          <entry key="JAVA" value="3270" />
+          <entry key="PLAIN_TEXT" value="288" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.57" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
     </session>
@@ -89,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUITest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="529" column="47" lean-forward="true" selection-start-line="529" selection-start-column="47" selection-end-line="529" selection-end-column="47" />
+            <state relative-caret-position="140">
+              <caret line="363" selection-start-line="363" selection-end-line="363" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#readTxt#0;class#GUITest#0" />
@@ -99,11 +111,70 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainRun.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javasss/BlankCharacter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="226" column="33" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
+              <folding>
+                <element signature="e#409#417#0" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
+                <element signature="e#781#782#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/_new/DirectedDFS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="64" lean-forward="true" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javapgb/StandardName.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2780">
+              <caret line="165" selection-start-line="165" selection-end-line="165" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/javapgb/WordAnalysis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/DirectedDFS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javasss/FileProcessing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="44" column="101" lean-forward="true" selection-start-line="44" selection-start-column="101" selection-end-line="44" selection-end-column="101" />
+            <state relative-caret-position="840">
+              <caret line="44" column="101" selection-start-line="44" selection-start-column="101" selection-end-line="44" selection-end-column="101" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,10 +193,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>icon</find>
-      <find>fileNames</find>
-      <find>sourcefiles</find>
-      <find>if</find>
       <find>try</find>
       <find>path</find>
       <find>\n</find>
@@ -144,7 +211,6 @@
       <find>项目</find>
       <find>选择</find>
       <find>重构</find>
-      <find>out</find>
       <find>展示</find>
       <find>old</find>
       <find>oldtext</find>
@@ -152,6 +218,11 @@
       <find>count</find>
       <find>转换</find>
       <find>下载</find>
+      <find>isout</find>
+      <find>J</find>
+      <find>isAnnotation</find>
+      <find>out</find>
+      <find>line</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,7 +231,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/process/Table.java" />
         <option value="$PROJECT_DIR$/src/methodtree/TryOrFinTree.java" />
         <option value="$PROJECT_DIR$/test/test.txt" />
         <option value="$PROJECT_DIR$/src/lexical/LexicalAnalysis.java" />
@@ -197,20 +267,21 @@
         <option value="$PROJECT_DIR$/src/javasss/GUITest.java" />
         <option value="$PROJECT_DIR$/src/javapgb/All.java" />
         <option value="$PROJECT_DIR$/src/xxx.java" />
-        <option value="$PROJECT_DIR$/src/javapgb/WordAnalysis.java" />
         <option value="$PROJECT_DIR$/src/javahyh/methodtree/NodeTree.java" />
         <option value="$PROJECT_DIR$/src/javahyh/lexical/LexicalAnalysis.java" />
         <option value="$PROJECT_DIR$/src/javahyh/CodeFile.java" />
         <option value="$PROJECT_DIR$/src/javapgb/ForToWhile.java" />
         <option value="$PROJECT_DIR$/GUITest.java" />
         <option value="$PROJECT_DIR$/src/javasss/OrderBlock.java" />
-        <option value="$PROJECT_DIR$/src/javasss/BlankCharacter.java" />
         <option value="$PROJECT_DIR$/src/ManyFileProcess/FileTree.java" />
         <option value="$PROJECT_DIR$/src/ManyFileProcess/FileNode.java" />
         <option value="$PROJECT_DIR$/src/javapgb/IfToSwitch.java" />
         <option value="$PROJECT_DIR$/src/javapgb/IfsToIf.java" />
         <option value="$PROJECT_DIR$/src/GUITest.java" />
         <option value="$PROJECT_DIR$/src/javasss/FileProcessing.java" />
+        <option value="$USER_HOME$/Desktop/DirectedDFS.java" />
+        <option value="$PROJECT_DIR$/src/javasss/BlankCharacter.java" />
+        <option value="$PROJECT_DIR$/src/javapgb/WordAnalysis.java" />
       </list>
     </option>
   </component>
@@ -244,41 +315,12 @@
               <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="CodeRefactoreApp_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="javasss" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -286,8 +328,8 @@
     <property name="ToolWindowAnt Build.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563109293260" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/_new/CodeRefactoreApp_v1.0" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563182366917" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -295,7 +337,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -499,7 +541,9 @@
       <workItem from="1563069116629" duration="7247000" />
       <workItem from="1563080088111" duration="3329000" />
       <workItem from="1563090675657" duration="3043000" />
-      <workItem from="1563108359958" duration="931000" />
+      <workItem from="1563108359958" duration="1606000" />
+      <workItem from="1563111649880" duration="2117000" />
+      <workItem from="1563175861195" duration="6494000" />
     </task>
     <task id="LOCAL-00001" summary="hyh">
       <created>1562913727422</created>
@@ -634,11 +678,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563092001141</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="更新下载限定格式UTF-8">
+      <created>1563109334728</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1563109334728</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395993000" />
+    <option name="totallyTimeSpent" value="405279000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -652,24 +703,24 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.2322239" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.5007072" side_tool="true" weight="0.20375335" />
+      <window_info id="Structure" order="0" sideWeight="0.5037221" side_tool="true" weight="0.13086233" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" sideWeight="0.5007072" side_tool="true" weight="0.20375335" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.49627793" visible="true" weight="0.2526475" />
       <window_info anchor="bottom" id="Duplicates" order="0" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" weight="0.22166666" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.54031116" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" visible="true" weight="0.33934426" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.53934425" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32840723" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.7044335" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.7044335" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067025" side_tool="true" weight="0.33521923" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32840723" />
       <window_info anchor="bottom" id="Ant Build" order="13" show_stripe_button="false" weight="0.24752475" />
@@ -780,7 +831,8 @@
     <MESSAGE value="设置浏览从顶端开始" />
     <MESSAGE value="改了一丢丢" />
     <MESSAGE value="按钮逻辑更新（不能同时按多if转···" />
-    <option name="LAST_COMMIT_MESSAGE" value="按钮逻辑更新（不能同时按多if转···" />
+    <MESSAGE value="更新下载限定格式UTF-8" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新下载限定格式UTF-8" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -889,22 +941,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/output.txt" />
-    <entry file="file://$PROJECT_DIR$/test/test-file.txt" />
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/icon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CodeRefactoreApp.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javapgb/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/javahyh/lexical/LexicalAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -967,113 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/javahyh">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>javahyh</OriginalElement>
-          <nodes>
-            <node x="" y="">javahyh.methodtree.WhileTree</node>
-            <node x="" y="">javahyh.methodtree.RootTree</node>
-            <node x="" y="">javahyh.methodtree.SwitchTree</node>
-            <node x="" y="">javahyh.methodtree.ForTree</node>
-            <node x="" y="">javahyh.CodeFile</node>
-            <node x="" y="">javahyh.process.ImportProcess</node>
-            <node x="" y="">javahyh.methodtree.CaseTree</node>
-            <node x="" y="">javahyh.process.ClassProcess</node>
-            <node x="" y="">javahyh.methodtree.CatchTree</node>
-            <node x="" y="">javahyh.methodtree.NodeTree</node>
-            <node x="" y="">javahyh.methodtree.DoWhileTree</node>
-            <node x="" y="">javahyh.methodtree.TryOrFinTree</node>
-            <node x="" y="">javahyh.process.PackageProcess</node>
-            <node x="" y="">javahyh.methodtree.IfTree</node>
-            <node x="" y="">javahyh.methodtree.ElseTree</node>
-            <node x="" y="">javahyh.methodtree.NormalTree</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="444.0" y="289.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/javasss">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>javasss</OriginalElement>
-          <nodes>
-            <node x="0.0" y="161.0">javasss.TypeUtil</node>
-            <node x="0.0" y="83.0">javasss.BlankCharacter</node>
-            <node x="176.0" y="83.0">javasss.OrderBlock</node>
-            <node x="80.0" y="0.0">javasss.FileProcessing</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="javasss.OrderBlock" target="javasss.FileProcessing">
-              <point x="0.0" y="-16.5" />
-              <point x="238.0" y="58.0" />
-              <point x="197.0" y="58.0" />
-              <point x="39.0" y="16.5" />
-            </edge>
-            <edge source="javasss.BlankCharacter" target="javasss.FileProcessing">
-              <point x="0.0" y="-16.5" />
-              <point x="78.0" y="58.0" />
-              <point x="119.0" y="58.0" />
-              <point x="-39.0" y="16.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="150.0" y="97.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/GUITest">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>GUITest</OriginalElement>
-          <nodes>
-            <node x="85.0" y="103.0">javahyh.process</node>
-            <node x="105.0" y="186.0">javahyh.CodeFile</node>
-            <node x="30.0" y="0.0">javahyh.methodtree</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="javahyh.process" target="javahyh.methodtree">
-              <point x="37.0" y="-16.5" />
-              <point x="196.0" y="83.0" />
-              <point x="180.5" y="83.0" />
-              <point x="64.5" y="16.5" />
-            </edge>
-            <edge source="javahyh.CodeFile" target="javahyh.process">
-              <point x="-27.0" y="-16.5" />
-              <point x="132.0" y="161.0" />
-              <point x="122.0" y="161.0" />
-              <point x="-37.0" y="16.5" />
-            </edge>
-            <edge source="javahyh.methodtree" target="javahyh.methodtree">
-              <point x="-64.5" y="16.5" />
-              <point x="51.5" y="53.0" />
-              <point x="10.0" y="53.0" />
-              <point x="10.0" y="24.75" />
-              <point x="-86.0" y="8.25" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="117.0" y="110.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javahyh/methodtree/NodeTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1081,82 +1010,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/javapgb">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>javapgb</OriginalElement>
-          <nodes>
-            <node x="" y="">javapgb.StandardName</node>
-            <node x="" y="">javapgb.All</node>
-            <node x="" y="">javapgb.EnglishRecognition</node>
-            <node x="" y="">javapgb.WordStack</node>
-            <node x="" y="">javapgb.WordAnalysis</node>
-            <node x="" y="">javapgb.GeneralMethod</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="200.0" y="180.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="" y="">javahyh.methodtree.WhileTree</node>
-            <node x="" y="">javasss.BlankCharacter</node>
-            <node x="" y="">javahyh.methodtree.SwitchTree</node>
-            <node x="" y="">javahyh.CodeFile</node>
-            <node x="" y="">javapgb.ForToWhile</node>
-            <node x="" y="">javahyh.methodtree.CaseTree</node>
-            <node x="" y="">javapgb.WhileToFor</node>
-            <node x="" y="">javahyh.process.ClassProcess</node>
-            <node x="" y="">javapgb.SwitchToIf</node>
-            <node x="" y="">javapgb.EnglishRecognition</node>
-            <node x="" y="">javasss.OrderBlock</node>
-            <node x="" y="">javahyh.methodtree.TryOrFinTree</node>
-            <node x="" y="">javapgb.WordStack</node>
-            <node x="" y="">javapgb.GeneralMethod</node>
-            <node x="" y="">javahyh.process.Table</node>
-            <node x="" y="">javasss.TypeUtil</node>
-            <node x="" y="">javahyh.lexical.LexicalAnalysis</node>
-            <node x="" y="">javahyh.methodtree.IfTree</node>
-            <node x="" y="">javapgb.IfToIfs</node>
-            <node x="" y="">javapgb.IfToSwitch</node>
-            <node x="" y="">javahyh.methodtree.NormalTree</node>
-            <node x="" y="">GUITest</node>
-            <node x="" y="">javahyh.methodtree.ForTree</node>
-            <node x="" y="">javahyh.methodtree.RootTree</node>
-            <node x="" y="">javapgb.StandardName</node>
-            <node x="" y="">javapgb.IfsToIf</node>
-            <node x="" y="">javahyh.process.ImportProcess</node>
-            <node x="" y="">javapgb.All</node>
-            <node x="" y="">javahyh.methodtree.NodeTree</node>
-            <node x="" y="">javahyh.methodtree.CatchTree</node>
-            <node x="" y="">javahyh.methodtree.DoWhileTree</node>
-            <node x="" y="">javapgb.WordAnalysis</node>
-            <node x="" y="">javahyh.process.PackageProcess</node>
-            <node x="" y="">javapgb.LengthStack</node>
-            <node x="" y="">javahyh.methodtree.ElseTree</node>
-            <node x="" y="">javasss.FileProcessing</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="955.0" y="440.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
@@ -1179,13 +1032,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3480" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javasss/BlankCharacter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="205" column="35" selection-start-line="205" selection-start-column="35" selection-end-line="205" selection-end-column="35" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ManyFileProcess/FilesNode.java">
@@ -1239,13 +1085,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javapgb/StandardName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javapgb/SwitchToIf.java" />
     <entry file="file://$PROJECT_DIR$/src/javapgb/Transformation2.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1283,13 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javapgb/WordAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="96" column="44" lean-forward="true" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javapgb/WordStack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9">
@@ -1309,23 +1141,859 @@
     <entry file="file://$USER_HOME$/Desktop/ceshi/1/q10.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+    <entry file="file://$USER_HOME$/Desktop/_new/test - 副本/a比赛整体展示/TheAll1.java" />
+    <entry file="file://$USER_HOME$/Desktop/_new/Test/a比赛整体展示/TheAll1.java" />
+    <entry file="file://$USER_HOME$/Desktop/_new/TheAll1.java" />
+    <entry file="file://E:/another/软件杯需求文件/04016066介绍/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-540" />
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/_new/test - 副本/a比赛整体展示/TheAll1.java">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">netscape</node>
+            <node x="" y="">oracle</node>
+            <node x="" y="">org</node>
+            <node x="" y="">sun</node>
+            <node x="" y="">javapgb</node>
+            <node x="" y="">META-INF</node>
+            <node x="" y="">jdk</node>
+            <node x="" y="">javahyh</node>
+            <node x="" y="">groovyjarjarasm</node>
+            <node x="" y="">MainRun</node>
+            <node x="" y="">java</node>
+            <node x="" y="">groovy</node>
+            <node x="" y="">javax</node>
+            <node x="" y="">javasss</node>
+            <node x="" y="">groovyjarjarcommonscli</node>
+            <node x="" y="">ManyFileProcess</node>
+            <node x="" y="">javafx</node>
+            <node x="" y="">groovyjarjarantlr</node>
+            <node x="" y="">GUITest</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="252.0" y="311.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/_new/Test/a比赛整体展示/TheAll1.java">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="uml://JAVA/javahyh.lexical">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>javahyh.lexical</OriginalElement>
+          <nodes>
+            <node x="" y="">javahyh.lexical.LexicalAnalysis</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="66.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/GUITest">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>GUITest</OriginalElement>
+          <nodes>
+            <node x="402.30948762906723" y="81.0">javahyh.methodtree.WhileTree</node>
+            <node x="36.25" y="655.0">javasss.BlankCharacter</node>
+            <node x="129.6198324566535" y="81.0">javahyh.methodtree.SwitchTree</node>
+            <node x="1336.6428209624005" y="766.0">ManyFileProcess.FileTree</node>
+            <node x="355.0594876290671" y="655.0">javahyh.CodeFile</node>
+            <node x="168.21466004286026" y="0.0">javahyh.methodtree.CaseTree</node>
+            <node x="476.95833333333326" y="514.0">javahyh.process.ClassProcess</node>
+            <node x="1597.333333333333" y="433.0">javapgb.EnglishRecognition</node>
+            <node x="1164.8094876290672" y="655.0">javasss.OrderBlock</node>
+            <node x="767.3094876290671" y="81.0">javahyh.methodtree.TryOrFinTree</node>
+            <node x="1015.9583333333331" y="292.0">javapgb.GeneralMethod</node>
+            <node x="1620.333333333333" y="292.0">javapgb.WordStack</node>
+            <node x="728.3615709624005" y="655.0">javahyh.lexical.LexicalAnalysis</node>
+            <node x="910.3094876290671" y="81.0">javahyh.methodtree.IfTree</node>
+            <node x="264.30948762906723" y="81.0">javahyh.methodtree.NormalTree</node>
+            <node x="772.1115709624005" y="847.0">GUITest</node>
+            <node x="456.70833333333326" y="433.0">javahyh.methodtree.RootTree</node>
+            <node x="528.3094876290672" y="81.0">javahyh.methodtree.ForTree</node>
+            <node x="1576.360158533022" y="514.0">javapgb.StandardName</node>
+            <node x="161.95833333333326" y="514.0">javahyh.process.ImportProcess</node>
+            <node x="1082.809487629067" y="655.0">javapgb.All</node>
+            <node x="1299.8094876290672" y="655.0">ManyFileProcess.FileNode</node>
+            <node x="641.3094876290672" y="81.0">javahyh.methodtree.CatchTree</node>
+            <node x="479.70833333333326" y="292.0">javahyh.methodtree.NodeTree</node>
+            <node x="1012.3094876290672" y="81.0">javahyh.methodtree.DoWhileTree</node>
+            <node x="946.3333333333331" y="433.0">javapgb.WordAnalysis</node>
+            <node x="579.7083333333333" y="433.0">javapgb.Transformation1</node>
+            <node x="744.8615709624005" y="766.0">MainRun</node>
+            <node x="1419.8094876290672" y="655.0">ManyFileProcess.FilesNode</node>
+            <node x="314.95833333333326" y="514.0">javahyh.process.PackageProcess</node>
+            <node x="1093.333333333333" y="433.0">javapgb.Transformation4</node>
+            <node x="1421.333333333333" y="433.0">javapgb.Transformation5</node>
+            <node x="743.7083333333333" y="433.0">javapgb.Transformation2</node>
+            <node x="1257.333333333333" y="433.0">javapgb.Transformation3</node>
+            <node x="871.2083333333331" y="514.0">javapgb.Transformation6</node>
+            <node x="12.619832456653512" y="81.0">javahyh.methodtree.ElseTree</node>
+            <node x="0.0" y="514.0">javasss.FileProcessing</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="javahyh.methodtree.SwitchTree" target="javahyh.methodtree.NodeTree">
+              <point x="0.0" y="15.5" />
+              <point x="184.6198324566535" y="232.0" />
+              <point x="496.3117816091953" y="232.0" />
+              <point x="-36.896551724137964" y="-15.5" />
+            </edge>
+            <edge source="MainRun" target="javasss.OrderBlock">
+              <point x="34.65000000000009" y="-15.5" />
+              <point x="829.0115709624006" y="736.0" />
+              <point x="1193.5594876290672" y="736.0" />
+              <point x="-28.75" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.IfTree" target="javahyh.methodtree.NodeTree">
+              <point x="27.33333333333337" y="15.5" />
+              <point x="978.6428209624005" y="242.0" />
+              <point x="573.794540229885" y="242.0" />
+              <point x="40.586206896551744" y="-15.5" />
+            </edge>
+            <edge source="javasss.BlankCharacter" target="javasss.FileProcessing">
+              <point x="0.0" y="-15.5" />
+              <point x="104.25" y="635.0" />
+              <point x="97.5" y="635.0" />
+              <point x="32.5" y="15.5" />
+            </edge>
+            <edge source="MainRun" target="javasss.BlankCharacter">
+              <point x="-44.549999999999955" y="-15.5" />
+              <point x="749.8115709624005" y="746.0" />
+              <point x="70.25" y="746.0" />
+              <point x="-34.0" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.ElseTree">
+              <point x="-51.65517241379314" y="-15.5" />
+              <point x="481.5531609195401" y="272.0" />
+              <point x="28.78649912332014" y="272.0" />
+              <point x="-32.33333333333334" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.WhileTree" target="javahyh.methodtree.NodeTree">
+              <point x="35.33333333333337" y="15.5" />
+              <point x="490.6428209624006" y="142.0" />
+              <point x="529.5186781609195" y="142.0" />
+              <point x="-3.6896551724137794" y="-15.5" />
+            </edge>
+            <edge source="javapgb.Transformation6" target="javapgb.WordAnalysis">
+              <point x="54.000000000000114" y="-15.5" />
+              <point x="997.2083333333333" y="494.0" />
+              <point x="993.9583333333331" y="494.0" />
+              <point x="-15.875" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.WordAnalysis">
+              <point x="-1.9375" y="-15.5" />
+              <point x="1111.871987629067" y="565.0" />
+              <point x="1058.610158533022" y="565.0" />
+              <point x="1058.610158533022" y="494.0" />
+              <point x="1057.458333333333" y="494.0" />
+              <point x="47.625" y="15.5" />
+            </edge>
+            <edge source="MainRun" target="javahyh.CodeFile">
+              <point x="-24.75" y="-15.5" />
+              <point x="769.6115709624005" y="726.0" />
+              <point x="379.5594876290671" y="726.0" />
+              <point x="-24.5" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation4" target="javapgb.GeneralMethod">
+              <point x="36.0" y="-15.5" />
+              <point x="1201.333333333333" y="403.0" />
+              <point x="1098.489583333333" y="403.0" />
+              <point x="13.03125" y="15.5" />
+            </edge>
+            <edge source="javahyh.CodeFile" target="javahyh.process.ImportProcess">
+              <point x="-24.5" y="-15.5" />
+              <point x="379.5594876290671" y="625.0" />
+              <point x="261.70833333333326" y="625.0" />
+              <point x="33.25" y="15.5" />
+            </edge>
+            <edge source="ManyFileProcess.FileTree" target="ManyFileProcess.FileNode">
+              <point x="-37.19999999999999" y="-15.5" />
+              <point x="1345.9428209624007" y="746.0" />
+              <point x="1316.476154295734" y="746.0" />
+              <point x="-33.33333333333334" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.ElseTree" target="javahyh.methodtree.NodeTree">
+              <point x="0.0" y="15.5" />
+              <point x="61.11983245665351" y="262.0" />
+              <point x="485.24281609195396" y="262.0" />
+              <point x="-47.9655172413793" y="-15.5" />
+            </edge>
+            <edge source="ManyFileProcess.FileTree" target="ManyFileProcess.FilesNode">
+              <point x="18.599999999999994" y="-15.5" />
+              <point x="1401.7428209624006" y="736.0" />
+              <point x="1437.476154295734" y="736.0" />
+              <point x="-35.33333333333334" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.WhileTree">
+              <point x="-11.068965517241395" y="-15.5" />
+              <point x="522.1393678160919" y="162.0" />
+              <point x="419.97615429573386" y="162.0" />
+              <point x="-35.33333333333337" y="15.5" />
+            </edge>
+            <edge source="javahyh.process.ClassProcess" target="javahyh.methodtree.NodeTree">
+              <point x="30.75" y="-15.5" />
+              <point x="35.66666666666663" y="15.5" />
+            </edge>
+            <edge source="javapgb.EnglishRecognition" target="javapgb.WordStack">
+              <point x="39.5" y="-15.5" />
+              <point x="1715.833333333333" y="413.0" />
+              <point x="1704.333333333333" y="413.0" />
+              <point x="28.0" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NormalTree" target="javahyh.methodtree.NodeTree">
+              <point x="0.0" y="15.5" />
+              <point x="323.30948762906723" y="182.0" />
+              <point x="514.7600574712643" y="182.0" />
+              <point x="-18.448275862068954" y="-15.5" />
+            </edge>
+            <edge source="javahyh.process.ClassProcess" target="javahyh.methodtree.RootTree">
+              <point x="-30.75" y="-15.5" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.ForTree" target="javahyh.methodtree.NodeTree">
+              <point x="31.0" y="15.5" />
+              <point x="605.8094876290672" y="152.0" />
+              <point x="540.5876436781608" y="152.0" />
+              <point x="7.379310344827559" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.IfTree">
+              <point x="33.206896551724185" y="-15.5" />
+              <point x="566.4152298850574" y="222.0" />
+              <point x="923.9761542957337" y="222.0" />
+              <point x="-27.33333333333337" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation5" target="javapgb.GeneralMethod">
+              <point x="36.0" y="-15.5" />
+              <point x="1529.333333333333" y="363.0" />
+              <point x="1133.239583333333" y="363.0" />
+              <point x="47.78125" y="15.5" />
+            </edge>
+            <edge source="ManyFileProcess.FileNode" target="ManyFileProcess.FileTree">
+              <point x="33.33333333333337" y="15.5" />
+              <point x="0.0" y="-15.5" />
+            </edge>
+            <edge source="javahyh.CodeFile" target="javahyh.process.PackageProcess">
+              <point x="-8.166666666666629" y="-15.5" />
+              <point x="395.8928209624005" y="615.0" />
+              <point x="350.45833333333326" y="615.0" />
+              <point x="-35.5" y="15.5" />
+            </edge>
+            <edge source="GUITest" target="ManyFileProcess.FileTree">
+              <point x="18.799999999999955" y="-15.5" />
+              <point x="837.9115709624004" y="817.0" />
+              <point x="1383.1428209624005" y="817.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="GUITest" target="ManyFileProcess.FilesNode">
+              <point x="37.59999999999991" y="-15.5" />
+              <point x="856.7115709624004" y="827.0" />
+              <point x="1508.1428209624005" y="827.0" />
+              <point x="35.33333333333337" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.ForTree">
+              <point x="0.0" y="-15.5" />
+              <point x="533.2083333333333" y="132.0" />
+              <point x="543.8094876290672" y="132.0" />
+              <point x="-31.0" y="15.5" />
+            </edge>
+            <edge source="GUITest" target="MainRun">
+              <point x="0.0" y="-15.5" />
+              <point x="24.75" y="15.5" />
+            </edge>
+            <edge source="javapgb.StandardName" target="javapgb.EnglishRecognition">
+              <point x="17.0" y="-15.5" />
+              <point x="1661.360158533022" y="494.0" />
+              <point x="1636.833333333333" y="494.0" />
+              <point x="-39.5" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation1" target="javapgb.GeneralMethod">
+              <point x="36.0" y="-15.5" />
+              <point x="687.7083333333333" y="353.0" />
+              <point x="1028.989583333333" y="353.0" />
+              <point x="-56.46875" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.TryOrFinTree" target="javahyh.methodtree.NodeTree">
+              <point x="41.0" y="15.5" />
+              <point x="869.8094876290671" y="212.0" />
+              <point x="562.7255747126436" y="212.0" />
+              <point x="29.51724137931035" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.NormalTree">
+              <point x="-22.13793103448279" y="-15.5" />
+              <point x="511.07040229885047" y="192.0" />
+              <point x="283.976154295734" y="192.0" />
+              <point x="-39.33333333333326" y="15.5" />
+            </edge>
+            <edge source="MainRun" target="javahyh.lexical.LexicalAnalysis">
+              <point x="-4.9500000000000455" y="-15.5" />
+              <point x="789.4115709624004" y="706.0" />
+              <point x="761.3615709624005" y="706.0" />
+              <point x="-33.0" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.DoWhileTree">
+              <point x="44.275862068965466" y="-15.5" />
+              <point x="577.4841954022987" y="252.0" />
+              <point x="1032.8094876290672" y="252.0" />
+              <point x="-41.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation6" target="javapgb.GeneralMethod">
+              <point x="-17.999999999999886" y="-15.5" />
+              <point x="925.2083333333333" y="494.0" />
+              <point x="912.7083333333333" y="494.0" />
+              <point x="912.7083333333333" y="393.0" />
+              <point x="1063.739583333333" y="393.0" />
+              <point x="-21.71875" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.CatchTree">
+              <point x="11.068965517241395" y="-15.5" />
+              <point x="544.2772988505747" y="162.0" />
+              <point x="658.9761542957337" y="162.0" />
+              <point x="-35.33333333333337" y="15.5" />
+            </edge>
+            <edge source="javahyh.CodeFile" target="javahyh.process.ClassProcess">
+              <point x="40.83333333333337" y="-15.5" />
+              <point x="444.8928209624005" y="635.0" />
+              <point x="569.2083333333333" y="635.0" />
+              <point x="30.75" y="15.5" />
+            </edge>
+            <edge source="javapgb.WordAnalysis" target="javapgb.GeneralMethod">
+              <point x="-31.75" y="-15.5" />
+              <point x="978.0833333333331" y="403.0" />
+              <point x="1072.427083333333" y="403.0" />
+              <point x="-13.03125" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.SwitchTree" target="javahyh.methodtree.CaseTree">
+              <point x="0.0" y="-15.5" />
+              <point x="-34.0" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.SwitchTree">
+              <point x="-40.586206896551744" y="-15.5" />
+              <point x="492.6221264367815" y="242.0" />
+              <point x="147.95316578998688" y="242.0" />
+              <point x="-36.666666666666664" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.StandardName">
+              <point x="29.0625" y="-15.5" />
+              <point x="1142.871987629067" y="635.0" />
+              <point x="1678.360158533022" y="635.0" />
+              <point x="34.0" y="15.5" />
+            </edge>
+            <edge source="GUITest" target="javasss.FileProcessing">
+              <point x="-37.59999999999991" y="-15.5" />
+              <point x="781.5115709624006" y="827.0" />
+              <point x="25.75" y="827.0" />
+              <point x="25.75" y="635.0" />
+              <point x="32.5" y="635.0" />
+              <point x="-32.5" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation2" target="javapgb.GeneralMethod">
+              <point x="36.0" y="-15.5" />
+              <point x="851.7083333333333" y="373.0" />
+              <point x="1046.364583333333" y="373.0" />
+              <point x="-39.09375" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.RootTree" target="javahyh.methodtree.NodeTree">
+              <point x="-25.5" y="-15.5" />
+              <point x="482.20833333333326" y="413.0" />
+              <point x="497.5416666666666" y="413.0" />
+              <point x="-35.666666666666686" y="15.5" />
+            </edge>
+            <edge source="ManyFileProcess.FilesNode" target="ManyFileProcess.FileTree">
+              <point x="0.0" y="15.5" />
+              <point x="1472.8094876290672" y="746.0" />
+              <point x="1420.3428209624005" y="746.0" />
+              <point x="37.19999999999993" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.CaseTree" target="javahyh.methodtree.NodeTree">
+              <point x="34.0" y="15.5" />
+              <point x="253.80948762906723" y="202.0" />
+              <point x="507.3807471264367" y="202.0" />
+              <point x="-25.82758620689657" y="-15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation2">
+              <point x="-21.3125" y="-15.5" />
+              <point x="1092.496987629067" y="615.0" />
+              <point x="831.8719876290671" y="615.0" />
+              <point x="831.8719876290671" y="494.0" />
+              <point x="779.7083333333333" y="494.0" />
+              <point x="-36.0" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.DoWhileTree" target="javahyh.methodtree.NodeTree">
+              <point x="41.0" y="15.5" />
+              <point x="1114.8094876290672" y="272.0" />
+              <point x="584.8635057471264" y="272.0" />
+              <point x="51.65517241379314" y="-15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation3">
+              <point x="9.6875" y="-15.5" />
+              <point x="1123.496987629067" y="585.0" />
+              <point x="1327.6844876290672" y="585.0" />
+              <point x="1327.6844876290672" y="494.0" />
+              <point x="1293.333333333333" y="494.0" />
+              <point x="-36.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation4">
+              <point x="5.8125" y="-15.5" />
+              <point x="1119.621987629067" y="575.0" />
+              <point x="1167.5594876290672" y="575.0" />
+              <point x="1167.5594876290672" y="494.0" />
+              <point x="1201.333333333333" y="494.0" />
+              <point x="36.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation5">
+              <point x="17.4375" y="-15.5" />
+              <point x="1131.246987629067" y="605.0" />
+              <point x="1491.6844876290672" y="605.0" />
+              <point x="1491.6844876290672" y="494.0" />
+              <point x="1457.333333333333" y="494.0" />
+              <point x="-36.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation6">
+              <point x="-9.6875" y="-15.5" />
+              <point x="1104.121987629067" y="585.0" />
+              <point x="979.2083333333331" y="585.0" />
+              <point x="36.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation3" target="javapgb.GeneralMethod">
+              <point x="-36.0" y="-15.5" />
+              <point x="1293.333333333333" y="393.0" />
+              <point x="1107.177083333333" y="393.0" />
+              <point x="21.71875" y="15.5" />
+            </edge>
+            <edge source="MainRun" target="javapgb.All">
+              <point x="24.75" y="-15.5" />
+              <point x="819.1115709624005" y="726.0" />
+              <point x="1129.309487629067" y="726.0" />
+              <point x="15.5" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.CatchTree" target="javahyh.methodtree.NodeTree">
+              <point x="0.0" y="15.5" />
+              <point x="694.3094876290672" y="172.0" />
+              <point x="547.9669540229884" y="172.0" />
+              <point x="14.758620689655118" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.TryOrFinTree">
+              <point x="22.13793103448279" y="-15.5" />
+              <point x="555.346264367816" y="192.0" />
+              <point x="787.8094876290671" y="192.0" />
+              <point x="-41.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.StandardName" target="javapgb.GeneralMethod">
+              <point x="-17.0" y="-15.5" />
+              <point x="1627.360158533022" y="484.0" />
+              <point x="1586.833333333333" y="484.0" />
+              <point x="1586.833333333333" y="343.0" />
+              <point x="1150.614583333333" y="343.0" />
+              <point x="65.15625" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation1">
+              <point x="-25.1875" y="-15.5" />
+              <point x="1088.621987629067" y="625.0" />
+              <point x="671.7469876290671" y="625.0" />
+              <point x="671.7469876290671" y="494.0" />
+              <point x="687.7083333333333" y="494.0" />
+              <point x="36.0" y="15.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="200.0" y="460.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/ManyFileProcess">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>ManyFileProcess</OriginalElement>
+          <nodes>
+            <node x="96.16666666666666" y="81.0">ManyFileProcess.FileTree</node>
+            <node x="0.0" y="0.0">ManyFileProcess.FilesNode</node>
+            <node x="126.0" y="0.0">ManyFileProcess.FileNode</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="ManyFileProcess.FileNode" target="ManyFileProcess.FileTree">
+              <point x="7.105427357601002E-15" y="15.5" />
+              <point x="176.0" y="51.0" />
+              <point x="161.26666666666665" y="51.0" />
+              <point x="18.59999999999999" y="-15.5" />
+            </edge>
+            <edge source="ManyFileProcess.FileTree" target="ManyFileProcess.FileNode">
+              <point x="0.0" y="-15.5" />
+              <point x="-33.333333333333336" y="15.5" />
+            </edge>
+            <edge source="ManyFileProcess.FileTree" target="ManyFileProcess.FilesNode">
+              <point x="-37.19999999999999" y="-15.5" />
+              <point x="105.46666666666667" y="61.0" />
+              <point x="26.5" y="61.0" />
+              <point x="-26.5" y="15.5" />
+            </edge>
+            <edge source="ManyFileProcess.FilesNode" target="ManyFileProcess.FileTree">
+              <point x="26.5" y="15.5" />
+              <point x="79.5" y="51.0" />
+              <point x="124.06666666666666" y="51.0" />
+              <point x="-18.599999999999994" y="-15.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-210.0" y="17.0" />
+          <SelectedNodes>
+            <node>ManyFileProcess.FileTree</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/javahyh">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>javahyh</OriginalElement>
+          <nodes>
+            <node x="903.689655172414" y="81.0">javahyh.methodtree.WhileTree</node>
+            <node x="567.3333333333335" y="363.0">javahyh.methodtree.RootTree</node>
+            <node x="769.0" y="81.0">javahyh.methodtree.SwitchTree</node>
+            <node x="1029.689655172414" y="81.0">javahyh.methodtree.ForTree</node>
+            <node x="177.0" y="439.0">javahyh.CodeFile</node>
+            <node x="807.594827586207" y="0.0">javahyh.methodtree.CaseTree</node>
+            <node x="143.00000000000006" y="81.0">javahyh.methodtree.CatchTree</node>
+            <node x="564.8333333333335" y="282.0">javahyh.methodtree.NodeTree</node>
+            <node x="0.0" y="81.0">javahyh.methodtree.DoWhileTree</node>
+            <node x="407.00000000000006" y="81.0">javahyh.methodtree.TryOrFinTree</node>
+            <node x="0.0" y="439.0">javahyh.lexical.LexicalAnalysis</node>
+            <node x="550.0" y="81.0">javahyh.methodtree.IfTree</node>
+            <node x="269.00000000000006" y="81.0">javahyh.methodtree.NormalTree</node>
+            <node x="652.0" y="81.0">javahyh.methodtree.ElseTree</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="javahyh.methodtree.SwitchTree" target="javahyh.methodtree.NodeTree">
+              <point x="0.0" y="15.5" />
+              <point x="824.0" y="172.0" />
+              <point x="636.7816091954023" y="172.0" />
+              <point x="18.448275862068954" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.SwitchTree">
+              <point x="14.758620689655118" y="-15.5" />
+              <point x="633.0919540229886" y="162.0" />
+              <point x="787.3333333333334" y="162.0" />
+              <point x="-36.666666666666686" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.ForTree">
+              <point x="44.275862068965466" y="-15.5" />
+              <point x="662.6091954022988" y="242.0" />
+              <point x="1045.189655172414" y="242.0" />
+              <point x="-31.0" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.IfTree" target="javahyh.methodtree.NodeTree">
+              <point x="27.33333333333337" y="15.5" />
+              <point x="0.0" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.WhileTree">
+              <point x="33.206896551724185" y="-15.5" />
+              <point x="651.5402298850577" y="212.0" />
+              <point x="921.3563218390806" y="212.0" />
+              <point x="-35.33333333333334" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.TryOrFinTree" target="javahyh.methodtree.NodeTree">
+              <point x="41.0" y="15.5" />
+              <point x="509.50000000000006" y="152.0" />
+              <point x="607.2643678160921" y="152.0" />
+              <point x="-11.068965517241395" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NormalTree" target="javahyh.methodtree.NodeTree">
+              <point x="39.33333333333337" y="15.5" />
+              <point x="367.3333333333334" y="182.0" />
+              <point x="596.1954022988507" y="182.0" />
+              <point x="-22.13793103448279" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.NormalTree">
+              <point x="-29.51724137931035" y="-15.5" />
+              <point x="588.816091954023" y="202.0" />
+              <point x="288.6666666666667" y="202.0" />
+              <point x="-39.33333333333337" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.ElseTree">
+              <point x="3.6896551724137794" y="-15.5" />
+              <point x="622.0229885057472" y="132.0" />
+              <point x="668.1666666666667" y="132.0" />
+              <point x="-32.333333333333314" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.WhileTree" target="javahyh.methodtree.NodeTree">
+              <point x="35.333333333333314" y="15.5" />
+              <point x="992.0229885057472" y="232.0" />
+              <point x="658.9195402298851" y="232.0" />
+              <point x="40.586206896551744" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.ForTree" target="javahyh.methodtree.NodeTree">
+              <point x="0.0" y="15.5" />
+              <point x="1076.189655172414" y="252.0" />
+              <point x="666.2988505747128" y="252.0" />
+              <point x="47.9655172413793" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.CaseTree" target="javahyh.methodtree.NodeTree">
+              <point x="34.0" y="15.5" />
+              <point x="893.189655172414" y="202.0" />
+              <point x="647.8505747126437" y="202.0" />
+              <point x="29.51724137931035" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.RootTree" target="javahyh.methodtree.NodeTree">
+              <point x="25.5" y="-15.5" />
+              <point x="643.8333333333335" y="338.0" />
+              <point x="645.0833333333335" y="338.0" />
+              <point x="26.75" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.IfTree">
+              <point x="-7.379310344827616" y="-15.5" />
+              <point x="610.9540229885058" y="142.0" />
+              <point x="563.6666666666667" y="142.0" />
+              <point x="-27.333333333333314" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.DoWhileTree" target="javahyh.methodtree.NodeTree">
+              <point x="41.0" y="15.5" />
+              <point x="102.5" y="242.0" />
+              <point x="574.0574712643679" y="242.0" />
+              <point x="-44.27586206896552" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.DoWhileTree">
+              <point x="-51.65517241379314" y="-15.5" />
+              <point x="566.6781609195402" y="262.0" />
+              <point x="20.5" y="262.0" />
+              <point x="-41.0" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.CatchTree" target="javahyh.methodtree.NodeTree">
+              <point x="35.33333333333337" y="15.5" />
+              <point x="231.33333333333343" y="212.0" />
+              <point x="585.1264367816093" y="212.0" />
+              <point x="-33.206896551724185" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.ElseTree" target="javahyh.methodtree.NodeTree">
+              <point x="0.0" y="15.5" />
+              <point x="700.5" y="142.0" />
+              <point x="625.7126436781609" y="142.0" />
+              <point x="7.379310344827559" y="-15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.CatchTree">
+              <point x="-40.586206896551744" y="-15.5" />
+              <point x="577.7471264367816" y="232.0" />
+              <point x="160.66666666666669" y="232.0" />
+              <point x="-35.33333333333337" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.NodeTree" target="javahyh.methodtree.TryOrFinTree">
+              <point x="-18.448275862068954" y="-15.5" />
+              <point x="599.8850574712644" y="172.0" />
+              <point x="427.50000000000006" y="172.0" />
+              <point x="-41.0" y="15.5" />
+            </edge>
+            <edge source="javahyh.methodtree.SwitchTree" target="javahyh.methodtree.CaseTree">
+              <point x="0.0" y="-15.5" />
+              <point x="-34.0" y="15.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="220.0" y="172.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/javasss">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>javasss</OriginalElement>
+          <nodes>
+            <node x="160.0" y="157.0">javasss.TypeUtil</node>
+            <node x="0.0" y="81.0">javasss.BlankCharacter</node>
+            <node x="0.0" y="157.0">javasss.OrderBlock</node>
+            <node x="3.0" y="0.0">javasss.FileProcessing</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="javasss.BlankCharacter" target="javasss.FileProcessing">
+              <point x="0.0" y="-15.5" />
+              <point x="0.0" y="15.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-196.0" y="52.0" />
+          <SelectedNodes>
+            <node>javasss.TypeUtil</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/javapgb">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>javapgb</OriginalElement>
+          <nodes>
+            <node x="381.3342391304348" y="333.0">javapgb.All</node>
+            <node x="193.33423913043475" y="131.0">javapgb.WordAnalysis</node>
+            <node x="345.1397515527951" y="0.0">javapgb.GeneralMethod</node>
+            <node x="668.3342391304349" y="131.0">javapgb.Transformation1</node>
+            <node x="504.3342391304348" y="131.0">javapgb.Transformation4</node>
+            <node x="340.3342391304348" y="131.0">javapgb.Transformation5</node>
+            <node x="0.0" y="131.0">javapgb.Transformation2</node>
+            <node x="832.3342391304349" y="131.0">javapgb.Transformation3</node>
+            <node x="123.52173913043475" y="212.0">javapgb.Transformation6</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="javapgb.Transformation2" target="javapgb.GeneralMethod">
+              <point x="-36.0" y="-15.5" />
+              <point x="36.0" y="51.0" />
+              <point x="350.1040372670808" y="51.0" />
+              <point x="-64.53571428571428" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation1" target="javapgb.GeneralMethod">
+              <point x="36.0" y="-15.5" />
+              <point x="776.3342391304349" y="71.0" />
+              <point x="459.3183229813665" y="71.0" />
+              <point x="44.678571428571445" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation6" target="javapgb.WordAnalysis">
+              <point x="18.0" y="-15.5" />
+              <point x="213.52173913043475" y="187.0" />
+              <point x="209.20923913043475" y="187.0" />
+              <point x="-47.625" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.WordAnalysis">
+              <point x="-6.642857142857167" y="-15.5" />
+              <point x="405.69138198757764" y="263.0" />
+              <point x="316.0993788819876" y="263.0" />
+              <point x="316.0993788819876" y="187.0" />
+              <point x="304.45923913043475" y="187.0" />
+              <point x="47.625" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation2">
+              <point x="-28.785714285714334" y="-15.5" />
+              <point x="383.5485248447205" y="313.0" />
+              <point x="71.3222049689441" y="313.0" />
+              <point x="71.3222049689441" y="187.0" />
+              <point x="36.0" y="187.0" />
+              <point x="-36.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation3">
+              <point x="24.357142857142833" y="-15.5" />
+              <point x="436.69138198757764" y="303.0" />
+              <point x="902.1199534161491" y="303.0" />
+              <point x="902.1199534161491" y="187.0" />
+              <point x="868.3342391304349" y="187.0" />
+              <point x="-36.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation4">
+              <point x="11.071428571428555" y="-15.5" />
+              <point x="423.40566770186336" y="273.0" />
+              <point x="578.5485248447205" y="273.0" />
+              <point x="578.5485248447205" y="187.0" />
+              <point x="612.3342391304348" y="187.0" />
+              <point x="36.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation5">
+              <point x="-2.2142857142857224" y="-15.5" />
+              <point x="410.1199534161491" y="187.0" />
+              <point x="376.3342391304348" y="187.0" />
+              <point x="-36.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation6" target="javapgb.GeneralMethod">
+              <point x="-54.0" y="-15.5" />
+              <point x="141.52173913043475" y="187.0" />
+              <point x="158.0" y="187.0" />
+              <point x="158.0" y="71.0" />
+              <point x="369.96118012422363" y="71.0" />
+              <point x="-44.678571428571445" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation6">
+              <point x="-19.928571428571445" y="-15.5" />
+              <point x="392.40566770186336" y="293.0" />
+              <point x="159.52173913043475" y="293.0" />
+              <point x="-36.0" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation5" target="javapgb.GeneralMethod">
+              <point x="-36.0" y="-15.5" />
+              <point x="376.3342391304348" y="111.0" />
+              <point x="409.67546583850935" y="111.0" />
+              <point x="-4.964285714285722" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation4" target="javapgb.GeneralMethod">
+              <point x="-36.0" y="-15.5" />
+              <point x="540.3342391304348" y="101.0" />
+              <point x="429.53260869565224" y="101.0" />
+              <point x="14.892857142857167" y="15.5" />
+            </edge>
+            <edge source="javapgb.Transformation3" target="javapgb.GeneralMethod">
+              <point x="36.0" y="-15.5" />
+              <point x="940.3342391304349" y="51.0" />
+              <point x="479.17546583850935" y="51.0" />
+              <point x="64.53571428571428" y="15.5" />
+            </edge>
+            <edge source="javapgb.WordAnalysis" target="javapgb.GeneralMethod">
+              <point x="31.75" y="-15.5" />
+              <point x="288.58423913043475" y="101.0" />
+              <point x="399.7468944099379" y="101.0" />
+              <point x="-14.892857142857167" y="15.5" />
+            </edge>
+            <edge source="javapgb.All" target="javapgb.Transformation1">
+              <point x="15.5" y="-15.5" />
+              <point x="427.8342391304348" y="283.0" />
+              <point x="738.1199534161491" y="283.0" />
+              <point x="738.1199534161491" y="187.0" />
+              <point x="704.3342391304349" y="187.0" />
+              <point x="-36.0" y="15.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="462.0" y="278.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javasss/FileProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="44" column="101" selection-start-line="44" selection-start-column="101" selection-end-line="44" selection-end-column="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUITest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="529" column="47" lean-forward="true" selection-start-line="529" selection-start-column="47" selection-end-line="529" selection-end-column="47" />
+        <state relative-caret-position="140">
+          <caret line="363" selection-start-line="363" selection-end-line="363" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#readTxt#0;class#GUITest#0" />
@@ -1333,16 +2001,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/_new/TheAll1.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javasss/FileProcessing.java">
+    <entry file="file://$PROJECT_DIR$/src/MainRun.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="44" column="101" lean-forward="true" selection-start-line="44" selection-start-column="101" selection-end-line="44" selection-end-column="101" />
+        <state relative-caret-position="140">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/JAVA/Java/jdk1.8.0_181/src.zip!/javax/swing/DefaultButtonModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="401" selection-start-line="401" selection-end-line="401" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javasss/BlankCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="226" column="33" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#409#417#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/DirectedDFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/_new/DirectedDFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="64" lean-forward="true" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javapgb/StandardName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2780">
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javapgb/WordAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1423,6 +2132,17 @@
         </settings>
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
         <settings>
           <splitter-proportions>
             <option name="proportions">
