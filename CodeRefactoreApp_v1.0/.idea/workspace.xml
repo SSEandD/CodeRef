@@ -6,13 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="更新下载限定格式UTF-8">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CodeRefactoreApp_jar/CodeRefactoreApp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CodeRefactoreApp_jar/CodeRefactoreApp.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/WordAnalysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javapgb/WordAnalysis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javasss/BlankCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CodeRefactoreApp/javasss/BlankCharacter.class" afterDir="false" />
+    <list default="true" id="06abf424-1de2-45b3-93c8-1524bf83342b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javapgb/GeneralMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javapgb/GeneralMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javapgb/StandardName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javapgb/StandardName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/javapgb/WordAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javapgb/WordAnalysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/javasss/BlankCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javasss/BlankCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javasss/FileProcessing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javasss/FileProcessing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javasss/OrderBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javasss/OrderBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javasss/TypeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javasss/TypeUtil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,7 +54,7 @@
           <entry key="JAVA/javahyh" value="4" />
           <entry key="JAVA/javapgb" value="1" />
           <entry key="JAVA/javasss" value="1" />
-          <entry key="java" value="53" />
+          <entry key="java" value="56" />
           <entry key="lexical" value="1" />
           <entry key="md" value="1" />
           <entry key="xml" value="1" />
@@ -59,7 +62,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="53" />
+          <entry key="JAVA" value="56" />
           <entry key="Markdown" value="1" />
           <entry key="UML" value="11" />
           <entry key="XML" value="1" />
@@ -68,13 +71,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="3270" />
-          <entry key="txt" value="288" />
+          <entry key="txt" value="298" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="3270" />
-          <entry key="PLAIN_TEXT" value="288" />
+          <entry key="PLAIN_TEXT" value="298" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -112,24 +115,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainRun.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javasss/BlankCharacter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="226" column="33" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
-              <folding>
-                <element signature="e#409#417#0" expanded="true" />
-                <element signature="e#722#723#0" expanded="true" />
-                <element signature="e#781#782#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="301">
+              <caret line="141" column="38" lean-forward="true" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -153,9 +142,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/javapgb/GeneralMethod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7780">
+              <caret line="520" selection-start-line="520" selection-end-line="520" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javapgb/WordAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="42">
               <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
             </state>
           </provider>
@@ -173,11 +171,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javasss/FileProcessing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
+            <state relative-caret-position="-363">
               <caret line="44" column="101" selection-start-line="44" selection-start-column="101" selection-end-line="44" selection-end-column="101" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javasss/OrderBlock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javasss/TypeUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -193,7 +209,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>try</find>
       <find>path</find>
       <find>\n</find>
       <find>Pane</find>
@@ -223,6 +238,7 @@
       <find>isAnnotation</find>
       <find>out</find>
       <find>line</find>
+      <find>.out</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -280,8 +296,8 @@
         <option value="$PROJECT_DIR$/src/GUITest.java" />
         <option value="$PROJECT_DIR$/src/javasss/FileProcessing.java" />
         <option value="$USER_HOME$/Desktop/DirectedDFS.java" />
-        <option value="$PROJECT_DIR$/src/javasss/BlankCharacter.java" />
         <option value="$PROJECT_DIR$/src/javapgb/WordAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/javasss/BlankCharacter.java" />
       </list>
     </option>
   </component>
@@ -315,6 +331,23 @@
               <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="javapgb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CodeRefactoreApp_v1.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodeRefactoreApp_v1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="javasss" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -328,7 +361,7 @@
     <property name="ToolWindowAnt Build.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563182366917" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563194441083" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -543,7 +576,7 @@
       <workItem from="1563090675657" duration="3043000" />
       <workItem from="1563108359958" duration="1606000" />
       <workItem from="1563111649880" duration="2117000" />
-      <workItem from="1563175861195" duration="6494000" />
+      <workItem from="1563175861195" duration="7838000" />
     </task>
     <task id="LOCAL-00001" summary="hyh">
       <created>1562913727422</created>
@@ -685,11 +718,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563109334728</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="改了注释bug">
+      <created>1563192963289</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1563192963289</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="405279000" />
+    <option name="totallyTimeSpent" value="406623000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -702,6 +742,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5037221" side_tool="true" weight="0.13086233" />
       <window_info id="Image Layers" order="1" />
@@ -713,18 +754,18 @@
       <window_info anchor="bottom" id="Duplicates" order="0" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" visible="true" weight="0.33934426" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49932975" weight="0.33934426" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.53934425" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32840723" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.7044335" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.39344263" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067025" side_tool="true" weight="0.33521923" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32840723" />
       <window_info anchor="bottom" id="Ant Build" order="13" show_stripe_button="false" weight="0.24752475" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.1724138" />
+      <window_info anchor="bottom" id="Version Control" order="14" visible="true" weight="0.07540984" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="right" id="Palette" order="2" />
@@ -832,7 +873,8 @@
     <MESSAGE value="改了一丢丢" />
     <MESSAGE value="按钮逻辑更新（不能同时按多if转···" />
     <MESSAGE value="更新下载限定格式UTF-8" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新下载限定格式UTF-8" />
+    <MESSAGE value="改了注释bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="改了注释bug" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -941,13 +983,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/javahyh/lexical/LexicalAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javahyh/CodeFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -1022,13 +1057,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javasss/OrderBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3480" />
@@ -1070,13 +1098,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javapgb/ForToWhile.java" />
-    <entry file="file://$PROJECT_DIR$/src/javapgb/GeneralMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="520" selection-start-line="520" selection-end-line="520" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javapgb/IfToIfs.java" />
     <entry file="file://$PROJECT_DIR$/src/javapgb/LengthStack.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1980,27 +2001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javasss/FileProcessing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="44" column="101" selection-start-line="44" selection-start-column="101" selection-end-line="44" selection-end-column="101" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="363" selection-start-line="363" selection-end-line="363" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#readTxt#0;class#GUITest#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainRun.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -2012,18 +2012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="401" selection-start-line="401" selection-end-line="401" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javasss/BlankCharacter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="226" column="33" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
-          <folding>
-            <element signature="e#409#417#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2041,6 +2029,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/javasss/BlankCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="141" column="38" lean-forward="true" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javasss/FileProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-363">
+          <caret line="44" column="101" selection-start-line="44" selection-start-column="101" selection-end-line="44" selection-end-column="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javasss/OrderBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javasss/TypeUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="363" selection-start-line="363" selection-end-line="363" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#readTxt#0;class#GUITest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javapgb/WordAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javapgb/StandardName.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2780">
@@ -2048,10 +2085,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javapgb/WordAnalysis.java">
+    <entry file="file://$PROJECT_DIR$/src/javapgb/GeneralMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        <state relative-caret-position="7780">
+          <caret line="520" selection-start-line="520" selection-end-line="520" />
         </state>
       </provider>
     </entry>

@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class FileProcessing {
 	
 	/**
-	 * ÎÄ¼ş¶ÁÈ¡µ½»º³åÇø
-	 * @param path ÎÄ¼şÂ·¾¶
+	 * æ–‡ä»¶è¯»å–åˆ°ç¼“å†²åŒº
+	 * @param path æ–‡ä»¶è·¯å¾„
 	 */
 	public static ArrayList<String> readFile(String path) {
 		ArrayList<String> line = new ArrayList<String>();
@@ -33,7 +33,7 @@ public class FileProcessing {
 	}
 	
 	/**
-	 * ×·¼Ó·½Ê½Ğ´ÎÄ¼ş
+	 * è¿½åŠ æ–¹å¼å†™æ–‡ä»¶
 	 */
 	public static boolean writeFile(String path,String args) {
 		try {
@@ -53,7 +53,7 @@ public class FileProcessing {
 	}
 	
 	/**
-	 * Çå¿ÕÎÄ¼ş
+	 * æ¸…ç©ºæ–‡ä»¶
 	 */
 	public static boolean clearFile(String path) {
 		try {
@@ -72,7 +72,7 @@ public class FileProcessing {
 		}
 	}
 	
-	/** ×Ö·ûÁ¬½Ó*/
+	/** å­—ç¬¦è¿æ¥*/
 	public static String concat(String str, Character ch) {
 		str += ch;
 		return str;

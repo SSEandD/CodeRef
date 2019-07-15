@@ -34,12 +34,12 @@ public class GUITest {
 
 	private JFrame frame;
 	private JTextField sourceFile;
-    private String rightPath="";//µ±Ç°Â·¾¶
-    private String extensionName="";//ÎÄ¼şºó×ºÃû
-    private String downLoadPath ="";//ÏÂÔØÂ·¾¶
-    private ArrayList<String> fileNames = new ArrayList<>();//¼ÇÂ¼ÎÄ¼şÃû
-    private ArrayList<String> paths = new ArrayList<>();//¼ÇÂ¼ÎÄ¼şÃû
-    private ArrayList<String> results = new ArrayList<>();//¼ÇÂ¼ÎÄ¼şÃû
+    private String rightPath="";//å½“å‰è·¯å¾„
+    private String extensionName="";//æ–‡ä»¶åç¼€å
+    private String downLoadPath ="";//ä¸‹è½½è·¯å¾„
+    private ArrayList<String> fileNames = new ArrayList<>();//è®°å½•æ–‡ä»¶å
+    private ArrayList<String> paths = new ArrayList<>();//è®°å½•æ–‡ä»¶å
+    private ArrayList<String> results = new ArrayList<>();//è®°å½•æ–‡ä»¶å
     private File[] souFiles;
     private int selectFileNum;
 	private String sourceFolderPath;
@@ -73,28 +73,28 @@ public class GUITest {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();//ÕûÌå¿ò¼Ü
+		frame = new JFrame();//æ•´ä½“æ¡†æ¶
 		frame.setBackground(new Color(128, 128, 128));
-		frame.setTitle("´úÂëÖØ¹¹×ª»»Æ÷");
+		frame.setTitle("ä»£ç é‡æ„è½¬æ¢å™¨");
 		frame.setResizable(false);
 		frame.setBounds(100, 100, 1275, 715);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 
-		JPanel choosePath = new JPanel();//Ñ¡ÔñÂ·¾¶Ä£¿é
+		JPanel choosePath = new JPanel();//é€‰æ‹©è·¯å¾„æ¨¡å—
 		choosePath.setToolTipText("");
 		choosePath.setBorder(new LineBorder(Color.LIGHT_GRAY));
 
-		sourceFile = new JTextField();//´æ·Å¶ÁÈ¡ÎÄ¼şÂ·¾¶
+		sourceFile = new JTextField();//å­˜æ”¾è¯»å–æ–‡ä»¶è·¯å¾„
 		sourceFile.setColumns(10);
 
-		//¶¨ÒåÑ¡Ôñ°´Å¥
-		JButton btnBrowse = new JButton("Ñ¡Ôñ");
-		btnBrowse.setFont(new Font("ËÎÌå", Font.PLAIN, 14));
+		//å®šä¹‰é€‰æ‹©æŒ‰é’®
+		JButton btnBrowse = new JButton("é€‰æ‹©");
+		btnBrowse.setFont(new Font("å®‹ä½“", Font.PLAIN, 14));
 		btnBrowse.setBackground(new Color(220, 220, 220));
 
-		JLabel label = new JLabel("ÇëÑ¡ÔñĞèÒª´¦ÀíµÄÔ´ÎÄ¼ş");
-        label.setFont(new Font("ËÎÌå", Font.PLAIN, 14));
+		JLabel label = new JLabel("è¯·é€‰æ‹©éœ€è¦å¤„ç†çš„æºæ–‡ä»¶");
+        label.setFont(new Font("å®‹ä½“", Font.PLAIN, 14));
 		GroupLayout gl_choosePath = new GroupLayout(choosePath);
 		gl_choosePath.setHorizontalGroup(
 				gl_choosePath.createParallelGroup(Alignment.LEADING)
@@ -121,10 +121,10 @@ public class GUITest {
 		);
 		choosePath.setLayout(gl_choosePath);
 
-		//Õ¹Ê¾ÎÄ±¾Ä£¿é
+		//å±•ç¤ºæ–‡æœ¬æ¨¡å—
 		JPanel showText = new JPanel();
-		JButton btnChangeButton = new JButton("×ª»»");
-		btnChangeButton.setFont(new Font("ËÎÌå", Font.PLAIN, 15));
+		JButton btnChangeButton = new JButton("è½¬æ¢");
+		btnChangeButton.setFont(new Font("å®‹ä½“", Font.PLAIN, 15));
 		btnChangeButton.setBackground(Color.LIGHT_GRAY);
 
 		btnChangeButton.setBounds(662, 341, 100, 23);
@@ -135,7 +135,7 @@ public class GUITest {
 		scrollPane_1.setBounds(790, 20, 465, 510);
 		showText.add(scrollPane_1);
 
-		JTextArea newText = new JTextArea();//´æ·ÅÒÑ´¦ÀíÄÚÈİ
+		JTextArea newText = new JTextArea();//å­˜æ”¾å·²å¤„ç†å†…å®¹
 		newText.setEditable(false);
         newText.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		scrollPane_1.setViewportView(newText);
@@ -144,34 +144,34 @@ public class GUITest {
 		scrollPane.setBounds(180, 20, 465, 510);
 		showText.add(scrollPane);
 
-		JTextArea oldText = new JTextArea();//´æ·ÅÎ´´¦ÀíµÄÎÄ¼şÄÚÈİ
+		JTextArea oldText = new JTextArea();//å­˜æ”¾æœªå¤„ç†çš„æ–‡ä»¶å†…å®¹
         oldText.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		scrollPane.setViewportView(oldText);
 		oldText.setEditable(false);
-		oldText.setText("ÓÃ»§ĞëÖª£º\n1.ÇëÑ¡ÔñÒ»¸öjavaÏîÄ¿/ÖÁÉÙÒ»¸öjavaÎÄ¼şÉÏ´«\n" +
-				"2.ÇëÈ·±£Ñ¡ÔñµÄÔ´ÎÄ¼ş¿ÉÒÔÍ¨¹ı±àÒë\n" +
-				"3.ÇëÏÈ¡±Ò»¼üÖØ¹¹¡°¸ñÊ½´¦Àí£¬ÔÙÑ¡Ôñµ¥¸öÎÄ¼ş½øĞĞ×ª»»\n");
+		oldText.setText("ç”¨æˆ·é¡»çŸ¥ï¼š\n1.è¯·é€‰æ‹©ä¸€ä¸ªjavaé¡¹ç›®/è‡³å°‘ä¸€ä¸ªjavaæ–‡ä»¶ä¸Šä¼ \n" +
+				"2.è¯·ç¡®ä¿é€‰æ‹©çš„æºæ–‡ä»¶å¯ä»¥é€šè¿‡ç¼–è¯‘\n" +
+				"3.è¯·å…ˆâ€ä¸€é”®é‡æ„â€œæ ¼å¼å¤„ç†ï¼Œå†é€‰æ‹©å•ä¸ªæ–‡ä»¶è¿›è¡Œè½¬æ¢\n");
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(Color.LIGHT_GRAY));
 
-		JLabel lblNewLabel = new JLabel("Ïà¹ØĞÅÏ¢");
+		JLabel lblNewLabel = new JLabel("ç›¸å…³ä¿¡æ¯");
 		lblNewLabel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				JOptionPane.showMessageDialog(null, "1.ÇëÑ¡ÔñÒ»¸öjavaÏîÄ¿/ÖÁÉÙÒ»¸öjavaÎÄ¼şÉÏ´«\n" +
-						"2.ÇëÈ·±£Ñ¡ÔñµÄÔ´ÎÄ¼ş¿ÉÒÔÍ¨¹ı±àÒë\n" +
-						"3.ÇëÏÈ¡±Ò»¼üÖØ¹¹¡°¸ñÊ½´¦Àí£¬ÔÙÑ¡Ôñµ¥¸öÎÄ¼ş½øĞĞ×ª»»\n");
+				JOptionPane.showMessageDialog(null, "1.è¯·é€‰æ‹©ä¸€ä¸ªjavaé¡¹ç›®/è‡³å°‘ä¸€ä¸ªjavaæ–‡ä»¶ä¸Šä¼ \n" +
+						"2.è¯·ç¡®ä¿é€‰æ‹©çš„æºæ–‡ä»¶å¯ä»¥é€šè¿‡ç¼–è¯‘\n" +
+						"3.è¯·å…ˆâ€ä¸€é”®é‡æ„â€œæ ¼å¼å¤„ç†ï¼Œå†é€‰æ‹©å•ä¸ªæ–‡ä»¶è¿›è¡Œè½¬æ¢\n");
 			}
 		});
 		lblNewLabel.setIcon(new ImageIcon(GUITest.class.getResource("icon.png")));
 
-		JButton btnExit = new JButton("ÍË³ö");
-		btnExit.setFont(new Font("ËÎÌå", Font.PLAIN, 15));
+		JButton btnExit = new JButton("é€€å‡º");
+		btnExit.setFont(new Font("å®‹ä½“", Font.PLAIN, 15));
 		btnExit.setBackground(new Color(220, 220, 220));
 
-		JButton btnDownload = new JButton("ÏÂÔØ");
-		btnDownload.setFont(new Font("ËÎÌå", Font.PLAIN, 15));
+		JButton btnDownload = new JButton("ä¸‹è½½");
+		btnDownload.setFont(new Font("å®‹ä½“", Font.PLAIN, 15));
 
 		btnDownload.setBackground(new Color(220, 220, 220));
 		GroupLayout gl_panel = new GroupLayout(panel);
@@ -217,95 +217,95 @@ public class GUITest {
 								.addComponent(panel, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
 								.addContainerGap())
 		);
-        //È·ÈÏ¿ò¶¨Òå´úÂë
-        JCheckBox f_wbtn = new JCheckBox("for×ªwhile");
-        f_wbtn.setFont(new Font("ËÎÌå", Font.BOLD, 14));
+        //ç¡®è®¤æ¡†å®šä¹‰ä»£ç 
+        JCheckBox f_wbtn = new JCheckBox("forè½¬while");
+        f_wbtn.setFont(new Font("å®‹ä½“", Font.BOLD, 14));
         f_wbtn.setBounds(657, 148, 122, 23);
         showText.add(f_wbtn);
 
-        JCheckBox w_fbtn = new JCheckBox("while×ªfor");
-        w_fbtn.setFont(new Font("ËÎÌå", Font.BOLD, 14));
-        //¸´Ñ¡¿ò×´Ì¬¸Ä±äÊÂ¼ş
+        JCheckBox w_fbtn = new JCheckBox("whileè½¬for");
+        w_fbtn.setFont(new Font("å®‹ä½“", Font.BOLD, 14));
+        //å¤é€‰æ¡†çŠ¶æ€æ”¹å˜äº‹ä»¶
         f_wbtn.addChangeListener(es -> {
             JCheckBox checkBox = (JCheckBox) es.getSource();
             if(checkBox.isSelected()) {
-                //ÕâÀïÊÇÖ¸±»Ñ¡ÖĞÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+                //è¿™é‡Œæ˜¯æŒ‡è¢«é€‰ä¸­äº†ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
                 w_fbtn.setSelected(false);
             }
         });
-        //¼àÌıÊÂ¼ş
+        //ç›‘å¬äº‹ä»¶
         w_fbtn.addChangeListener(es -> {
             JCheckBox checkBox = (JCheckBox) es.getSource();
             if(checkBox.isSelected()) {
-                //ÕâÀïÊÇÖ¸±»Ñ¡ÖĞÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+                //è¿™é‡Œæ˜¯æŒ‡è¢«é€‰ä¸­äº†ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
                 f_wbtn.setSelected(false);
             }
         });
         w_fbtn.setBounds(657, 173, 133, 23);
         showText.add(w_fbtn);
 
-        JCheckBox i_sbtn = new JCheckBox("switch×ª¶àif");
-        i_sbtn.setFont(new Font("ËÎÌå", Font.BOLD, 14));
+        JCheckBox i_sbtn = new JCheckBox("switchè½¬å¤šif");
+        i_sbtn.setFont(new Font("å®‹ä½“", Font.BOLD, 14));
         i_sbtn.setBounds(657, 198, 133, 23);
         showText.add(i_sbtn);
 
-        JCheckBox s_ibtn = new JCheckBox("¶àif×ªswitch");
-        s_ibtn.setFont(new Font("ËÎÌå", Font.BOLD, 14));
+        JCheckBox s_ibtn = new JCheckBox("å¤šifè½¬switch");
+        s_ibtn.setFont(new Font("å®‹ä½“", Font.BOLD, 14));
 
         s_ibtn.setBounds(657, 223, 133, 23);
         showText.add(s_ibtn);
 
-        JCheckBox if_ifsbtn = new JCheckBox("¶àif×ªµ¥if");
-        if_ifsbtn.setFont(new Font("ËÎÌå", Font.BOLD, 14));
+        JCheckBox if_ifsbtn = new JCheckBox("å¤šifè½¬å•if");
+        if_ifsbtn.setFont(new Font("å®‹ä½“", Font.BOLD, 14));
         if_ifsbtn.setBounds(657, 248, 133, 23);
         showText.add(if_ifsbtn);
 
-        JCheckBox ifs_ifbtn = new JCheckBox("µ¥if×ª¶àif");
-        ifs_ifbtn.setFont(new Font("ËÎÌå", Font.BOLD, 14));
-        //switch×ªif¼àÌıÊÂ¼ş
+        JCheckBox ifs_ifbtn = new JCheckBox("å•ifè½¬å¤šif");
+        ifs_ifbtn.setFont(new Font("å®‹ä½“", Font.BOLD, 14));
+        //switchè½¬ifç›‘å¬äº‹ä»¶
         i_sbtn.addChangeListener(es -> {
             JCheckBox checkBox = (JCheckBox) es.getSource();
             if(checkBox.isSelected()) {
-                //ÕâÀïÊÇÖ¸±»Ñ¡ÖĞÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+                //è¿™é‡Œæ˜¯æŒ‡è¢«é€‰ä¸­äº†ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
                 s_ibtn.setSelected(false);
             }
         });
-        //¶àif×ªswitch¼àÌıÊÂ¼ş
+        //å¤šifè½¬switchç›‘å¬äº‹ä»¶
         s_ibtn.addChangeListener(es -> {
             JCheckBox checkBox = (JCheckBox) es.getSource();
             if(checkBox.isSelected()) {
-                //ÕâÀïÊÇÖ¸±»Ñ¡ÖĞÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+                //è¿™é‡Œæ˜¯æŒ‡è¢«é€‰ä¸­äº†ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
                 i_sbtn.setSelected(false);
                 if_ifsbtn.setSelected(false);
             }
         });
-        //¶àif×ªµ¥if¼àÌıÊÂ¼ş
+        //å¤šifè½¬å•ifç›‘å¬äº‹ä»¶
         if_ifsbtn.addChangeListener(es -> {
             JCheckBox checkBox = (JCheckBox) es.getSource();
             if(checkBox.isSelected()) {
-                //ÕâÀïÊÇÖ¸±»Ñ¡ÖĞÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+                //è¿™é‡Œæ˜¯æŒ‡è¢«é€‰ä¸­äº†ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
                 ifs_ifbtn.setSelected(false);
                 s_ibtn.setSelected(false);
             }
         });
-        //µ¥if×ª¶àif¼àÌıÊÂ¼ş
+        //å•ifè½¬å¤šifç›‘å¬äº‹ä»¶
         ifs_ifbtn.addChangeListener(es -> {
             JCheckBox checkBox = (JCheckBox) es.getSource();
             if(checkBox.isSelected()) {
-                //ÕâÀïÊÇÖ¸±»Ñ¡ÖĞÁË£¡£¡£¡£¡£¡£¡£¡£¡£¡
+                //è¿™é‡Œæ˜¯æŒ‡è¢«é€‰ä¸­äº†ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
                 if_ifsbtn.setSelected(false);
             }
         });
         ifs_ifbtn.setBounds(657, 273, 133, 23);
         showText.add(ifs_ifbtn);
 
-		JLabel label_1 = new JLabel("´¦ÀíÇ°´úÂë£º");
-		label_1.setFont(new Font("ËÎÌå", Font.PLAIN, 14));
+		JLabel label_1 = new JLabel("å¤„ç†å‰ä»£ç ï¼š");
+		label_1.setFont(new Font("å®‹ä½“", Font.PLAIN, 14));
 		label_1.setBounds(181, 0, 100, 15);
 		showText.add(label_1);
 
-		JLabel label_2 = new JLabel("´¦Àíºó´úÂë£º");
-		label_2.setFont(new Font("ËÎÌå", Font.PLAIN, 14));
+		JLabel label_2 = new JLabel("å¤„ç†åä»£ç ï¼š");
+		label_2.setFont(new Font("å®‹ä½“", Font.PLAIN, 14));
 		label_2.setBounds(792, 0, 100, 15);
 		showText.add(label_2);
 
@@ -318,17 +318,17 @@ public class GUITest {
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
 			    try {
-                    //¼àÌıÊÂ¼ş
+                    //ç›‘å¬äº‹ä»¶
                     int i;
                     selectFileNum=list.getSelectedIndex();
                     i=selectFileNum;
                     rightPath=paths.get(i);
                     sourceFile.setText(rightPath);
-                    String o_text = readTxt(sourceFile.getText());//±£´æÁË¶ÁÈ¡³öµÄÎÄ±¾ÄÚÈİ£¨º¬»»ĞĞ·û£©
+                    String o_text = readTxt(sourceFile.getText());//ä¿å­˜äº†è¯»å–å‡ºçš„æ–‡æœ¬å†…å®¹ï¼ˆå«æ¢è¡Œç¬¦ï¼‰
                     oldText.setText(o_text);
 					oldText.setCaretPosition(0);
                     if(results.size()!=0){
-                        String n_text = results.get(i);//±£´æÁË¶ÁÈ¡³öµÄÎÄ±¾ÄÚÈİ£¨º¬»»ĞĞ·û£©
+                        String n_text = results.get(i);//ä¿å­˜äº†è¯»å–å‡ºçš„æ–‡æœ¬å†…å®¹ï¼ˆå«æ¢è¡Œç¬¦ï¼‰
                         newText.setText(n_text);
 						newText.setCaretPosition(0);
                     }
@@ -341,7 +341,7 @@ public class GUITest {
 		scrollPane_2.setViewportView(list);
 		frame.getContentPane().setLayout(groupLayout);
 
-        JButton btnFastButton = new JButton("Ò»¼üÖØ¹¹");
+        JButton btnFastButton = new JButton("ä¸€é”®é‡æ„");
         btnFastButton.addActionListener(e -> {
             results.clear();
             String result;
@@ -355,32 +355,32 @@ public class GUITest {
             judge.add(if_ifsbtn.isSelected());
             judge.add(ifs_ifbtn.isSelected());
             if(paths.size()==0){
-                JOptionPane.showMessageDialog(null, "ÇëÑ¡ÔñÒ»¸öjavaÏîÄ¿/ÖÁÉÙÒ»¸öjavaÎÄ¼şÉÏ´«");
+                JOptionPane.showMessageDialog(null, "è¯·é€‰æ‹©ä¸€ä¸ªjavaé¡¹ç›®/è‡³å°‘ä¸€ä¸ªjavaæ–‡ä»¶ä¸Šä¼ ");
             }
             else{
                 for(String path:paths){
-                    source = FileProcessing.readFile(path);//°´ĞĞ¶ÁÈ¡ÎÄ¼şÄÚÈİ£¨ÎŞ»»ĞĞ·û
+                    source = FileProcessing.readFile(path);//æŒ‰è¡Œè¯»å–æ–‡ä»¶å†…å®¹ï¼ˆæ— æ¢è¡Œç¬¦
                     MainRun theMain=new MainRun(source,judge);
                     result=theMain.run();
                     results.add(result);
                 }
-                    JOptionPane.showMessageDialog(null, "Ò»¼üÖØ¹¹³É¹¦");
+                    JOptionPane.showMessageDialog(null, "ä¸€é”®é‡æ„æˆåŠŸ");
             }
             list.clearSelection();
         });
         btnFastButton.setBounds(38, 507, 105, 23);
-        btnFastButton.setFont(new Font("ËÎÌå", Font.PLAIN, 15));
+        btnFastButton.setFont(new Font("å®‹ä½“", Font.PLAIN, 15));
         btnFastButton.setBackground(Color.LIGHT_GRAY);
         showText.add(btnFastButton);
         frame.getContentPane().setLayout(groupLayout);
 
-        JLabel lblNewLabel_1 = new JLabel("ÎÄ¼şÄ¿Â¼£º");
-        lblNewLabel_1.setFont(new Font("ËÎÌå", Font.PLAIN, 14));
+        JLabel lblNewLabel_1 = new JLabel("æ–‡ä»¶ç›®å½•ï¼š");
+        lblNewLabel_1.setFont(new Font("å®‹ä½“", Font.PLAIN, 14));
         lblNewLabel_1.setBounds(10, 0, 100, 15);
         showText.add(lblNewLabel_1);
         frame.getContentPane().setLayout(groupLayout);
 
-		//×ª»»°´Å¥
+		//è½¬æ¢æŒ‰é’®
 		btnChangeButton.addActionListener(arg0 -> {
 //				result="";
             ArrayList<String> source;
@@ -394,28 +394,28 @@ public class GUITest {
             judge.add(ifs_ifbtn.isSelected());
 
             if(results.size()==0){
-JOptionPane.showMessageDialog(null, "ÇëÏÈµã»÷¡°Ò»¼üÖØ¹¹");
+JOptionPane.showMessageDialog(null, "è¯·å…ˆç‚¹å‡»â€œä¸€é”®é‡æ„");
 }
             else if("".equals(rightPath)) {
-JOptionPane.showMessageDialog(null, "ÇëÔÚÎÄ¼şÄ¿Â¼ÖĞÑ¡ÔñÒ»¸öÎÄ¼ş");
+JOptionPane.showMessageDialog(null, "è¯·åœ¨æ–‡ä»¶ç›®å½•ä¸­é€‰æ‹©ä¸€ä¸ªæ–‡ä»¶");
 }
             else {
-                source = FileProcessing.readFile(rightPath);//°´ĞĞ¶ÁÈ¡ÎÄ¼şÄÚÈİ£¨ÎŞ»»ĞĞ·û
-//Ö÷³ÌĞò
+                source = FileProcessing.readFile(rightPath);//æŒ‰è¡Œè¯»å–æ–‡ä»¶å†…å®¹ï¼ˆæ— æ¢è¡Œç¬¦
+//ä¸»ç¨‹åº
 MainRun theMain=new MainRun(source,judge);
 String result=theMain.run();
 results.set(selectFileNum,result);
 
-//½á¹ûÏÔÊ¾
-newText.setText(result);//×ª»»Íê³É
+//ç»“æœæ˜¾ç¤º
+newText.setText(result);//è½¬æ¢å®Œæˆ
 				newText.setCaretPosition(0);
             }
         });
-		//Ñ¡ÔñÔ´ÎÄ¼ş
-		//Òª²»¾ÍÑ¡Ò»¸öÏîÄ¿£¬Òª²»¾ÍÑ¡¶à¸öÎÄ¼ş
+		//é€‰æ‹©æºæ–‡ä»¶
+		//è¦ä¸å°±é€‰ä¸€ä¸ªé¡¹ç›®ï¼Œè¦ä¸å°±é€‰å¤šä¸ªæ–‡ä»¶
 		btnBrowse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			    //Çå¿Õ
+			    //æ¸…ç©º
 			    clearAll();
 			    oldText.setText("");
 			    newText.setText("");
@@ -423,7 +423,7 @@ newText.setText(result);//×ª»»Íê³É
                 JFileChooser jfc=new JFileChooser();
 
                 jfc.setMultiSelectionEnabled(true);
-                //ÎÄ¼ş¼ĞÎÄ¼ş¾ù¿É
+                //æ–‡ä»¶å¤¹æ–‡ä»¶å‡å¯
 				jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES );
                 boolean someFileWrong = false;
                 int option = jfc.showOpenDialog(jfc);
@@ -433,7 +433,7 @@ newText.setText(result);//×ª»»Íê³É
 
                     for(File file: souFiles) {
 						try{
-							//Èç¹ûÊÇÎÄ¼ş¼ĞÎÒ¾Í±éÀúËü
+							//å¦‚æœæ˜¯æ–‡ä»¶å¤¹æˆ‘å°±éå†å®ƒ
 							if(file.isDirectory() && souFiles.length==1){
 								isFolder = true;
 								sourceFolderPath = file.getPath();
@@ -444,14 +444,14 @@ newText.setText(result);//×ª»»Íê³É
 								}
 							}
 							else if(souFiles.length>0 && file.isFile()){
-								//ÎÄ¼şµ¥¶ÀÅĞ¶ÏÀàĞÍ
+								//æ–‡ä»¶å•ç‹¬åˆ¤æ–­ç±»å‹
 								path = file.getPath();
 								paths.add(path);
 								fileNames.add(getFileNames(path));
 
-								//ÅĞ¶ÏÊäÈëÎÄ¼şÊÇ·ñ·ûºÏÒªÇó
+								//åˆ¤æ–­è¾“å…¥æ–‡ä»¶æ˜¯å¦ç¬¦åˆè¦æ±‚
 								extensionName = getExtensionName(file.getPath());
-								//Èç¹ûÊÇjavaÎÄ¼ş
+								//å¦‚æœæ˜¯javaæ–‡ä»¶
 //								if("java".equals(extensionName) || "txt".equals(extensionName)) {
 								if(!"java".equals(extensionName)) {
 									someFileWrong = true;
@@ -459,7 +459,7 @@ newText.setText(result);//×ª»»Íê³É
 							}
 							else {
 								clearAll();
-								JOptionPane.showMessageDialog(null,"ÇëÑ¡ÔñÒ»¸öjavaÏîÄ¿/ÖÁÉÙÒ»¸öjavaÎÄ¼şÉÏ´«");
+								JOptionPane.showMessageDialog(null,"è¯·é€‰æ‹©ä¸€ä¸ªjavaé¡¹ç›®/è‡³å°‘ä¸€ä¸ªjavaæ–‡ä»¶ä¸Šä¼ ");
 							}
 						}
 						catch (Exception ex){
@@ -469,18 +469,18 @@ newText.setText(result);//×ª»»Íê³É
                 }
                 if(someFileWrong){
                 	clearAll();
-                    JOptionPane.showMessageDialog(null, "ÇëÑ¡ÔñÒ»¸öjavaÏîÄ¿/ÖÁÉÙÒ»¸öjavaÎÄ¼şÉÏ´«");
+                    JOptionPane.showMessageDialog(null, "è¯·é€‰æ‹©ä¸€ä¸ªjavaé¡¹ç›®/è‡³å°‘ä¸€ä¸ªjavaæ–‡ä»¶ä¸Šä¼ ");
                 }
                 else{
-//                    /**ÓĞ´íÎó**/
+//                    /**æœ‰é”™è¯¯**/
                     list.setListData(fileNames.toArray());
                 }
 
 			}
 		});
-		//ÍË³ö°´Å¥
+		//é€€å‡ºæŒ‰é’®
 		btnExit.addActionListener(e -> System.exit(0));
-		//ÏÂÔØ°´Å¥
+		//ä¸‹è½½æŒ‰é’®
 		btnDownload.addActionListener(e -> {
 
 			JFileChooser fc = new JFileChooser();
@@ -490,17 +490,17 @@ newText.setText(result);//×ª»»Íê³É
             String result;
 			String path;
 			if (flag != JFileChooser.APPROVE_OPTION) {
-				//Èç¹ûÃ»ÓĞµã»÷È·¶¨°´Å¥
+				//å¦‚æœæ²¡æœ‰ç‚¹å‡»ç¡®å®šæŒ‰é’®
 				if(flag == JFileChooser.CANCEL_OPTION){
-					JOptionPane.showMessageDialog(null, "È¡ÏûÏÂÔØ£¡");
+					JOptionPane.showMessageDialog(null, "å–æ¶ˆä¸‹è½½ï¼");
 				}
 			} else {
-				//µã»÷ÁËÈ·¶¨°´Å¥
+				//ç‚¹å‡»äº†ç¡®å®šæŒ‰é’®
 				f = fc.getSelectedFile();
-				downLoadPath =f.getPath();                // pathÊÇ±£´æºÃµÄÏÂÔØÂ·¾¶£¬¿ÉÒÔÊä³öÒ»ÏÂ
-				String new_filePath = downLoadPath +"\\"+"_new";//ĞÂ½¨Ò»¸öÎÄ¼ş¼Ğ´æ·Å½á¹û
+				downLoadPath =f.getPath();                // pathæ˜¯ä¿å­˜å¥½çš„ä¸‹è½½è·¯å¾„ï¼Œå¯ä»¥è¾“å‡ºä¸€ä¸‹
+				String new_filePath = downLoadPath +"\\"+"_new";//æ–°å»ºä¸€ä¸ªæ–‡ä»¶å¤¹å­˜æ”¾ç»“æœ
 				if(isFolder){
-					//Èç¹ûµ¼ÈëµÄÊÇÏîÄ¿
+					//å¦‚æœå¯¼å…¥çš„æ˜¯é¡¹ç›®
 					File srcFile = new File(sourceFolderPath);
 					File desFile = new File(new_filePath);
 					try {
@@ -510,11 +510,11 @@ newText.setText(result);//×ª»»Íê³É
 						e1.printStackTrace();
 					}
 					if(count==results.size()){
-						JOptionPane.showMessageDialog(null, "ÏÂÔØ³É¹¦£¡");
+						JOptionPane.showMessageDialog(null, "ä¸‹è½½æˆåŠŸï¼");
 					}
 				}
 				else{
-					//Èç¹ûµ¼ÈëµÄÊÇ¶à¸ö»òÒ»¸öÎÄ¼ş
+					//å¦‚æœå¯¼å…¥çš„æ˜¯å¤šä¸ªæˆ–ä¸€ä¸ªæ–‡ä»¶
 					File newFile = new File(new_filePath);
 					if  (!newFile .exists()  && !newFile .isDirectory())
 					{
@@ -523,19 +523,19 @@ newText.setText(result);//×ª»»Íê³É
 
 					try{
 						for(int i=0;i<paths.size();i++){
-							result=results.get(i);//»ñÈ¡´¦Àí½á¹û
-							path= new_filePath + "\\" + fileNames.get(i)+".java";//ÎÄ¼şÂ·¾¶
-							//Ğ´ÈëÎÄ¼ş
+							result=results.get(i);//è·å–å¤„ç†ç»“æœ
+							path= new_filePath + "\\" + fileNames.get(i)+".java";//æ–‡ä»¶è·¯å¾„
+							//å†™å…¥æ–‡ä»¶
 							FileProcessing.clearFile(path);
 							FileProcessing.writeFile(path,result);
 						}
 						if(results.size()!=0){
-							//Ö¸Ã»ÓĞÒ»¼üµ¼ÈëµÄÇé¿ö
-							JOptionPane.showMessageDialog(null, "ÏÂÔØ³É¹¦£¡");
+							//æŒ‡æ²¡æœ‰ä¸€é”®å¯¼å…¥çš„æƒ…å†µ
+							JOptionPane.showMessageDialog(null, "ä¸‹è½½æˆåŠŸï¼");
 						}
 					}
 					catch (Exception ex){
-						JOptionPane.showMessageDialog(null, "ÏÂÔØ´íÎó£¡");
+						JOptionPane.showMessageDialog(null, "ä¸‹è½½é”™è¯¯ï¼");
 					}
 				}
 			}
@@ -543,7 +543,7 @@ newText.setText(result);//×ª»»Íê³É
 		});
 	}
 
-	//¸´ÖÆÎÄ¼ş¼Ğ
+	//å¤åˆ¶æ–‡ä»¶å¤¹
 	private void copyFolder(File srcFile, File destFile) throws IOException {
 
 
@@ -564,7 +564,7 @@ newText.setText(result);//×ª»»Íê³É
 
 	}
 
-	//¸´ÖÆÎÄ¼ş
+	//å¤åˆ¶æ–‡ä»¶
 	private void copyFile(File srcFile, File newFile) throws IOException{
 
 		String extensionName = getExtensionName(srcFile.getName());
@@ -595,18 +595,18 @@ newText.setText(result);//×ª»»Íê³É
 
 	}
 
-	//Í¨¹ıÂ·¾¶»ñÈ¡ÎÄ¼şÃû³Æ
+	//é€šè¿‡è·¯å¾„è·å–æ–‡ä»¶åç§°
 	private String getFileNames(String path){
 			String className;
 			String[] strArray = path.split("\\\\");
 			String[] splitStr = strArray[strArray.length-1].split("\\.");
-			className = splitStr[0];     // ±£´æµÄÎÄ¼şÃû
+			className = splitStr[0];     // ä¿å­˜çš„æ–‡ä»¶å
 //			fileNames.add(className);
 		return className;
 	}
 
 
-	//Çå¿Õ¼ÇÂ¼
+	//æ¸…ç©ºè®°å½•
     private void clearAll(){
 	    paths.clear();
 	    fileNames.clear();
@@ -621,7 +621,7 @@ newText.setText(result);//×ª»»Íê³É
 	    count = 0;
     }
 
-	//»ñÈ¡ÓÃ»§ÉÏ´«µÄÎÄ¼şÃû
+	//è·å–ç”¨æˆ·ä¸Šä¼ çš„æ–‡ä»¶å
 	private String getExtensionName(String filename) {
 		if ((filename != null) && (filename.length() > 0)) {
 			int dot = filename.lastIndexOf('.');
@@ -632,7 +632,7 @@ newText.setText(result);//×ª»»Íê³É
 		return filename;
 	}
 
-	//¶ÁÈ¡ÉÏ´«ÎÄ¼ş
+	//è¯»å–ä¸Šä¼ æ–‡ä»¶
 	private String readTxt(String path) {
 		if (path == null || "".equals(path)) {
 			return "";

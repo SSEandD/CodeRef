@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class OrderBlock {
 	
-	private ArrayList<String> lines;//°´ĞĞ¶ÁÈ¡ÎÄ¼şÄÚÈİ
-	private ArrayList<String> records = new ArrayList<>();//¼ÇÂ¼
+	private ArrayList<String> lines;//æŒ‰è¡Œè¯»å–æ–‡ä»¶å†…å®¹
+	private ArrayList<String> records = new ArrayList<>();//è®°å½•
 	private String thisLine;
 	private int j = 0;
 
 	/**
-	 * ¶ÁÈ¡Ö¸¶¨Â·¾¶ÎÄ¼ş
+	 * è¯»å–æŒ‡å®šè·¯å¾„æ–‡ä»¶
 	 */
 	public OrderBlock(ArrayList<String> list) {
 		lines = list;
@@ -33,16 +33,16 @@ public class OrderBlock {
 		while(i<s.length()) {
 			ch = s.charAt(i);
 			if(ch>=7&&ch<=13){
-				//°üº¬»»ĞĞ·û
+				//åŒ…å«æ¢è¡Œç¬¦
 				i++;
 				continue;
 			}
 			else if(ch==32&&flag){
-				//ÈôÎª¿Õ¸ñ
+				//è‹¥ä¸ºç©ºæ ¼
 				result += ch;
 			}
 			else if(ch!=32){
-				//Ö±µ½Óö¼ûµÚÒ»¸ö·Ç¿Õ°×·û
+				//ç›´åˆ°é‡è§ç¬¬ä¸€ä¸ªéç©ºç™½ç¬¦
 				result += ch;
 				flag=true;
 			}
@@ -52,11 +52,11 @@ public class OrderBlock {
 	}
 	
 	public ArrayList<String> analyse() {
-		//		FileProcessing.clearFile();//Çå¿ÕÎÄ¼ş
+		//		FileProcessing.clearFile();//æ¸…ç©ºæ–‡ä»¶
 		while(j<lines.size()) {
 			thisLine="";
 			thisLine = deleteBC(lines.get(j));
-			records.add(thisLine);//Î´¼Ó»»ĞĞ·û
+			records.add(thisLine);//æœªåŠ æ¢è¡Œç¬¦
 			j++;
 		}
 		combination();
