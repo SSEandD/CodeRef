@@ -28,13 +28,13 @@ public class StandardName {
                     try {
 
                         temp = String.valueOf(arrayListTemp.get(j));
-                        // ·¢ÏÖpackage
+                        // å‘ç°package
                         if (temp.equals("package")) {
                             boolean isBreak = false;
                             oldPackageName = new ArrayList();
                             newPackageName = new ArrayList();
                             for (int i1 = i; i1 < arrayList.size(); i1++) {
-                                // Ñ­»·²éÕÒ¸ÃĞĞ
+                                // å¾ªç¯æŸ¥æ‰¾è¯¥è¡Œ
                                 arrayListTemp1 = (ArrayList)arrayList.get(i1);
                                 int j1 = 0;
                                 if (i == i1) {
@@ -44,7 +44,7 @@ public class StandardName {
                                 }
                                 for (; j1 < arrayListTemp1.size(); j1++) {
                                     temp1 = String.valueOf(arrayListTemp1.get(j1));
-                                    // ·¢ÏÖ£»Ê±Îª¸ÃÓï¾äÖÕµã
+                                    // å‘ç°ï¼›æ—¶ä¸ºè¯¥è¯­å¥ç»ˆç‚¹
                                     if (temp1.equals(";")) {
                                         isBreak = true;
                                         break;
@@ -99,7 +99,7 @@ public class StandardName {
                             }
                         } else if (temp.equals("final")) {
                             boolean isBreak = false;
-                            // 0ÊôĞÔ1³£Á¿2Àà
+                            // 0å±æ€§1å¸¸é‡2ç±»
                             int type = 0;
                             int words = 0;
                             for (int i1 = i; i1 < arrayList.size(); i1++) {
@@ -160,7 +160,7 @@ public class StandardName {
                                 }
                             }
                         } else if (temp.equals("(")) {
-                            // (Íù»ØÕÒ£¬ÕÒµ½;»òÕß}ÎªÖ¹£¬Ê¶±ğÆäÖĞÊÇ·ñÓĞnew£¬Ã»ÓĞÔòÊÓÎª·½·¨
+                            // (å¾€å›æ‰¾ï¼Œæ‰¾åˆ°;æˆ–è€…}ä¸ºæ­¢ï¼Œè¯†åˆ«å…¶ä¸­æ˜¯å¦æœ‰newï¼Œæ²¡æœ‰åˆ™è§†ä¸ºæ–¹æ³•
                             ArrayList arrayListNew = new ArrayList();
                             int words = 0;
                             boolean isBreak = false;
@@ -177,20 +177,20 @@ public class StandardName {
                                     temp1 = String.valueOf(arrayListTemp1.get(j1));
                                     if (!temp1.equals(" ")) {
                                         words++;
-                                        if (words == 1) {// »ØÕÒµÚÒ»¸ö´Ê£¬ÓĞ¿ÉÄÜÎª·½·¨ÃûÏÈ¼ÇÂ¼
+                                        if (words == 1) {// å›æ‰¾ç¬¬ä¸€ä¸ªè¯ï¼Œæœ‰å¯èƒ½ä¸ºæ–¹æ³•åå…ˆè®°å½•
                                             if ((!generalMethod.isKeyWord(temp1)) && (!temp1.equals("("))) {
                                                 oldName = temp1;
                                                 arrayListNew.add(0, temp1);
                                                 continue;
                                             }
-                                            // Èç¹ûÇ°Ò»¸öÎª¹Ø¼ü×Ö»òÕß£¨Ôò¿Ï¶¨²»ÊÇ£¬Ìø³ö
+                                            // å¦‚æœå‰ä¸€ä¸ªä¸ºå…³é”®å­—æˆ–è€…ï¼ˆåˆ™è‚¯å®šä¸æ˜¯ï¼Œè·³å‡º
                                             else {
                                                 needChange = false;
                                                 isBreak = true;
                                                 break;
                                             }
                                         }
-                                        if (words == 2) {// Á½¸ö×ÖÊ±£¬ÍùÇ°Ò»¸öÎª.Îªµ÷ÓÃµÄ·½·¨£¬²»Àí£¬Ìø³ö£¬Ö»¸Ä¶¨ÒåÊ±µÄ·½·¨
+                                        if (words == 2) {// ä¸¤ä¸ªå­—æ—¶ï¼Œå¾€å‰ä¸€ä¸ªä¸º.ä¸ºè°ƒç”¨çš„æ–¹æ³•ï¼Œä¸ç†ï¼Œè·³å‡ºï¼Œåªæ”¹å®šä¹‰æ—¶çš„æ–¹æ³•
                                             if ((!temp1.equals("."))) {
                                                 if (temp1.length() == 1) {
                                                     if (generalMethod.isOperator(temp1.charAt(0))
@@ -373,7 +373,7 @@ public class StandardName {
     }
 
     public boolean isIdentical(ArrayList arrayList1, ArrayList arrayList2) {
-        // ±È½ÏÊÇ·ñÏàÍ¬
+        // æ¯”è¾ƒæ˜¯å¦ç›¸åŒ
         if (arrayList1.size() != arrayList2.size()) {
             return false;
         } else {

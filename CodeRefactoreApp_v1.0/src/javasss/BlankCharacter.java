@@ -6,9 +6,9 @@ public class BlankCharacter {
     private int count = 0;
     private int j=0;
     private int flag = 0;
-    private char ch; // ×Ö·û±äÁ¿£¬´æ·Å×îĞÂ¶Á½øµÄÔ´³ÌĞò×Ö·û
-    private char fch; // ×Ö·û±äÁ¿
-    private String strToken; // ×Ö·ûÊı×é£¬´æ·Å¹¹³Éµ¥´Ê·ûºÅµÄ×Ö·û´®
+    private char ch; // å­—ç¬¦å˜é‡ï¼Œå­˜æ”¾æœ€æ–°è¯»è¿›çš„æºç¨‹åºå­—ç¬¦
+    private char fch; // å­—ç¬¦å˜é‡
+    private String strToken; // å­—ç¬¦æ•°ç»„ï¼Œå­˜æ”¾æ„æˆå•è¯ç¬¦å·çš„å­—ç¬¦ä¸²
     private String blankStr="";
     private String thisline="";
     private ArrayList<String> line = new ArrayList<String>();
@@ -18,7 +18,7 @@ public class BlankCharacter {
         line = array;
     }
     /**
-    * ½«ÏÂÒ»¸öÊäÈë×Ö·û¶Áµ½chÖĞ£¬ËÑË÷Ö¸Ê¾Æ÷Ç°ÒÆÒ»¸ö×Ö·û
+    * å°†ä¸‹ä¸€ä¸ªè¾“å…¥å­—ç¬¦è¯»åˆ°chä¸­ï¼Œæœç´¢æŒ‡ç¤ºå™¨å‰ç§»ä¸€ä¸ªå­—ç¬¦
     */
     public void getChar() {
         ch = line.get(j).charAt(i);
@@ -28,10 +28,10 @@ public class BlankCharacter {
     public void concat() {
         strToken=FileProcessing.concat(strToken,ch);
     }
-    /** ¼ì²échÖĞµÄ×Ö·ûÊÇ·ñÎª¿Õ°×£¬ÈôÊÇÔòµ÷ÓÃgetChar()Ö±ÖÁchÖĞ½øÈëÒ»¸ö·Ç¿Õ°××Ö·û*/
+    /** æ£€æŸ¥chä¸­çš„å­—ç¬¦æ˜¯å¦ä¸ºç©ºç™½ï¼Œè‹¥æ˜¯åˆ™è°ƒç”¨getChar()ç›´è‡³chä¸­è¿›å…¥ä¸€ä¸ªéç©ºç™½å­—ç¬¦*/
     public void deleteBC() {
-        //isSpaceChar(char ch) È·¶¨Ö¸¶¨×Ö·ûÊÇ·ñÎª Unicode ¿Õ°××Ö·û¡£
-        //ÉÏÊö·½·¨²»ÄÜÊ¶±ğ»»ĞĞ·û
+        //isSpaceChar(char ch) ç¡®å®šæŒ‡å®šå­—ç¬¦æ˜¯å¦ä¸º Unicode ç©ºç™½å­—ç¬¦ã€‚
+        //ä¸Šè¿°æ–¹æ³•ä¸èƒ½è¯†åˆ«æ¢è¡Œç¬¦
         while (Character.isWhitespace(ch)&&i<line.get(j).length()) {
             if(ch==32) {
                 while(ch==32&&i<line.get(j).length()) {
@@ -46,7 +46,7 @@ public class BlankCharacter {
             }
         }
     }
-    /**ÔÚÒıºÅÄÚµÄ¿Õ°××Ö·û¼ì²é£¬ÈôchÎª¿Õ°×£¬Ôò±ä³É×ªÒå×Ö·û£¬*/
+    /**åœ¨å¼•å·å†…çš„ç©ºç™½å­—ç¬¦æ£€æŸ¥ï¼Œè‹¥chä¸ºç©ºç™½ï¼Œåˆ™å˜æˆè½¬ä¹‰å­—ç¬¦ï¼Œ*/
     public void transBC() {
         if(ch==7) {
             strToken+="\\a";
@@ -70,9 +70,9 @@ public class BlankCharacter {
             strToken+="\\v";
         }
     }
-    /**¶ÔÒıºÅÄÚµÄÌØÊâ¿Õ¸ñ½øĞĞ×ªÒå*/
+    /**å¯¹å¼•å·å†…çš„ç‰¹æ®Šç©ºæ ¼è¿›è¡Œè½¬ä¹‰*/
     public void inQuotation() {
-        if(ch=='"') {//Ë«ÒıºÅÄÚ
+        if(ch=='"') {//åŒå¼•å·å†…
             concat();
             getChar();
             while(ch!='"') {
@@ -90,7 +90,7 @@ public class BlankCharacter {
             record.add(strToken);
             strToken="";
         }
-        if(ch=='\'') {//µ¥ÒıºÅÄÚ
+        if(ch=='\'') {//å•å¼•å·å†…
             concat();
             getChar();
             while(ch!='\'') {
@@ -109,17 +109,17 @@ public class BlankCharacter {
             strToken="";
         }
     }
-    /**×¢ÊÍÄÚÈİ*/
+    /**æ³¨é‡Šå†…å®¹*/
     public boolean isAnnotation() {
         boolean isOut=false;
-        //»ñÈ¡µÚÒ»¸ö×Ö·û
+        //è·å–ç¬¬ä¸€ä¸ªå­—ç¬¦
         int a = getFirstCh();
         if(fch=='/') {
-            //¶ÁÈ¡ÏÂÒ»¸ö×Ö·û
+            //è¯»å–ä¸‹ä¸€ä¸ªå­—ç¬¦
             fch = line.get(j).charAt(a++);
             if(fch=='/') {
-                //ÈôÎª ¡®//¡¯ ×¢ÊÍÄÚÈİ
-                record.add(blankStr);//Ëõ½ø
+                //è‹¥ä¸º â€˜//â€™ æ³¨é‡Šå†…å®¹
+                record.add(blankStr);//ç¼©è¿›
                 while(i<line.get(j).length()) {
                     getChar();
                     deleteBC();
@@ -131,7 +131,7 @@ public class BlankCharacter {
                 return true;
             }
             else if(fch=='*') {
-                //ÈôÎª ¡®/*¡¯
+                //è‹¥ä¸º â€˜/*â€™
                 while(true) {
                     record.add(blankStr);
 //                    System.out.println(j);
@@ -166,7 +166,7 @@ public class BlankCharacter {
         }
         return false;
     }
-    /**¼ÇÂ¼Ëõ½øÁ¿¸Ä±äµÄµÈ¼¶*/
+    /**è®°å½•ç¼©è¿›é‡æ”¹å˜çš„ç­‰çº§*/
     public void retract (){
         if(ch=='{'){
             count++;
@@ -178,7 +178,7 @@ public class BlankCharacter {
         }
     }
     /**
-    * ¸Ä±äËõ½øÁ¿*/
+    * æ”¹å˜ç¼©è¿›é‡*/
     public void changeBlankStr() {
         if(count==0) {
             blankStr="";
@@ -190,7 +190,7 @@ public class BlankCharacter {
             }
         }
     }
-    /**Ğ´ÈëËõ½øÁ¿*/
+    /**å†™å…¥ç¼©è¿›é‡*/
     public void addRetact() {
         getFirstCh();
         if(fch=='}') {
@@ -204,7 +204,7 @@ public class BlankCharacter {
             record.add(blankStr);
         }
     }
-    /**¼ì²âµÚÒ»¸ö×Ö·û²¢·µ»Ø*/
+    /**æ£€æµ‹ç¬¬ä¸€ä¸ªå­—ç¬¦å¹¶è¿”å›*/
     public int getFirstCh() {
         int a=0;
         do {
@@ -212,14 +212,14 @@ public class BlankCharacter {
         }while(Character.isWhitespace(fch)&&a<line.get(j).length());
         return a;
     }
-    /**É¾³ı¿ÕĞĞ*/
+    /**åˆ é™¤ç©ºè¡Œ*/
     public boolean deleteBlankLine() {
         if(line.get(j).equals("")) {
             return true;
         }
         return false;
     }
-    /**½«Êı×éÄÚÈİĞ´½øÎÄ¼ş*/
+    /**å°†æ•°ç»„å†…å®¹å†™è¿›æ–‡ä»¶*/
     public void writeInFile() {
     	thisline="";
     	line.clear();
@@ -237,24 +237,24 @@ public class BlankCharacter {
     }
 
     /**
-    * ´Ê·¨·ÖÎö
+    * è¯æ³•åˆ†æ
     */
     public ArrayList<String> analyse() {
-        strToken = ""; // ÖÃstrTokenÎª¿Õ´®
-//        FileProcessing.clearFile(outputPath);//Çå¿ÕÎÄ¼ş
+        strToken = ""; // ç½®strTokenä¸ºç©ºä¸²
+//        FileProcessing.clearFile(outputPath);//æ¸…ç©ºæ–‡ä»¶
         while(j<line.size()) {
             i=0;
-            //É¾³ı¿ÕĞĞ
+            //åˆ é™¤ç©ºè¡Œ
             if(deleteBlankLine()) {
                 j++;
                 continue;
             }
-            //×¢ÊÍÄÚÈİ
+            //æ³¨é‡Šå†…å®¹
             if(isAnnotation()) {
                 j++;
                 continue;
             }
-            //Ìí¼ÓËõ½ø
+            //æ·»åŠ ç¼©è¿›
             if(flag!=1) {
                 addRetact();
             }
@@ -262,18 +262,18 @@ public class BlankCharacter {
             //getFirstCh();
             while(i<line.get(j).length()) {
                 getChar();
-                deleteBC();//É¾³ı¿Õ°×·û
+                deleteBC();//åˆ é™¤ç©ºç™½ç¬¦
                 if(i==line.get(j).length()&&Character.isWhitespace(ch)) {
-                    //ÒÑ¾­Îª×îºóÒ»¸ö×Ö·û
-                    flag=1;//»»ĞĞ,Ìø¹ıÖÆ±í·ûÔì³ÉµÄ¿ÕĞĞ
+                    //å·²ç»ä¸ºæœ€åä¸€ä¸ªå­—ç¬¦
+                    flag=1;//æ¢è¡Œ,è·³è¿‡åˆ¶è¡¨ç¬¦é€ æˆçš„ç©ºè¡Œ
                     strToken = "";
                     continue;
                 }
                 try {
-                    inQuotation();//ÔÚË«ÒıºÅÄÚ
-                    retract();//Ëõ½ø
+                    inQuotation();//åœ¨åŒå¼•å·å†…
+                    retract();//ç¼©è¿›
                 }
-                catch(Exception e) {//½â¾öµÄÊÇ¼ì²â²»µ½³É¶ÔÒıºÅµÄÊ±ºòµÄÎÊÌâ
+                catch(Exception e) {//è§£å†³çš„æ˜¯æ£€æµ‹ä¸åˆ°æˆå¯¹å¼•å·çš„æ—¶å€™çš„é—®é¢˜
                     throw(e);
                 }
                 concat();
@@ -281,7 +281,7 @@ public class BlankCharacter {
                 strToken="";
             }
             if(flag==1) {
-                //Ìø¹ı
+                //è·³è¿‡
                 j++;
                 continue;
             }
@@ -292,8 +292,8 @@ public class BlankCharacter {
             j++;
         }
         writeInFile();
-//        return record;//ºúÒ«»ÔĞèÒªµÄ
-        return line;//Åí¹ú±¶ĞèÒªµÄ
+//        return record;//èƒ¡è€€è¾‰éœ€è¦çš„
+        return line;//å½­å›½å€éœ€è¦çš„
     }
 }
 

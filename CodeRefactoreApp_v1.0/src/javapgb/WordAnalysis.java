@@ -16,7 +16,7 @@ public class WordAnalysis {
 		return arrayList;
 	}
 	public ArrayList lineAnalysis(ArrayList arrayList,String row){
-		ArrayList arrRow=new ArrayList();//ĞĞ
+		ArrayList arrRow=new ArrayList();//è¡Œ
 		ArrayList arrTemp=new ArrayList();
 		String temp="";
 		char c=' ';
@@ -27,7 +27,7 @@ public class WordAnalysis {
 			arrTemp = (ArrayList) arrayList.get(arrayList.size()-1);
 			if(arrTemp.size()>0){
 				lastWord = String.valueOf(arrTemp.get(arrTemp.size()-1));
-				//ÅĞ¶ÏÉÏÒ»¸ö¿ªÍ·ÊÇ·ñÎª/*...
+				//åˆ¤æ–­ä¸Šä¸€ä¸ªå¼€å¤´æ˜¯å¦ä¸º/*...
 				if(lastWord.length()>=2){
 					if(lastWord.charAt(0)=='/'&&lastWord.charAt(1)=='*'){
 						if(lastWord.charAt(lastWord.length()-2)=='*'&&lastWord.charAt(lastWord.length()-1)=='/'){
@@ -39,7 +39,7 @@ public class WordAnalysis {
 				}
 			}
 		}
-		//Èç¹ûÊÇÏÈ°ÑÏÂÃæµÄ¼Ó½øÈ¥£¬Ö±µ½Åöµ½*/
+		//å¦‚æœæ˜¯å…ˆæŠŠä¸‹é¢çš„åŠ è¿›å»ï¼Œç›´åˆ°ç¢°åˆ°*/
 		if(isUnfinishedNotes){
 			lastWord+='\r';
 			lastWord+='\n';

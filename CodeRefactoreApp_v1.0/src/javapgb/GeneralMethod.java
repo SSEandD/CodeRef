@@ -38,7 +38,7 @@ public class GeneralMethod {
 	public boolean isSpace(char c){
 		return c==' ';
 	}
-	/*ÔÚÄÄ¼Ó¾ÍÊäÈëÏÂ±ê£¬ÔÚ¸ÃÏÂ±êÎ»ÖÃ¼ÓÊäÈë¸ÃÏÂ±ê£¬ÔÚÏÂ±êºó¼ÓÊäÏÂ±ê+1
+	/*åœ¨å“ªåŠ å°±è¾“å…¥ä¸‹æ ‡ï¼Œåœ¨è¯¥ä¸‹æ ‡ä½ç½®åŠ è¾“å…¥è¯¥ä¸‹æ ‡ï¼Œåœ¨ä¸‹æ ‡ååŠ è¾“ä¸‹æ ‡+1
 	 * 
 	 */
 	public ArrayList addSentence(ArrayList arrayList,int i,String sentence){
@@ -136,8 +136,8 @@ public class GeneralMethod {
 		}
 		return arrayList;
 	}
-	/*ÊäÈëµ±Ç°×óÀ¨ºÅµÄÏÂ±ê
-	 * Êä³öµ½ÓÒÀ¨ºÅÎªÖ¹µÄarrayList
+	/*è¾“å…¥å½“å‰å·¦æ‹¬å·çš„ä¸‹æ ‡
+	 * è¾“å‡ºåˆ°å³æ‹¬å·ä¸ºæ­¢çš„arrayList
 	 */
 	public ArrayList bracketsMatching(ArrayList arrayList,int i,int j){
 		ArrayList arrayListResult = new ArrayList();
@@ -208,8 +208,8 @@ public class GeneralMethod {
 		arrayListResult.add(String.valueOf(bracketsJ));
 		return arrayListResult;
 	}
-	/*ÊäÈëµ±Ç°ÏÂ±ê
-	 * Ñ°ÕÒ×óÀ¨ºÅ,µ÷ÓÃº¯Êı,Êä³ö×óÀ¨ºÅµ½ÓÒÀ¨ºÅÎªÖ¹µÄarrayList
+	/*è¾“å…¥å½“å‰ä¸‹æ ‡
+	 * å¯»æ‰¾å·¦æ‹¬å·,è°ƒç”¨å‡½æ•°,è¾“å‡ºå·¦æ‹¬å·åˆ°å³æ‹¬å·ä¸ºæ­¢çš„arrayList
 	 */
 	public ArrayList returnBracketsMatching(ArrayList arrayList,int i,int j,String brackets){
 		String temp="";

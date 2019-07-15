@@ -1,7 +1,7 @@
 package javasss;
 
 /**
- * ¶Ô¶ÁÈ¡×Ö·û·ÖÀàÏà¹Ø²Ù×÷
+ * å¯¹è¯»å–å­—ç¬¦åˆ†ç±»ç›¸å…³æ“ä½œ
  */
 public class TypeUtil {
 	
@@ -13,19 +13,19 @@ public class TypeUtil {
 			"long", "native", "new", "package", "private", "protected",
 			"public", "return", "short", "static", "super", "switch",
 			"synchronized", "this", "throw", "throws", "transient", "try",
-			"void", "volatile", "while","strictfp","enum","goto","const","assert" }; // ¹Ø¼ü×ÖÊý×é
+			"void", "volatile", "while","strictfp","enum","goto","const","assert" }; // å…³é”®å­—æ•°ç»„
 	private final char operators[] = { '+', '-', '*', '/', '=', '>', '<', '&', '|',
-			'!' }; // ÔËËã·ûÊý×é
+			'!' }; // è¿ç®—ç¬¦æ•°ç»„
 	private final char separators[] = { ',', ';', '{', '}', '(', ')', '[', ']', '_',
-			':', '.', '"','\\'}; // ½ç·ûÊý×é
+			':', '.', '"','\\'}; // ç•Œç¬¦æ•°ç»„
 	
 	private final String exKeyWords[] = {
 			"if","else","try","catch","finally"
 	};
 	
 	/**
-	 * ÅÐ¶ÏÊÇ·ñÎª×ÖÄ¸
-	 * @param ch ÐèÅÐ¶ÏµÄ×Ö·û
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºå­—æ¯
+	 * @param ch éœ€åˆ¤æ–­çš„å­—ç¬¦
 	 * @return boolean
 	 */
 	public boolean isLetter(char ch) {
@@ -33,16 +33,16 @@ public class TypeUtil {
 	}
 
 	/**
-	 * ÅÐ¶ÏÊÇ·ñÎªÊý×Ö
-	 * @param ch ÐèÅÐ¶ÏµÄ×Ö·û
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºæ•°å­—
+	 * @param ch éœ€åˆ¤æ–­çš„å­—ç¬¦
 	 * @return boolean
 	 */
 	public boolean isDigit(char ch) {
 		return Character.isDigit(ch);
 	}
 	/**
-	 * ÅÐ¶ÏÊÇ·ñÎª¹Ø¼ü×Ö
-	 * @param s ÐèÅÐ¶ÏµÄ×Ö·û´®
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºå…³é”®å­—
+	 * @param s éœ€åˆ¤æ–­çš„å­—ç¬¦ä¸²
 	 * @return boolean
 	 */
 	public boolean isKeyWord(String s) {
@@ -54,8 +54,8 @@ public class TypeUtil {
 	}
 
 	/**
-	 * ÅÐ¶ÏÊÇ·ñÎªÀýÍâ¹Ø¼ü×Ö
-	 * @param s ÐèÅÐ¶ÏµÄ×Ö·û´®
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºä¾‹å¤–å…³é”®å­—
+	 * @param s éœ€åˆ¤æ–­çš„å­—ç¬¦ä¸²
 	 * @return boolean
 	 */
 	public boolean isExKeyWord(String s) {
@@ -67,8 +67,8 @@ public class TypeUtil {
 	}
 
 	/**
-	 * ÅÐ¶ÏÊÇ·ñÎªÔËËã·û
-	 * @param ch ÐèÅÐ¶ÏµÄ×Ö·û
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºè¿ç®—ç¬¦
+	 * @param ch éœ€åˆ¤æ–­çš„å­—ç¬¦
 	 * @return boolean
 	 */
 	public boolean isOperator(char ch) {
@@ -80,8 +80,8 @@ public class TypeUtil {
 	}
 
 	/**
-	 * ÅÐ¶ÏÊÇ·ñÎª·Ö¸ô·û
-	 * @param ch ÐèÅÐ¶ÏµÄ×Ö·û
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºåˆ†éš”ç¬¦
+	 * @param ch éœ€åˆ¤æ–­çš„å­—ç¬¦
 	 * @return boolean
 	 */
 	public boolean isSeparators(char ch) {
