@@ -53,7 +53,20 @@ public class CodeFile {
                 classGroup.add("THE_FLAG_IS_TOP_CLASS");
                 int theFlag = 0;
                 do {
-                    if ("{".equals(word)) theFlag++;
+                    if ("{".equals(word)) {
+                        theFlag++;
+                        classGroup.add(word);
+                        if(i+1 == list.size()) break;
+                        word=list.get(++i);
+                        if(!"\n".equals(word) && !"\r".equals(word)) {
+                            classGroup.add("\r");
+                            classGroup.add("\n");
+                            classGroup.add(" ");
+                            classGroup.add(" ");
+                            classGroup.add(" ");
+                            classGroup.add(" ");
+                        }
+                    }
                     if ("}".equals(word)) {
                         theFlag--;
                         if (theFlag == 0) {

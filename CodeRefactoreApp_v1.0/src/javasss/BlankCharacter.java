@@ -229,7 +229,7 @@ public class BlankCharacter {
             }
             else {
             	line.add(thisline);
-                System.out.println(thisline);
+//                System.out.println(thisline);
             	thisline="";
             }
 
